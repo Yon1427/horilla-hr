@@ -1,6 +1,7 @@
 ---
 description: QA and release engineer for the Algerian SIRH fork - owns the M0 regression suite, the IRG boundary and golden payslip cases, and the CI gates that close each plan task.
 mode: subagent
+model: opencode-go/crouton-alpha-free#high
 color: "#2563eb"
 steps: 25
 permissions:

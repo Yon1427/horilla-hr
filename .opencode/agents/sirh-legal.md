@@ -1,6 +1,7 @@
 ---
 description: Algerian labour-law and statutory-declarations analyst - produces and validates legal rules, declaration data contracts, deadlines and golden scenarios with OFF/REP/PRAC/UNV source tags.
 mode: subagent
+model: opencode-go/muse-spark-1.3-contributor#high
 color: "#d97706"
 steps: 20
 permissions:

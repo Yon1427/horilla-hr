@@ -40,6 +40,9 @@ permissions:
   - action: subagent
     resource: sirh-qa
     effect: allow
+  - action: subagent
+    resource: sirh-explore
+    effect: allow
   - action: shell
     resource: "git push*"
     effect: ask
@@ -93,6 +96,9 @@ register), `06-gap-analysis.md` (defects B1-B8), `07-contrats-et-rotation.md` an
   must write first; no second task before the first suite is green.
 - `sirh-qa` for verification. It owns the regression suite and the release gate and may
   not edit app logic, so a defect it reports comes back to you.
+- `sirh-explore` for reconnaissance: "where is this", "who calls it", "what breaks
+  if this changes". It is read-only and cheap; use it before asking a worker to
+  open a large area of the tree.
 
 ## Review output
 

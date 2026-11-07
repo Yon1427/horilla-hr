@@ -203,3 +203,58 @@ class TaxBracket(HorillaModel):
                     )
                 }
             )
+
+
+class AlgeriaPayrollParameter(HorillaModel):
+    """Algerian private-sector payroll rules, effective-dated per company.
+
+    Every figure must carry a source. A new finance law creates a new row; it
+    never edits an old one, because historical payslips must keep computing.
+    """
+
+    DZ_IRG_BRACKETS = [
+        {"min": 0, "max": 20000, "rate": 0},
+        {"min": 20000, "max": 40000, "rate": 23},
+        {"min": 40000, "max": 80000, "rate": 27},
+        {"min": 80000, "max": 160000, "rate": 30},
+        {"min": 160000, "max": 320000, "rate": 33},
+        {"min": 320000, "max": None, "rate": 35},
+    ]
+
+    company_id = models.ForeignKey(Company, null=True, on_delete=models.PROTECT)
+    effective_from = models.DateField()
+    snmg_monthly = models.FloatField(default=24000)
+    irg_brackets = models.JSONField(default=list)
+    irg_exemption_monthly = models.FloatField(default=30000)
+    abatement_rate = models.FloatField(default=40)
+    abatement_min = models.FloatField(default=1000)
+    abatement_max = models.FloatField(default=1500)
+    smoothing_min = models.FloatField(default=30000)
+    smoothing_max = models.FloatField(default=35000)
+    smoothing_factor = models.FloatField(default=137 / 51)
+    smoothing_offset = models.FloatField(default=27925 / 8)
+    disabled_smoothing_max = models.FloatField(default=42500)
+    disabled_smoothing_factor = models.FloatField(default=93 / 61)
+    disabled_smoothing_offset = models.FloatField(default=81213 / 41)
+    exceptional_bonus_rate = models.FloatField(default=10)
+    cnas_employee_rate = models.FloatField(default=9)
+    cnas_employer_rate = models.FloatField(default=25)
+    fnpos_rate = models.FloatField(default=0.5)
+    tfpc_rate = models.FloatField(default=1)
+    tapp_rate = models.FloatField(default=1)
+    source_url = models.URLField(blank=True)
+    objects = HorillaCompanyManager("company_id")
+
+    class Meta:
+        ordering = ["-effective_from"]
+        unique_together = ("company_id", "effective_from")
+
+    def __str__(self):
+        return f"Algeria payroll {self.effective_from}"
+
+    @classmethod
+    def for_company(cls, company, as_of):
+        qs = cls.objects.filter(effective_from__lte=as_of)
+        company_id = getattr(company, "pk", company)
+        row = qs.filter(company_id=company_id).first() if company_id else None
+        return row or qs.filter(company_id__isnull=True).first()

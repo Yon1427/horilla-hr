@@ -545,77 +545,53 @@ def leave_request_creation(request, type_id=None, emp_id=None):
         form = choosesubordinates(request, form, "leave.add_leaverequest")
         if form.is_valid():
             leave_request = form.save(commit=False)
-            save = True
+            leave_request.created_by = request.user.employee_get
 
             if leave_request.leave_type_id.require_approval == "no":
-                employee_id = leave_request.employee_id
-                leave_type_id = leave_request.leave_type_id
-                available_leave = AvailableLeave.objects.get(
-                    leave_type_id=leave_type_id, employee_id=employee_id
-                )
-                leave_request.created_by = request.user.employee_get
+                # The first save computes requested_days, which no_approval()
+                # reads; the balance and the approved status must land together.
+                with transaction.atomic():
+                    leave_request.save()
+                    leave_request.no_approval()
+                    leave_request.save()
+            else:
                 leave_request.save()
-                if leave_request.requested_days > available_leave.available_days:
-                    leave = (
-                        leave_request.requested_days - available_leave.available_days
-                    )
-                    leave_request.approved_available_days = (
-                        available_leave.available_days
-                    )
-                    available_leave.available_days = 0
-                    available_leave.carryforward_days = (
-                        available_leave.carryforward_days - leave
-                    )
-                    leave_request.approved_carryforward_days = leave
-                else:
-                    available_leave.available_days = (
-                        available_leave.available_days - leave_request.requested_days
-                    )
-                    leave_request.approved_available_days = leave_request.requested_days
-                leave_request.status = "approved"
-            if save:
-                leave_request.created_by = request.user.employee_get
-                leave_request.save()
-                try:
-                    available_leave.save()
-                except:
-                    pass
 
-                if multiple_approvals_check(leave_request.id):
-                    conditional_requests = multiple_approvals_check(leave_request.id)
-                    managers = []
-                    for manager in conditional_requests["managers"]:
-                        managers.append(manager.employee_user_id)
-                    with contextlib.suppress(Exception):
-                        notify.send(
-                            request.user.employee_get,
-                            recipient=managers[0],
-                            verb=gettext_noop(
-                                "You have a new leave request to validate."
-                            ),
-                            icon="people-circle",
-                            redirect=f"/leave/request-view?id={leave_request.id}",
-                        )
-
-                mail_thread = LeaveMailSendThread(
-                    request, leave_request, type="request"
-                )
-                mail_thread.start()
-                messages.success(request, _("Leave request created successfully.."))
+            if multiple_approvals_check(leave_request.id):
+                conditional_requests = multiple_approvals_check(leave_request.id)
+                managers = []
+                for manager in conditional_requests["managers"]:
+                    managers.append(manager.employee_user_id)
                 with contextlib.suppress(Exception):
                     notify.send(
                         request.user.employee_get,
-                        recipient=leave_request.employee_id.employee_work_info.reporting_manager_id.employee_user_id,
+                        recipient=managers[0],
                         verb=gettext_noop(
-                            "New leave request created for %(employee)s."
+                            "You have a new leave request to validate."
                         ),
-                        verb_params={"employee": str(leave_request.employee_id)},
                         icon="people-circle",
-                        redirect=reverse("request-view") + f"?id={leave_request.id}",
+                        redirect=f"/leave/request-view?id={leave_request.id}",
                     )
-                form = LeaveRequestCreationForm()
-                if referer_parts[-2] == "employee-view":
-                    return HorillaRedirect(request)
+
+            mail_thread = LeaveMailSendThread(
+                request, leave_request, type="request"
+            )
+            mail_thread.start()
+            messages.success(request, _("Leave request created successfully.."))
+            with contextlib.suppress(Exception):
+                notify.send(
+                    request.user.employee_get,
+                    recipient=leave_request.employee_id.employee_work_info.reporting_manager_id.employee_user_id,
+                    verb=gettext_noop(
+                        "New leave request created for %(employee)s."
+                    ),
+                    verb_params={"employee": str(leave_request.employee_id)},
+                    icon="people-circle",
+                    redirect=reverse("request-view") + f"?id={leave_request.id}",
+                )
+            form = LeaveRequestCreationForm()
+            if referer_parts[-2] == "employee-view":
+                return HorillaRedirect(request)
 
             leave_requests = LeaveRequest.objects.all()
             if len(leave_requests) == 1:
@@ -1139,6 +1115,7 @@ def leave_request_delete(request, id):
 
 @login_required
 @manager_can_enter("leave.change_leaverequest")
+@transaction.atomic
 def leave_request_approve(request, id, emp_id=None):
     """
     function used to approve a leave request.
@@ -1153,7 +1130,13 @@ def leave_request_approve(request, id, emp_id=None):
     GET : If `emp_id` is provided, it returns to the "/employee/employee-view/{employee_id}/" template after approval.
           Otherwise, it returns to the default leave request view template.
     """
-    leave_request = LeaveRequest.find(id)
+    # of=("self",) locks only the request row. Locking every joined table fails
+    # on PostgreSQL because the company manager adds a nullable outer join.
+    leave_request = (
+        LeaveRequest.objects.select_for_update(of=("self",))
+        .filter(id=id)
+        .first()
+    )
     if not leave_request:
         return HorillaRedirect(
             request, message=_("No leave request found matching the query.")
@@ -1179,7 +1162,7 @@ def leave_request_approve(request, id, emp_id=None):
             return HorillaRedirect(request)
     leave_type_id = leave_request.leave_type_id
     try:
-        available_leave = AvailableLeave.objects.get(
+        available_leave = AvailableLeave._base_manager.select_for_update().get(
             leave_type_id=leave_type_id, employee_id=employee_id
         )
     except AvailableLeave.DoesNotExist:

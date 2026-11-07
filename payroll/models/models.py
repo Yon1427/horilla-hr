@@ -3676,11 +3676,11 @@ class Payslip(HorillaModel):
     start_date = models.DateField()
     end_date = models.DateField()
     pay_head_data = models.JSONField()
-    contract_wage = models.FloatField(null=True, default=0)
-    basic_pay = models.FloatField(null=True, default=0)
-    gross_pay = models.FloatField(null=True, default=0)
-    deduction = models.FloatField(null=True, default=0)
-    net_pay = models.FloatField(null=True, default=0)
+    contract_wage = models.DecimalField(max_digits=14, decimal_places=2, null=True, default=0)
+    basic_pay = models.DecimalField(max_digits=14, decimal_places=2, null=True, default=0)
+    gross_pay = models.DecimalField(max_digits=14, decimal_places=2, null=True, default=0)
+    deduction = models.DecimalField(max_digits=14, decimal_places=2, null=True, default=0)
+    net_pay = models.DecimalField(max_digits=14, decimal_places=2, null=True, default=0)
     status = models.CharField(
         max_length=20, null=True, default="draft", choices=status_choices
     )

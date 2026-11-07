@@ -512,7 +512,7 @@ def apply_edits(payslip, amounts, removed, new_line=None):
             if LOP_KEY in removed
             else round(float(amounts.get(LOP_KEY, data.get("loss_of_pay", 0)) or 0), 2)
         )
-    new_basic = round(amounts.get(BASIC_KEY, payslip.basic_pay or 0), 2)
+    new_basic = round(float(amounts.get(BASIC_KEY, payslip.basic_pay or 0) or 0), 2)
     # The page reads these from the snapshot, not from the model's columns, so
     # leaving them as generated showed the old basic and gross after a save.
     data["basic_pay"] = new_basic
@@ -537,7 +537,7 @@ def apply_edits(payslip, amounts, removed, new_line=None):
     data["uncovered_deduction"] = totals["uncovered_deduction"]
     data["net_pay"] = totals["net_pay"]
 
-    payslip.basic_pay = round(amounts.get(BASIC_KEY, payslip.basic_pay or 0), 2)
+    payslip.basic_pay = round(float(amounts.get(BASIC_KEY, payslip.basic_pay or 0) or 0), 2)
     payslip.gross_pay = totals["gross_pay"]
     payslip.deduction = totals["total_deductions"]
     payslip.net_pay = totals["net_pay"]

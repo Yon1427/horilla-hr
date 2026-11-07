@@ -59,7 +59,7 @@ class ContractFixture(TestCase):
         )
 
     def paid(self, slips):
-        return sum(p.basic_pay for p in slips)
+        return sum(float(p.basic_pay or 0) for p in slips)
 
     def due(self, wage, first, last, days=DAYS):
         """What a contract at ``wage`` earns from ``first`` to ``last`` of a month of ``days`` days."""

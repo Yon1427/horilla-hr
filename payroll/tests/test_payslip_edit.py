@@ -387,7 +387,7 @@ class NewLineTests(Fixture):
             ),
             self.payslip,
         )
-        self.assertEqual(line["amount"], round(self.payslip.basic_pay * 0.1, 2))
+        self.assertEqual(line["amount"], round(float(self.payslip.basic_pay) * 0.1, 2))
         self.assertEqual(line["formula"], "BASIC * 0.1")
 
     def test_a_formula_that_will_not_evaluate_refuses_the_line(self):
@@ -402,7 +402,7 @@ class NewLineTests(Fixture):
             payslip_edit.parse_new_line(self.post_data(new_amount="500"), self.payslip)
 
     def test_an_added_earning_moves_gross_and_net(self):
-        before = self.payslip.gross_pay
+        before = float(self.payslip.gross_pay)
         payslip_edit.apply_edits(
             self.payslip,
             {},
@@ -575,7 +575,7 @@ class NewLineViewTests(Fixture):
         )
         payload = response.json()
         self.assertTrue(payload["ok"])
-        self.assertEqual(payload["result"], round(self.payslip.basic_pay * 0.1, 2))
+        self.assertEqual(payload["result"], round(float(self.payslip.basic_pay) * 0.1, 2))
 
     def test_the_preview_endpoint_reports_a_bad_formula_rather_than_failing(self):
         response = self.client.post(
@@ -742,7 +742,7 @@ class SeparateLossOfPayTests(Fixture):
     def test_editing_basic_pay_does_not_wipe_a_separate_loss_of_pay(self):
         self.make_separate(500.0)
         payslip_edit.apply_edits(
-            self.payslip, {"basic": (self.payslip.basic_pay or 0) + 1000.0}, set()
+            self.payslip, {"basic": float(self.payslip.basic_pay or 0) + 1000.0}, set()
         )
         self.payslip.refresh_from_db()
         self.assertEqual(self.payslip.pay_head_data["loss_of_pay"], 500.0)
@@ -795,7 +795,7 @@ class SeparateLossOfPayTests(Fixture):
         self.assertEqual(self.payslip.pay_head_data["loss_of_pay"], 100.0)
         self.assertTrue(self.payslip.pay_head_data["lop_reflected_in_basic"])
         self.assertFalse(self.payslip.pay_head_data.get("basic_edited"))
-        self.assertAlmostEqual(self.payslip.basic_pay, before - 100.0, places=2)
+        self.assertAlmostEqual(float(self.payslip.basic_pay), before - 100.0, places=2)
 
     def test_the_server_works_basic_out_from_the_adjustment_when_basic_is_not_sent(
         self,
@@ -803,14 +803,14 @@ class SeparateLossOfPayTests(Fixture):
         basic = self.inside_basic(190.67)
         payslip_edit.apply_edits(self.payslip, {"lop_adj": 0.0}, set())
         self.payslip.refresh_from_db()
-        self.assertAlmostEqual(self.payslip.basic_pay, basic + 190.67, places=2)
+        self.assertAlmostEqual(float(self.payslip.basic_pay), basic + 190.67, places=2)
         self.assertEqual(self.payslip.pay_head_data["loss_of_pay"], 0.0)
 
     def test_the_adjustment_cannot_exceed_what_basic_was(self):
         basic = self.inside_basic(190.67)
         payslip_edit.apply_edits(self.payslip, {"lop_adj": 10**9}, set())
         self.payslip.refresh_from_db()
-        self.assertGreaterEqual(self.payslip.basic_pay, 0)
+        self.assertGreaterEqual(float(self.payslip.basic_pay), 0)
         self.assertAlmostEqual(
             self.payslip.pay_head_data["loss_of_pay"], basic + 190.67, places=2
         )
@@ -1037,7 +1037,7 @@ class TaxFollowsTheEditTests(Fixture):
         self.assertGreater(before, 0)
 
         payslip_edit.apply_edits(
-            self.payslip, {"basic": self.payslip.basic_pay + 12000}, set()
+            self.payslip, {"basic": float(self.payslip.basic_pay) + 12000}, set()
         )
         self.payslip.refresh_from_db()
 
@@ -1045,7 +1045,7 @@ class TaxFollowsTheEditTests(Fixture):
 
     def test_the_live_recalculation_returns_the_new_tax(self):
         before = self.payslip.pay_head_data["federal_tax"]
-        amounts = {"basic": self.payslip.basic_pay + 12000}
+        amounts = {"basic": float(self.payslip.basic_pay) + 12000}
         recomputed = payslip_edit.recompute_dependents(
             self.payslip, amounts, given={"basic"}
         )
@@ -1053,14 +1053,14 @@ class TaxFollowsTheEditTests(Fixture):
 
     def test_a_tax_figure_typed_in_is_kept(self):
         payslip_edit.apply_edits(
-            self.payslip, {"basic": self.payslip.basic_pay + 12000, "tax": 1.0}, set()
+            self.payslip, {"basic": float(self.payslip.basic_pay) + 12000, "tax": 1.0}, set()
         )
         self.payslip.refresh_from_db()
         self.assertEqual(self.payslip.pay_head_data["federal_tax"], 1.0)
 
     def test_the_snapshot_the_page_reads_follows_the_edit(self):
         payslip_edit.apply_edits(
-            self.payslip, {"basic": self.payslip.basic_pay + 12000}, set()
+            self.payslip, {"basic": float(self.payslip.basic_pay) + 12000}, set()
         )
         self.payslip.refresh_from_db()
         data = self.payslip.pay_head_data
@@ -1074,7 +1074,7 @@ class TaxFollowsTheEditTests(Fixture):
         self.payslip.save()
 
         payslip_edit.apply_edits(
-            self.payslip, {"basic": self.payslip.basic_pay + 100}, set()
+            self.payslip, {"basic": float(self.payslip.basic_pay) + 100}, set()
         )
         self.payslip.refresh_from_db()
         self.assertFalse(self.payslip.pay_head_data["lop_reflected_in_basic"])

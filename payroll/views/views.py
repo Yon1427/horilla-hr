@@ -814,7 +814,7 @@ def dashboard_employee_chart(request):
             payslips = employee_list.filter(employee_id=label)
             for payslip in payslips:
                 total_pay_with_status[payslip.status][label] += round(
-                    payslip.net_pay, 2
+                    float(payslip.net_pay or 0), 2
                 )
 
         for data in dataset:
@@ -1096,11 +1096,15 @@ def payslip_export(request):
                     "employee": f"{payslip.employee_id.employee_first_name} {payslip.employee_id.employee_last_name}",
                     "start_date": formatted_start_date,
                     "end_date": formatted_end_date,
-                    "basic_pay": round(payslip.basic_pay, 2),
-                    "deduction": round(payslip.deduction, 2),
-                    "allowance": round(payslip.gross_pay - payslip.basic_pay, 2),
-                    "gross_pay": round(payslip.gross_pay, 2),
-                    "net_pay": round(payslip.net_pay, 2),
+                    "basic_pay": round(float(payslip.basic_pay or 0), 2),
+                    "deduction": round(float(payslip.deduction or 0), 2),
+                    "allowance": round(
+                        float(payslip.gross_pay or 0)
+                        - float(payslip.basic_pay or 0),
+                        2,
+                    ),
+                    "gross_pay": round(float(payslip.gross_pay or 0), 2),
+                    "net_pay": round(float(payslip.net_pay or 0), 2),
                     "status": status_choices.get(payslip.status),
                 },
             )

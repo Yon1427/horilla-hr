@@ -7,6 +7,7 @@ Payroll related module to write custom calculation methods
 import calendar
 import json
 import logging
+from decimal import Decimal, ROUND_HALF_UP
 from datetime import date, datetime, timedelta
 
 from dateutil.relativedelta import relativedelta
@@ -32,6 +33,13 @@ from payroll.methods.employer_cost import employer_amount
 from payroll.models.models import Contract, Deduction, Payslip
 
 logger = logging.getLogger(__name__)
+
+TWOPLACES = Decimal("0.01")
+
+
+def money(value) -> Decimal:
+    """Round a payroll amount to two decimal places, half-up."""
+    return Decimal(str(value or 0)).quantize(TWOPLACES, rounding=ROUND_HALF_UP)
 
 
 def get_total_days(start_date, end_date):
@@ -1130,17 +1138,17 @@ def save_payslip(**kwargs):
     instance.start_date = kwargs["start_date"]
     instance.end_date = kwargs["end_date"]
     instance.status = kwargs["status"]
-    instance.basic_pay = round(kwargs["basic_pay"], 2)
-    instance.contract_wage = round(kwargs["contract_wage"], 2)
-    instance.gross_pay = round(kwargs["gross_pay"], 2)
+    instance.basic_pay = money(kwargs["basic_pay"])
+    instance.contract_wage = money(kwargs["contract_wage"])
+    instance.gross_pay = money(kwargs["gross_pay"])
     # A backstop behind the engine's own cap, because this one field is read
     # by everything -- the payslip, the run totals, the dashboard, every
     # export -- and a single stored row where deductions exceed gross makes
     # all of them disagree with each other at once.
     instance.deduction = min(
-        round(kwargs["deduction"], 2), round(kwargs["gross_pay"], 2)
+        money(kwargs["deduction"]), money(kwargs["gross_pay"])
     )
-    instance.net_pay = max(0.0, round(kwargs["net_pay"], 2))
+    instance.net_pay = max(Decimal("0.00"), money(kwargs["net_pay"]))
     instance.pay_head_data = kwargs["pay_data"]
     instance.save()
     instance.installment_ids.set(kwargs["installments"])

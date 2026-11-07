@@ -164,7 +164,9 @@ class OutsideTheStructure(OutsideHelpers, StructureTypeFixture):
             self.rows(payslip)["C1 Special"]["amount"], base_special, places=2
         )
         self.assertAlmostEqual(payslip.gross_pay, baseline.gross_pay, places=2)
-        self.assertAlmostEqual(payslip.net_pay, baseline.net_pay - 1350.0, places=2)
+        self.assertAlmostEqual(
+            float(payslip.net_pay), float(baseline.net_pay) - 1350.0, places=2
+        )
 
     def test_a_structure_that_lists_no_components_keeps_every_earning_in_the_package(
         self,

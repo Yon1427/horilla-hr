@@ -1,6 +1,7 @@
 ---
 description: Payroll and compliance engineer for the Algerian SIRH fork - implements the M0 defect fixes and the M1 Algerian payroll core (SNMG, CNAS, IRG, costisation) test-first.
 mode: subagent
+model: opencode-go/deepseek-v4.1-flash#high
 color: "#0d9488"
 steps: 30
 permissions:

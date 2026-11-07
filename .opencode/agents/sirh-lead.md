@@ -1,6 +1,7 @@
 ---
 description: Technical lead for the Algerian private-sector SIRH fork - sequences M0/M1 and reviews every change for money correctness, migration safety, multi-company scoping, permissions, tests and audit.
 mode: primary
+model: opencode-go/deepseek-v4-pro#high
 color: "#7c3aed"
 steps: 40
 permissions:

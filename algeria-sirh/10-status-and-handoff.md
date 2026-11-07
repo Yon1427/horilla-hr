@@ -90,12 +90,17 @@ Baseline before M0: 1,491 tests OK (1 expected failure).
 | M1-15 employer cost | **not started** | `payroll/methods/dz_cost.py`, `payroll/tests/test_dz_cost.py` |
 | M1-16 delivery notes + gate | **not started** | `algeria-sirh/`, `Makefile` gate |
 
-**Full four-app gate:** the first run ended `FAILED (2 failures, 2 errors)` but
-is **invalid**: the M1-9/10 model and migrations were added while the test
-process was already running, so its registry never saw
-`payroll_algeriapayrollparameter` and `flush` could not truncate it. The test DB
-now has `0017`/`0018` and `test_dz_parameters` passes (2 OK). A clean four-app
-rerun is in progress. Do not edit models or existing methods until it lands.
+**Full four-app gate:** two runs so far, neither is the final sign-off.
+
+1. The first run (`--keepdb`) was invalid: the M1-9/10 model was added mid-run,
+   so the process never registered `payroll_algeriapayrollparameter`.
+2. The clean rerun (`--keepdb`, 1,511 tests) ended `FAILED (3 failures)` in
+   `base.tests.test_export_permission_seeding` and
+   `leave.tests.test_restrict_department_migration`. Those three modules pass on
+   a **fresh database** (8 tests OK). The cause is `--keepdb` state, not M0 code.
+
+Policy from here: use `--keepdb` for fast iteration only; the sign-off gate runs
+without it. A full fresh-DB gate is running now.
 
 ### M2–M7 — not started
 
@@ -184,8 +189,9 @@ docker compose run --rm -e HORILLA_SKIP_RELEASE_TASKS=1 web \
 
 ## Ground rules for the next session
 
-- One test command at a time; `--keepdb`; record the test count in the commit body
-  when the suite is large.
+- One test command at a time. Use `--keepdb` for iteration, but run the final
+  sign-off without it; data-migration seed tests are order/state sensitive.
+- Record the test count in the commit body when the suite is large.
 - Never change an asserted payroll number to make a test pass. Fix the engine or
   the fixture.
 - Every rate/threshold gets `effective_from` + `source_url` + confidence tag.

@@ -12,8 +12,8 @@ disagree, this file wins; if this file and the code disagree, the code wins.
 | Repo | `/home/sidali/sirh` |
 | Fork | `github.com/Yon1427/horilla-hr` (from `horilla/horilla-hr`, branch `2.0`, base `bba4b37`) |
 | Working branch | `algeria/m0-m1` |
-| HEAD | `a6cda56 feat(payroll): effective-dated Algeria parameters and 2026 seed` |
-| Upstream | `fork/algeria/m0-m1` (pushed through `a6cda56`) |
+| HEAD | `42a2391 feat(payroll): Algerian IRG engine and boundary tests` |
+| Upstream | `fork/algeria/m0-m1` (pushed through `42a2391`) |
 | Runtime | Docker Compose: `db` (Postgres 16) + `redis` up; image `sirh-web` built |
 | Python | 3.12 / Django 5.2.19 (in the image) |
 | Scope | Algerian **private sector only** (loi 90-11) |
@@ -83,24 +83,22 @@ Baseline before M0: 1,491 tests OK (1 expected failure).
 |---|---|---|
 | M1-9 parameter model | **committed `a6cda56`** | `payroll/models/tax_models.py` (`AlgeriaPayrollParameter`), `payroll/migrations/0017_algeria_payroll_parameter.py`, `payroll/tests/test_dz_parameters.py` |
 | M1-10 2026 seed | **committed `a6cda56`** | `payroll/migrations/0018_seed_algeria_parameters_2026.py` |
-| M1-11 IRG engine | **written, uncommitted** | `payroll/methods/dz_irg.py`, `payroll/tests/test_dz_irg.py` |
+| M1-11 IRG engine | **committed `42a2391`** | `payroll/methods/dz_irg.py`, `payroll/tests/test_dz_irg.py` |
 | M1-12 `FilingStatus.tax_engine` | **not started** | `payroll/models/models.py`, `payroll/methods/tax_calc.py`, migration `0019` |
 | M1-13 component seed command | **not started** | `payroll/management/commands/seed_algeria_payroll.py` |
 | M1-14 80,000 DA golden payslip | **not started** | `payroll/tests/test_dz_payroll_golden.py` |
 | M1-15 employer cost | **not started** | `payroll/methods/dz_cost.py`, `payroll/tests/test_dz_cost.py` |
 | M1-16 delivery notes + gate | **not started** | `algeria-sirh/`, `Makefile` gate |
 
-**Full four-app gate:** two runs so far, neither is the final sign-off.
+**Full four-app gate: GREEN.** Fresh database, no `--keepdb`, **1,517 tests**
+→ `OK (expected failures=1)` in **23m21s**. This includes M0, M1-9/10 and the
+M1-11 IRG tests.
 
-1. The first run (`--keepdb`) was invalid: the M1-9/10 model was added mid-run,
-   so the process never registered `payroll_algeriapayrollparameter`.
-2. The clean rerun (`--keepdb`, 1,511 tests) ended `FAILED (3 failures)` in
-   `base.tests.test_export_permission_seeding` and
-   `leave.tests.test_restrict_department_migration`. Those three modules pass on
-   a **fresh database** (8 tests OK). The cause is `--keepdb` state, not M0 code.
+Earlier runs were not sign-offs: the first was invalidated by a mid-run model
+addition; the second (`--keepdb`, 1,511 tests) failed three data-migration tests
+because of reused-DB state. Those three pass on a fresh DB.
 
-Policy from here: use `--keepdb` for fast iteration only; the sign-off gate runs
-without it. A full fresh-DB gate is running now.
+Policy: `--keepdb` is for fast iteration only; the sign-off gate runs without it.
 
 ### M2–M7 — not started
 
@@ -182,10 +180,10 @@ docker compose run --rm -e HORILLA_SKIP_RELEASE_TASKS=1 web \
 1. **Rerun the clean four-app gate** (`base payroll leave horilla_views`) from
    a fresh process; the previous failure was a mid-run edit, not an M0 regression.
 2. M1-9/10 are committed (`a6cda56`) and `test_dz_parameters` is green.
-3. **Implement M1-11** in `payroll/methods/dz_irg.py` with the boundary test
-   (30,000 / 30,001 / 34,999 / 35,000 / 35,001 / 42,500; 72,800 → 11,956).
+3. M1-11 is committed (`42a2391`) and covered by the green gate.
 4. **Implement M1-12** (`FilingStatus.tax_engine` + `as_of`), then M1-13/14/15.
-5. Record each gate result in this file's snapshot before moving on.
+5. Run the touched app suite after each task; run the full fresh gate only at a
+   milestone, and record the count here before moving on.
 
 ## Ground rules for the next session
 

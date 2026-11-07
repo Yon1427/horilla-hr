@@ -26,6 +26,7 @@ from base.methods import (
 from base.models import CompanyLeaves, Holidays
 from horilla.methods import get_horilla_model_class
 from payroll.methods.component_formula import ComponentFormulaError
+from payroll.methods.errors import PayrollBlockedError
 from payroll.methods.contract_periods import forced_contract
 from payroll.methods.employer_cost import employer_amount
 from payroll.models.models import Contract, Deduction, Payslip
@@ -773,6 +774,11 @@ def compute_salary_on_period(
         return contract
 
     month_summary = month_summary or {}
+    if month_summary.get("unresolved_conflicts", 0):
+        raise PayrollBlockedError(
+            "Unresolved attendance conflicts for this period. "
+            "Resolve them before generating the payslip."
+        )
     # contract.pay_rate, not contract.wage: an hourly contract has its rate in
     # its own field now, and reading `wage` there would pay a monthly figure
     # per hour.
@@ -824,8 +830,6 @@ def compute_salary_on_period(
             unpaid_days = month_summary.get("unpaid_leave", 0) + month_summary.get(
                 "absent", 0
             )
-            if month_summary.get("unresolved_conflicts", 0):
-                unpaid_days = total_days
             paid_days = float(total_days - unpaid_days)
             loss_of_pay = unpaid_days * wage
 
@@ -882,8 +886,6 @@ def compute_salary_on_period(
             unpaid_days = month_summary.get("unpaid_leave", 0) + month_summary.get(
                 "absent", 0
             )
-            if month_summary.get("unresolved_conflicts", 0):
-                unpaid_days = total_days
             # What one unpaid day costs, from the contract: which figure it
             # is a share of, and how many days it is shared between.
             #

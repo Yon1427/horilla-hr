@@ -18,6 +18,14 @@ disagree, this file wins; if this file and the code disagree, the code wins.
 | Python | 3.12 / Django 5.2.19 (in the image) |
 | Scope | Algerian **private sector only** (loi 90-11) |
 
+## Test deployment (local Compose)
+
+- URL: http://localhost:8000 (dev stack: `DEBUG=1`, dev secrets)
+- `web` is **healthy**; `/health/` → `{"status":"ok","product":"horilla","api":1}`
+- `/` → 302 → `/login/?next=/` → 200
+- Payroll migrations `0016`/`0017`/`0018` applied on the main DB
+- Seeded parameter row verified: `snmg=24000.0`, 6 IRG brackets
+
 ## Source of truth
 
 1. `00-index.md` — reading order and conflicts.
@@ -63,7 +71,7 @@ Baseline before M0: 1,491 tests OK (1 expected failure).
 |---|---|---|
 | M1-9 parameter model | **committed `a6cda56`** | `payroll/models/tax_models.py` (`AlgeriaPayrollParameter`), `payroll/migrations/0017_algeria_payroll_parameter.py`, `payroll/tests/test_dz_parameters.py` |
 | M1-10 2026 seed | **committed `a6cda56`** | `payroll/migrations/0018_seed_algeria_parameters_2026.py` |
-| M1-11 IRG engine | **not started** | `payroll/methods/dz_irg.py`, `payroll/tests/test_dz_irg.py` |
+| M1-11 IRG engine | **written, uncommitted** | `payroll/methods/dz_irg.py`, `payroll/tests/test_dz_irg.py` |
 | M1-12 `FilingStatus.tax_engine` | **not started** | `payroll/models/models.py`, `payroll/methods/tax_calc.py`, migration `0019` |
 | M1-13 component seed command | **not started** | `payroll/management/commands/seed_algeria_payroll.py` |
 | M1-14 80,000 DA golden payslip | **not started** | `payroll/tests/test_dz_payroll_golden.py` |
@@ -75,7 +83,7 @@ is **invalid**: the M1-9/10 model and migrations were added while the test
 process was already running, so its registry never saw
 `payroll_algeriapayrollparameter` and `flush` could not truncate it. The test DB
 now has `0017`/`0018` and `test_dz_parameters` passes (2 OK). A clean four-app
-rerun is the next action.
+rerun is in progress. Do not edit models or existing methods until it lands.
 
 ### M2–M7 — not started
 

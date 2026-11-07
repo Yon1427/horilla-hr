@@ -12,8 +12,8 @@ disagree, this file wins; if this file and the code disagree, the code wins.
 | Repo | `/home/sidali/sirh` |
 | Fork | `github.com/Yon1427/horilla-hr` (from `horilla/horilla-hr`, branch `2.0`, base `bba4b37`) |
 | Working branch | `algeria/m0-m1` |
-| HEAD | `3cd9730 docs(algeria): M0 delivery notes and test evidence` |
-| Upstream | `fork/algeria/m0-m1` (pushed through `3cd9730`) |
+| HEAD | `a6cda56 feat(payroll): effective-dated Algeria parameters and 2026 seed` |
+| Upstream | `fork/algeria/m0-m1` (pushed through `a6cda56`) |
 | Runtime | Docker Compose: `db` (Postgres 16) + `redis` up; image `sirh-web` built |
 | Python | 3.12 / Django 5.2.19 (in the image) |
 | Scope | Algerian **private sector only** (loi 90-11) |
@@ -61,8 +61,8 @@ Baseline before M0: 1,491 tests OK (1 expected failure).
 
 | Task | State | Files |
 |---|---|---|
-| M1-9 parameter model | **written, uncommitted** | `payroll/models/tax_models.py` (`AlgeriaPayrollParameter`), `payroll/migrations/0017_algeria_payroll_parameter.py`, `payroll/tests/test_dz_parameters.py` |
-| M1-10 2026 seed | **written, uncommitted** | `payroll/migrations/0018_seed_algeria_parameters_2026.py` |
+| M1-9 parameter model | **committed `a6cda56`** | `payroll/models/tax_models.py` (`AlgeriaPayrollParameter`), `payroll/migrations/0017_algeria_payroll_parameter.py`, `payroll/tests/test_dz_parameters.py` |
+| M1-10 2026 seed | **committed `a6cda56`** | `payroll/migrations/0018_seed_algeria_parameters_2026.py` |
 | M1-11 IRG engine | **not started** | `payroll/methods/dz_irg.py`, `payroll/tests/test_dz_irg.py` |
 | M1-12 `FilingStatus.tax_engine` | **not started** | `payroll/models/models.py`, `payroll/methods/tax_calc.py`, migration `0019` |
 | M1-13 component seed command | **not started** | `payroll/management/commands/seed_algeria_payroll.py` |
@@ -70,10 +70,12 @@ Baseline before M0: 1,491 tests OK (1 expected failure).
 | M1-15 employer cost | **not started** | `payroll/methods/dz_cost.py`, `payroll/tests/test_dz_cost.py` |
 | M1-16 delivery notes + gate | **not started** | `algeria-sirh/`, `Makefile` gate |
 
-**Full four-app gate:** running in the background when this file was written
-(`base payroll leave horilla_views`). Result not yet recorded. The test DB is
-preserved (`--keepdb`) and has migrations through `0016`; the next test run
-applies `0017`/`0018`.
+**Full four-app gate:** the first run ended `FAILED (2 failures, 2 errors)` but
+is **invalid**: the M1-9/10 model and migrations were added while the test
+process was already running, so its registry never saw
+`payroll_algeriapayrollparameter` and `flush` could not truncate it. The test DB
+now has `0017`/`0018` and `test_dz_parameters` passes (2 OK). A clean four-app
+rerun is the next action.
 
 ### M2–M7 — not started
 
@@ -148,18 +150,13 @@ docker compose run --rm -e HORILLA_SKIP_RELEASE_TASKS=1 web \
 
 ## Resume here (next 5 actions)
 
-1. **Record the full gate result.** If it failed, fix the first failure before
-   any M1 work; the likely class is another `Decimal`/float read in
-   `horilla_views` or `report`.
-2. **Apply and verify M1-9/10:**
-   `python manage.py test payroll.tests.test_dz_parameters --keepdb`.
-   The test DB will apply `0017` + `0018`.
-3. **Commit M1-9/10** (`payroll/models/tax_models.py`,
-   `payroll/migrations/0017_*`, `0018_*`, `payroll/tests/test_dz_parameters.py`):
-   `feat(payroll): effective-dated Algeria parameters and 2026 seed`.
-4. **Implement M1-11** in `payroll/methods/dz_irg.py` with the boundary test
+1. **Rerun the clean four-app gate** (`base payroll leave horilla_views`) from
+   a fresh process; the previous failure was a mid-run edit, not an M0 regression.
+2. M1-9/10 are committed (`a6cda56`) and `test_dz_parameters` is green.
+3. **Implement M1-11** in `payroll/methods/dz_irg.py` with the boundary test
    (30,000 / 30,001 / 34,999 / 35,000 / 35,001 / 42,500; 72,800 → 11,956).
-5. **Implement M1-12** (`FilingStatus.tax_engine` + `as_of`), then M1-13/14/15.
+4. **Implement M1-12** (`FilingStatus.tax_engine` + `as_of`), then M1-13/14/15.
+5. Record each gate result in this file's snapshot before moving on.
 
 ## Ground rules for the next session
 

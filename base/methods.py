@@ -1589,6 +1589,12 @@ def is_holiday(date, employee=None):
     return holiday if holiday else False
 
 
+def month_week_index(value):
+    """0-based week of the month, Sunday-first (Algerian weekend is Fri-Sat)."""
+    sunday_based_weekday = (value.replace(day=1).weekday() + 1) % 7
+    return (value.day + sunday_based_weekday - 1) // 7
+
+
 def is_company_leave(input_date):
     """
     Check if the given date is a company leave.
@@ -1598,17 +1604,13 @@ def is_company_leave(input_date):
         CompanyLeaves or bool: The CompanyLeaves object if the date is a company leave, otherwise False.
     """
     # Calculate the week number within the month (0-4) and weekday (0 for Monday to 6 for Sunday)
-    first_day_of_month = input_date.replace(day=1)
-    adjusted_day = (
-        input_date.day + first_day_of_month.weekday()
-    )  # Adjust day based on first day of the month
-    date_week_no = (adjusted_day - 1) // 7  # Calculate the week number (0-based)
+    date_week_no = month_week_index(input_date)
     date_week_day = input_date.weekday()  # Get weekday (0 for Monday to 6 for Sunday)
 
     # Query for company leaves that match the week number and weekday
     company_leave = CompanyLeaves.objects.filter(
         Q(
-            based_on_week=None, based_on_week_day=date_week_day
+            based_on_week__in=[None, ""], based_on_week_day=date_week_day
         )  # Match week-independent leaves
         | Q(
             based_on_week=date_week_no, based_on_week_day=date_week_day
@@ -1675,11 +1677,11 @@ def get_company_leave_dates(year):
         based_on_week = company_leave.based_on_week
         based_on_week_day = company_leave.based_on_week_day
         for month in range(1, 13):
-            if based_on_week is not None:
-                # Set Sunday as the first day of the week
-                calendar.setfirstweekday(6)
-                month_calendar = calendar.monthcalendar(year, month)
-                weeks = month_calendar[int(based_on_week)]
+            calendar.setfirstweekday(6)  # Sunday-first, same as month_week_index
+            month_calendar = calendar.monthcalendar(year, month)
+            if based_on_week not in (None, ""):
+                week_no = int(based_on_week)
+                weeks = month_calendar[week_no] if week_no < len(month_calendar) else []
                 weekdays_in_weeks = [day for day in weeks if day != 0]
                 for day in weekdays_in_weeks:
                     leave_date = datetime.strptime(
@@ -1691,13 +1693,12 @@ def get_company_leave_dates(year):
                     ):
                         company_leave_dates.append(leave_date)
             else:
-                # Set Monday as the first day of the week
-                calendar.setfirstweekday(0)
-                month_calendar = calendar.monthcalendar(year, month)
+                # Sunday-first rows: Monday (0) sits in column 1, Sunday (6) in 0.
+                day_column = (int(based_on_week_day) + 1) % 7
                 for week in month_calendar:
-                    if week[int(based_on_week_day)] != 0:
+                    if week[day_column] != 0:
                         leave_date = datetime.strptime(
-                            f"{year}-{month:02}-{week[int(based_on_week_day)]:02}",
+                            f"{year}-{month:02}-{week[day_column]:02}",
                             "%Y-%m-%d",
                         ).date()
                         if leave_date not in company_leave_dates:

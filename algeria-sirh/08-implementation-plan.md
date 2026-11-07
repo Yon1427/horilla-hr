@@ -125,8 +125,10 @@ algeria-sirh/
 ## Task 1: Weekly-off calendar must not crash and must agree with attendance
 
 Why: `get_company_leave_dates` runs `int("")` for the UI's “All” choice and
-indexes a 4-row February with week 4. It also uses Sunday-first weeks while
-`is_company_leave` uses Monday-first. One config 500s payroll and attendance.
+indexes a 4-row February with week 4. It used Sunday-first weeks while
+`is_company_leave` used Monday-first; the Algerian week starts Sunday (weekend
+is Friday–Saturday), so Sunday-first is the convention both must use. One
+config 500s payroll and attendance.
 
 **Files:**
 - Modify: `base/methods.py:1592-1618` (`is_company_leave`), `base/methods.py:1668-1705` (`get_company_leave_dates`)
@@ -150,12 +152,12 @@ class CompanyLeaveDatesTest(TestCase):
 
     def test_fifth_week_in_a_four_row_month_does_not_raise(self):
         CompanyLeaves.objects.create(based_on_week="4", based_on_week_day="0")
-        dates = get_company_leave_dates(2027)  # Feb 2027 is 4 Monday-first rows
+        dates = get_company_leave_dates(2026)  # Feb 2026 is 4 Sunday-first rows
         self.assertIsInstance(dates, list)
 
     def test_payroll_and_attendance_agree_on_week_number(self):
-        CompanyLeaves.objects.create(based_on_week="1", based_on_week_day="0")
-        day = date(2024, 9, 2)  # second Monday, week index 1
+        CompanyLeaves.objects.create(based_on_week="0", based_on_week_day="0")
+        day = date(2024, 9, 2)  # first Monday, inside Sunday-first week 0
         self.assertIn(day, get_company_leave_dates(2024))
         self.assertTrue(is_company_leave(day))
 ```
@@ -174,8 +176,9 @@ agreement test fails.
 ```python
 # base/methods.py, above is_company_leave
 def month_week_index(value):
-    """0-based week of the month, Monday-first (matches WEEK_DAYS order)."""
-    return (value.day + value.replace(day=1).weekday() - 1) // 7
+    """0-based week of the month, Sunday-first (Algerian weekend is Fri-Sat)."""
+    sunday_based_weekday = (value.replace(day=1).weekday() + 1) % 7
+    return (value.day + sunday_based_weekday - 1) // 7
 ```
 
 ```python
@@ -193,7 +196,7 @@ for company_leave in company_leaves:
     based_on_week = company_leave.based_on_week
     based_on_week_day = company_leave.based_on_week_day
     for month in range(1, 13):
-        calendar.setfirstweekday(0)  # Monday-first, same as month_week_index
+        calendar.setfirstweekday(6)  # Sunday-first, same as month_week_index
         month_calendar = calendar.monthcalendar(year, month)
         if based_on_week not in (None, ""):
             week_no = int(based_on_week)
@@ -208,10 +211,12 @@ for company_leave in company_leaves:
                 ):
                     company_leave_dates.append(leave_date)
         else:
+            # Sunday-first rows: Monday (0) sits in column 1, Sunday (6) in 0.
+            day_column = (int(based_on_week_day) + 1) % 7
             for week in month_calendar:
-                if week[int(based_on_week_day)] != 0:
+                if week[day_column] != 0:
                     leave_date = datetime.strptime(
-                        f"{year}-{month:02}-{week[int(based_on_week_day)]:02}",
+                        f"{year}-{month:02}-{week[day_column]:02}",
                         "%Y-%m-%d",
                     ).date()
                     if leave_date not in company_leave_dates:

@@ -25,6 +25,18 @@ disagree, this file wins; if this file and the code disagree, the code wins.
 - `/` → 302 → `/login/?next=/` → 200
 - Payroll migrations `0016`/`0017`/`0018` applied on the main DB
 - Seeded parameter row verified: `snmg=24000.0`, 6 IRG brackets
+- **DB initialized and demo data loaded:** 278 users, 3 companies, 276 employees,
+  184 payslips, 30k attendance, 129 leave requests
+- **Login verified:** `POST /login/` → 302 → `/` → 200, dashboard shows `Adam Admin`
+- **Credentials:** user `admin`; the password was set interactively and is **not**
+  stored in this repository. Ask the session owner for it, or reset with
+  `manage.py shell` / `manage.py changepassword admin`.
+- **Demo-load caveat:** `manage.py load_demo_data --no-input` loaded the fixtures
+  but aborted at `normalize_demo_payslips()` because M0-8 raises
+  `PayrollBlockedError` on demo attendance conflicts. The 184 payslips are fixture
+  rows, not re-anchored. One fixture also logged
+  `DataError: value too long for type character varying(30)`; the command caught it
+  and continued.
 
 ## Source of truth
 
@@ -131,6 +143,10 @@ rerun is in progress. Do not edit models or existing methods until it lands.
 3. The 2026 parameter values (SNMG 24,000, CASNOS base, IRG 35,000 boundary) come
    from research marked `REP/UNV`; confirm against primary texts before they
    become blocking rules.
+4. **M0-8 breaks the demo payslip re-anchor.** `base.views.normalize_demo_payslips`
+   calls `payroll_calculation` without catching `PayrollBlockedError`; demo
+   attendance contains unresolved conflicts. Fix by catching it per payslip and
+   skipping (same shape as `bulk_generate`), not by reverting the block.
 4. `payroll` full suite after M1-9/10 is **not yet run**; the new model and
    migrations are unapplied to the test DB.
 5. Do **not** run two `manage.py test` commands at once: they share

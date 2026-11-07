@@ -67,6 +67,7 @@ from payroll.filters import (
     ReimbursementFilter,
 )
 from payroll.forms import component_forms as forms
+from payroll.methods.bulk_generate import generate_bulk_payslips
 from payroll.methods.deductions import create_deductions
 from payroll.methods.methods import paginator_qry, payslip_fields, save_payslip
 from payroll.methods.payroll_run import (  # noqa: F401  (re-exported for callers)
@@ -802,19 +803,15 @@ def generate_payslip(request):
             "payroll/payslip/bulk_create_payslip.html",
             {"bulk_form": bulk_form},
         )
-    payslips = []
-    json_data = []
     form = forms.GeneratePayslipForm()
     if request.method == "POST":
         form = forms.GeneratePayslipForm(request.POST)
         if form.is_valid():
-            instances = []
             employees = form.cleaned_data["employee_id"]
             start_date = form.cleaned_data["start_date"]
             end_date = form.cleaned_data["end_date"]
 
             group_name = form.cleaned_data["group_name"]
-            emp_count = employees.count()
 
             from attendance.views.summary import build_monthly_summary
 
@@ -823,57 +820,17 @@ def generate_payslip(request):
             )
             att_summary = {row["employee"].pk: row for row in att_rows}
 
-            for employee in employees:
-                contract = Contract.objects.filter(
-                    employee_id=employee, contract_status="active"
-                ).first()
-                if start_date < contract.contract_start_date:
-                    start_date = contract.contract_start_date
-
-                if end_date < start_date:
-                    messages.error(
-                        request, _(f"{employee}'s contract has not started yet.")
-                    )
-                    emp_count -= 1
-                    continue
-
-                try:
-                    payslip = payroll_calculation(
-                        employee,
-                        start_date,
-                        end_date,
-                        month_summary=att_summary.get(employee.pk, dict({})),
-                    )
-                except TaxComputationError as exc:
-                    # Skip this employee rather than saving a payslip whose tax
-                    # silently computed to 0. Same shape as the contract-not-
-                    # started skip above: report it, drop the count, carry on
-                    # with the rest of the batch.
-                    messages.error(request, str(exc))
-                    emp_count -= 1
-                    continue
-                payslips.append(payslip)
-                json_data.append(payslip["json_data"])
-
-                payslip["payslip"] = payslip
-                instance = save_payslip(
-                    **payslip_fields(
-                        payslip, employee, status="draft", group_name=group_name
-                    )
-                )
-                instances.append(instance)
-                notify.send(
-                    request.user.employee_get,
-                    recipient=employee.employee_user_id,
-                    verb=gettext_noop("Payslip has been generated for you."),
-                    redirect=reverse(
-                        "view-created-payslip", kwargs={"payslip_id": instance.id}
-                    ),
-                    icon="close",
-                )
+            saved = generate_bulk_payslips(
+                request=request,
+                employees=employees,
+                start_date=start_date,
+                end_date=end_date,
+                group_name=group_name,
+                summary_by_employee=att_summary,
+            )
             messages.success(
                 request,
-                _("%(emp_count)s payslip saved as draft") % {"emp_count": emp_count},
+                _("%(emp_count)s payslip saved as draft") % {"emp_count": len(saved)},
             )
             return redirect(
                 f"/payroll/view-payslip/?group_by=group_name&active_group={group_name}"

@@ -22,6 +22,7 @@ before they become blocking rules.
 | `05-product-spec.md` | **Build spec**: modules, domain model, rule catalogue (PAY/LEG/TRM/DEC/COST/LOC), state machines, workflows, documents, NFRs, phases, golden tests, conflict register | — |
 | `06-gap-analysis.md` | Horilla 2.0 vs the spec: scoreboard, must-fix defects, reuse map, build list, effort shape | — |
 | `07-contrats-et-rotation.md` | Contract types (CDI/CDD/part-time/apprenticeship/home/interim/aided), trial, termination; shift systems 2x8/3x8/4x8, nightly limits, rotation rules, ITP/night premiums | 409 |
+| `09-m0-delivery-notes.md` | M0 stabilisation: commits, test evidence, decisions and known issues | 42 |
 | `08-implementation-plan.md` | M0 stabilisation + M1 Algeria payroll core, task-by-task TDD plan | 1769 |
 
 ## Headline numbers (2026)

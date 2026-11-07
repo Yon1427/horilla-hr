@@ -11,6 +11,7 @@ payslips one at a time.
 import csv
 import datetime
 
+from horilla.export_safety import safe_row
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, render
 
@@ -150,31 +151,35 @@ def contribution_export(request):
 
     writer = csv.writer(response)
     writer.writerow(
-        [
-            "Component",
-            "Badge ID",
-            "Employee",
-            "Period start",
-            "Period end",
-            "Status",
-            "Employee share",
-            "Employer share",
-            "Total",
-        ]
+        safe_row(
+            [
+                "Component",
+                "Badge ID",
+                "Employee",
+                "Period start",
+                "Period end",
+                "Status",
+                "Employee share",
+                "Employer share",
+                "Total",
+            ]
+        )
     )
     for row in rows:
         for line in contributions.breakdown(payslips, row["id"]):
             writer.writerow(
-                [
-                    row["title"],
-                    line["employee"].badge_id or "",
-                    str(line["employee"]),
-                    line["start_date"],
-                    line["end_date"],
-                    line["status"],
-                    line["employee_amount"],
-                    line["employer_amount"],
-                    line["total"],
-                ]
+                safe_row(
+                    [
+                        row["title"],
+                        line["employee"].badge_id or "",
+                        str(line["employee"]),
+                        line["start_date"],
+                        line["end_date"],
+                        line["status"],
+                        line["employee_amount"],
+                        line["employer_amount"],
+                        line["total"],
+                    ]
+                )
             )
     return response

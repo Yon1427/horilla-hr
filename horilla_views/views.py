@@ -34,7 +34,7 @@ from xhtml2pdf import pisa
 
 from base.methods import eval_validate, has_export_access
 from horilla.decorators import login_required as func_login_required
-from horilla.export_safety import safe_cell
+from horilla.export_safety import safe_cell, safe_row
 from horilla.http.response import HorillaRedirect
 from horilla.signals import post_generic_delete, pre_generic_delete
 from horilla_views import models
@@ -1070,12 +1070,12 @@ def export_data(request, *args, **kwargs):
     response["Content-Disposition"] = f'attachment; filename="{file_name}.csv"'
 
     writer = csv.writer(response)
-    writer.writerow([company_name])
-    writer.writerow([file_name])
-    writer.writerow([date_range])
+    writer.writerow(safe_row([company_name]))
+    writer.writerow(safe_row([file_name]))
+    writer.writerow(safe_row([date_range]))
     writer.writerow([])
-    writer.writerow(headers)
-    writer.writerows(final_rows)
+    writer.writerow(safe_row(headers))
+    writer.writerows(safe_row(row) for row in final_rows)
 
     return response
 

@@ -55,3 +55,8 @@ def safe_cell(value: Any) -> Any:
     if isinstance(value, str):
         return neutralize_formula(value)
     return neutralize_formula(str(value))
+
+
+def safe_row(row) -> list:
+    """Guard every cell of one CSV or XLSX row."""
+    return [safe_cell(value) for value in row]

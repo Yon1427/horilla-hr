@@ -19813,27 +19813,24 @@ msgstr "Doit être un nombre positif ou nul."
 msgid "Please choose a file to import."
 msgstr "Veuillez sélectionner un format d'heure valide."
 
-#, fuzzy
 #| msgid "Please upload a valid .xlsx file."
 msgid "The file could not be read. Please upload a valid .xlsx file."
-msgstr "Veuillez importer un fichier .xlsx valide."
+msgstr "Le fichier n'a pas pu être lu. Veuillez importer un fichier .xlsx valide."
 
 #, python-brace-format
 msgid "Missing required column(s): {}. Please use the template."
 msgstr ""
 
-#, fuzzy
 #| msgid "Employee Badge Id"
 msgid "Employee Badge ID is required."
-msgstr "Matricule de l'employé"
+msgstr "Le matricule de l'employé est requis."
 
 msgid "This badge id does not exist."
 msgstr "Cet identifiant de badge n'existe pas."
 
-#, fuzzy
 #| msgid "Leave type is required"
 msgid "Leave Type is required."
-msgstr "Le type de congé est requis"
+msgstr "Le type de congé est requis."
 
 msgid "This leave type does not exist."
 msgstr "Ce type de permission n'existe pas."
@@ -19851,25 +19848,20 @@ msgstr ""
 "Format de date invalide. Veuillez utiliser AAAA-MM-JJ ou un format pris en "
 "charge."
 
-#, fuzzy
 #| msgid "Please upload a valid .xlsx file."
 msgid "The file could not be read. Please upload a valid .xlsx or .csv file."
-msgstr "Veuillez importer un fichier .xlsx valide."
+msgstr "Le fichier n'a pas pu être lu. Veuillez importer un fichier .xlsx ou .csv valide."
 
-#, fuzzy
 #| msgid "Theme ID is required"
 msgid "Badge ID is required."
-msgstr "L'identifiant du thème est requis"
+msgstr "Le matricule est requis."
 
 msgid "A valid start date is required (YYYY-MM-DD)."
 msgstr ""
 
-#, fuzzy
 #| msgid "Invalid date format. Please use YYYY-MM-DD or a supported format."
 msgid "Invalid date format. Please use YYYY-MM-DD."
-msgstr ""
-"Format de date invalide. Veuillez utiliser AAAA-MM-JJ ou un format pris en "
-"charge."
+msgstr "Format de date invalide. Veuillez utiliser AAAA-MM-JJ."
 
 msgid "Must be Full Day, First Half or Second Half."
 msgstr ""
@@ -20024,10 +20016,9 @@ msgstr "Congé compensatoire mis à jour."
 msgid "Compensatory Leave created."
 msgstr "Congé compensatoire créé."
 
-#, fuzzy
 #| msgid "Compensatory leave request deleted."
 msgid "An approved compensatory leave request cannot be deleted."
-msgstr "Demande de permission compensatoire supprimée."
+msgstr "Une demande de congé compensatoire approuvée ne peut pas être supprimée."
 
 msgid "Compensatory leave request deleted."
 msgstr "Demande de permission compensatoire supprimée."
@@ -20079,45 +20070,37 @@ msgstr "Condition ajoutée avec succès."
 msgid "Condition removed successfully."
 msgstr "Condition supprimée avec succès."
 
-#, fuzzy
 #| msgid "Leave balance type not found."
 msgid "Leave balance not found."
-msgstr "Type de solde de congé introuvable."
+msgstr "Solde de congé introuvable."
 
-#, fuzzy
 #| msgid "Leave Reset Date"
 msgid "Leave reset manually"
-msgstr "Quitter la date de réinitialisation"
+msgstr "Congé réinitialisé manuellement"
 
-#, fuzzy
 #| msgid "Carryforward Expire In"
 msgid "Carryforward expired manually"
-msgstr "Le Carryforward expire dans"
+msgstr "Report expiré manuellement"
 
-#, fuzzy
 #| msgid "Shifts have been approved."
 msgid "Missed leave reset applied."
-msgstr "Les changements ont été approuvés."
+msgstr "Réinitialisation de congé manquée appliquée."
 
-#, fuzzy
 #| msgid "No key results found for this objective."
 msgid "No reset is due for this leave balance."
-msgstr "Aucun résultat clé trouvé pour cet objectif."
+msgstr "Aucune réinitialisation n’est due pour ce solde de congé."
 
-#, fuzzy
 #| msgid "Capped"
 msgid "Mapped"
-msgstr "Plafonné"
+msgstr "Rapproché"
 
-#, fuzzy
 #| msgid "Create"
 msgid "Will Create"
-msgstr "Créer"
+msgstr "Sera créé"
 
-#, fuzzy
 #| msgid "Till date"
 msgid "Will Update"
-msgstr "Till date"
+msgstr "Sera mis à jour"
 
 #| msgid "Validate"
 msgid "Valid"
@@ -20127,74 +20110,60 @@ msgstr "Valide"
 msgid "Unchanged"
 msgstr "Inchangé"
 
-#, fuzzy
 msgid "already match the sheet"
 msgstr "correspondent déjà au fichier"
 
-#, fuzzy
 msgid "Left Out by You"
-msgstr "Exclu par vous"
+msgstr "Écarté par vous"
 
-#, fuzzy
 #| msgid "File Error"
 msgid "With Errors"
-msgstr "Erreur de fichier"
+msgstr "Avec erreurs"
 
-#, fuzzy
 msgid "left out of the import"
 msgstr "exclu de l’import"
 
-#, fuzzy
 #| msgid "There is no meetings has been created."
 msgid "These do not exist yet and will be created:"
-msgstr "Aucune réunion n'a été créée."
+msgstr "Ceux-ci n'existent pas encore et seront créés :"
 
-#, fuzzy
 msgid "New Records, By Type"
 msgstr "Nouveaux enregistrements, par type"
 
 msgid "Count"
 msgstr "Nombre"
 
-#, fuzzy
 #| msgid "Payroll Records"
 msgid "Valid Records"
-msgstr "Enregistrements de la paie"
+msgstr "Enregistrements valides"
 
-#, fuzzy
 #| msgid "Export Records"
 msgid "Error Records"
-msgstr "Exporter les enregistrements"
+msgstr "Enregistrements en erreur"
 
-#, fuzzy
 #| msgid "Present Records"
 msgid "Search These Records"
-msgstr "Enregistrements de présence"
+msgstr "Rechercher ces enregistrements"
 
-#, fuzzy
 #| msgid "Download Template"
 msgid "Download Update Records"
-msgstr "Télécharger le modèle"
+msgstr "Télécharger les enregistrements à mettre à jour"
 
-#, fuzzy
 #| msgid "Download report"
 msgid "Download Valid Records"
-msgstr "Télécharger le rapport"
+msgstr "Télécharger les enregistrements valides"
 
-#, fuzzy
 #| msgid "All records"
 msgid "Skip All Error Records"
-msgstr "Tous les enregistrements"
+msgstr "Ignorer tous les enregistrements en erreur"
 
-#, fuzzy
 #| msgid "Download Error File"
 msgid "Download Error Records"
-msgstr "Télécharger le fichier d'erreur"
+msgstr "Télécharger les enregistrements en erreur"
 
-#, fuzzy
 #| msgid "Download report"
 msgid "Download Skipped Records"
-msgstr "Télécharger le rapport"
+msgstr "Télécharger les enregistrements ignorés"
 
 msgid ""
 "Every value can be edited and any record skipped. Then use Save changes & "
@@ -20208,12 +20177,10 @@ msgstr "Changements"
 msgid "Row"
 msgstr "Ligne"
 
-#, fuzzy
 #| msgid "Find a filter"
 msgid "in your file"
-msgstr "Trouver un filtre"
+msgstr "dans votre fichier"
 
-#, fuzzy
 msgid "Leave this record out of the import"
 msgstr "Exclure cet enregistrement de l’import"
 
@@ -20221,45 +20188,38 @@ msgstr "Exclure cet enregistrement de l’import"
 msgid "Nothing to update: %(n)s matched rows already have these values."
 msgstr ""
 
-#, fuzzy
 #| msgid "Nothing to cancel."
 msgid "Nothing to update."
-msgstr "Rien à annuler."
+msgstr "Rien à mettre à jour."
 
-#, fuzzy
 #| msgid "No paid leave records."
 msgid "No valid records."
-msgstr "Aucun enregistrement de congé payé."
+msgstr "Aucun enregistrement valide."
 
 #, python-format
 msgid "Showing the first %(n)s of %(total)s. The download has them all."
 msgstr ""
 
-#, fuzzy
 msgid "Problem"
 msgstr "Problème"
 
-#, fuzzy
 #| msgid "Server error."
 msgid "No errors."
-msgstr "Erreur serveur."
+msgstr "Aucune erreur."
 
 msgid "Untick to put this record back in the import"
 msgstr ""
 
-#, fuzzy
 #| msgid "Nothing to approve."
 msgid "Nothing skipped."
-msgstr "Rien à approuver."
+msgstr "Rien n’a été ignoré."
 
-#, fuzzy
 msgid "Master Data Import"
 msgstr "Import des données de référence"
 
-#, fuzzy
 #| msgid "Import"
 msgid "New Import"
-msgstr "Importation"
+msgstr "Nouvel import"
 
 #| msgid "Data rows"
 msgid "Data"
@@ -20268,74 +20228,61 @@ msgstr "Données"
 msgid "When"
 msgstr "Quand"
 
-#, fuzzy
 #| msgid "Error"
 msgid "Errors"
-msgstr "Erreur"
+msgstr "Erreurs"
 
-#, fuzzy
 #| msgid "Summary"
 msgid "View Summary"
-msgstr "Summary"
+msgstr "Voir le résumé"
 
-#, fuzzy
 #| msgid "No Entries Imported"
 msgid "Continue This Import"
-msgstr "Aucune entrée importée"
+msgstr "Continuer cet import"
 
-#, fuzzy
 #| msgid "No resignation has been created yet."
 msgid "Nothing has been imported yet."
-msgstr "Aucune démission n'a encore été créée."
+msgstr "Rien n'a encore été importé."
 
 msgid "The import failed and nothing was saved."
 msgstr ""
 
-#, fuzzy
 #| msgid "Back to listings"
 msgid "Back to Matching"
-msgstr "Retour aux annonces"
+msgstr "Retour au rapprochement"
 
-#, fuzzy
 msgid "Imported with Errors"
 msgstr "Importé avec des erreurs"
 
-#, fuzzy
 #| msgid "Imported"
 msgid "All Rows Imported"
-msgstr "Importé"
+msgstr "Toutes les lignes importées"
 
-#, fuzzy
 #| msgid "Download File"
 msgid "Rows in File"
-msgstr "Télécharger le fichier"
+msgstr "Lignes dans le fichier"
 
-#, fuzzy
 #| msgid "Already Returned"
 msgid "Already Matched"
-msgstr "Déjà revenu"
+msgstr "Déjà rapproché"
 
-#, fuzzy
 #| msgid "Bonus Added"
 msgid "Bank Accounts Added"
-msgstr "Bonus ajouté"
+msgstr "Comptes bancaires ajoutés"
 
-#, fuzzy
 #| msgid "Block Account"
 msgid "Bank Accounts"
-msgstr "Bloquer le compte"
+msgstr "Comptes bancaires"
 
-#, fuzzy
 msgid "Also Created Along The Way"
 msgstr "Également créés en cours de route"
 
 msgid "Salary Structures"
 msgstr "Structures salariales"
 
-#, fuzzy
 #| msgid "No Entries Imported"
 msgid "Rows That Were Not Imported"
-msgstr "Aucune entrée importée"
+msgstr "Lignes qui n'ont pas été importées"
 
 msgid ""
 "Download them, fix the problems in the Errors column's list, then upload the "
@@ -20346,48 +20293,41 @@ msgstr ""
 msgid "Showing the first %(n)s; the downloaded file has them all."
 msgstr ""
 
-#, fuzzy
 #| msgid "Upload Photo"
 msgid "Upload Corrected Rows"
-msgstr "Télécharger une photo"
+msgstr "Téléverser les lignes corrigées"
 
-#, fuzzy
 msgid "Start Another Import"
 msgstr "Démarrer un nouvel import"
 
-#, fuzzy
 #| msgid "No Records Found"
 msgid "Rows Found"
-msgstr "Aucun enregistrement trouvé"
+msgstr "Lignes trouvées"
 
-#, fuzzy
 #| msgid "Choose or Drop Files Here"
 msgid "Choose Another File"
-msgstr "Choisir ou déposer des fichiers ici"
+msgstr "Choisir un autre fichier"
 
 #| msgid "Contains"
 msgid "Continue"
 msgstr "Continuer"
 
-#, fuzzy
 #| msgid "Map Employee"
 msgid "Match Employees By"
-msgstr "Employé de la carte"
+msgstr "Identifier les employés par"
 
-#, fuzzy
 #| msgid "Leave Records"
 msgid "Match Records By"
-msgstr "Quitter les enregistrements"
+msgstr "Identifier les enregistrements par"
 
 msgid ""
 "Each row must find exactly one employee. Tick more than one and all of them "
 "must agree."
 msgstr ""
 
-#, fuzzy
 #| msgid "days used"
 msgid "Always used"
-msgstr "jours utilisés"
+msgstr "Toujours utilisée"
 
 msgid ""
 "Pick the column in your file that holds each field. We matched the ones we "
@@ -20395,31 +20335,25 @@ msgid ""
 "review every row, fix what needs fixing, and confirm the import."
 msgstr ""
 
-#, fuzzy
 msgid "Column in Your File"
 msgstr "Colonne de votre fichier"
 
-#, fuzzy
 msgid "Example from Your File"
 msgstr "Exemple tiré de votre fichier"
 
-#, fuzzy
 #| msgid "Import"
 msgid "Don't Import"
-msgstr "Importation"
+msgstr "Ne pas importer"
 
-#, fuzzy
 msgid "Columns In Your File That Are Not Used"
 msgstr "Colonnes inutilisées de votre fichier"
 
 msgid "Nothing is matched to these, so they are left out of the import."
 msgstr ""
 
-#, fuzzy
 msgid "Still to match:"
 msgstr "Reste à rapprocher :"
 
-#, fuzzy
 msgid "Every column is used."
 msgstr "Toutes les colonnes sont utilisées."
 
@@ -20430,34 +20364,27 @@ msgstr "Correspondances"
 msgid "Fix anything below, then confirm the import."
 msgstr ""
 
-#, fuzzy
 #| msgid "Save Changes"
 msgid "Save Changes & Recheck"
-msgstr "Enregistrer les modifications"
+msgstr "Enregistrer et revérifier"
 
-#, fuzzy
 msgid "Reading Your File…"
 msgstr "Lecture de votre fichier…"
 
-#, fuzzy
 #| msgid "Import"
 msgid "Importing…"
-msgstr "Importation"
+msgstr "Importation…"
 
-#, fuzzy
 #| msgid "Please select one option"
 msgid "Please keep this page open."
-msgstr "Veuillez sélectionner une option"
+msgstr "Veuillez garder cette page ouverte."
 
-#, fuzzy
 msgid "Yes, import"
 msgstr "Oui, importer"
 
-#, fuzzy
 msgid "Checking Each Row…"
 msgstr "Vérification de chaque ligne…"
 
-#, fuzzy
 msgid "Summarising…"
 msgstr "Synthèse en cours…"
 
@@ -20465,76 +20392,63 @@ msgstr "Synthèse en cours…"
 msgid "Record"
 msgstr "Enregistrement"
 
-#, fuzzy
 #| msgid "Payroll Records"
 msgid "Valid Record"
-msgstr "Enregistrements de la paie"
+msgstr "Enregistrement valide"
 
-#, fuzzy
 #| msgid "Save changes"
 msgid "Save changes & recheck first"
-msgstr "Enregistrer les modifications"
+msgstr "Enregistrez d'abord, puis revérifiez"
 
-#, fuzzy
 #| msgid "The contract could not be found."
 msgid "The check could not be completed."
-msgstr "Le contrat n'a pas pu être trouvé."
+msgstr "La vérification n'a pas pu être terminée."
 
 #| msgid "Create Work Type"
 msgid "Create or update"
 msgstr "Créer ou mettre à jour"
 
-#, fuzzy
 #| msgid "Records"
 msgid "records?"
-msgstr "Enregistrements"
+msgstr "enregistrements ?"
 
-#, fuzzy
 #| msgid "Deleting the record"
 msgid "existing records?"
-msgstr "Suppression de l'enregistrement"
+msgstr "enregistrements existants ?"
 
-#, fuzzy
 #| msgid "All records"
 msgid "valid records?"
-msgstr "Tous les enregistrements"
+msgstr "enregistrements valides ?"
 
 msgid "rows with errors will be skipped and listed afterwards."
 msgstr ""
 
-#, fuzzy
 msgid "Every row in the file passed the check."
-msgstr "Toutes les lignes du fichier sont valides."
+msgstr "Toutes les lignes du fichier ont passé la vérification."
 
-#, fuzzy
 #| msgid "Import"
 msgid "Data to Import"
-msgstr "Importation"
+msgstr "Données à importer"
 
-#, fuzzy
 #| msgid "Upload a File"
 msgid "Upload Your File"
-msgstr "Télécharger un fichier"
+msgstr "Téléversez votre fichier"
 
 msgid "What to do"
 msgstr "Conduite à tenir"
 
-#, fuzzy
 #| msgid "Create New {} "
 msgid "Create New"
 msgstr "Créer un nouveau {}"
 
-#, fuzzy
 #| msgid "Update Meeting"
 msgid "Update Existing"
-msgstr "Mettre à jour la réunion"
+msgstr "Mettre à jour les existants"
 
-#, fuzzy
 #| msgid "Create Work Type"
 msgid "Create or Update"
-msgstr "Créer un type de travail"
+msgstr "Créer ou mettre à jour"
 
-#, fuzzy
 msgid "Drop your file here, or browse"
 msgstr "Déposez votre fichier ici, ou parcourez"
 
@@ -20543,7 +20457,6 @@ msgid ""
 "import."
 msgstr ""
 
-#, fuzzy
 msgid "Required Fields Are Highlighted"
 msgstr "Les champs obligatoires sont surlignés"
 
@@ -20563,46 +20476,38 @@ msgid ""
 "another company are rejected."
 msgstr ""
 
-#, fuzzy
 msgid "Choose data and a file"
 msgstr "Choisissez les données et un fichier"
 
-#, fuzzy
 #| msgid "Search columns"
 msgid "Match Columns"
-msgstr "Rechercher des colonnes"
+msgstr "Rapprocher les colonnes"
 
-#, fuzzy
 #| msgid "No columns match your search"
 msgid "Map your columns to ours"
-msgstr "Aucune colonne ne correspond à votre recherche"
+msgstr "Associez vos colonnes aux nôtres"
 
-#, fuzzy
 #| msgid "Confirm Restore"
 msgid "Confirm & Import"
-msgstr "Confirmer la restauration"
+msgstr "Confirmer et importer"
 
-#, fuzzy
 msgid "Review, fix and import"
 msgstr "Vérifier, corriger puis importer"
 
 msgid "The uploaded file is no longer available. Upload it again."
 msgstr ""
 
-#, fuzzy
 #| msgid "You don't have access to export this data"
 msgid "You don't have access to import this data."
-msgstr "Vous n'avez pas accès à l'exportation de ces données"
+msgstr "Vous n'avez pas accès à l'importation de ces données."
 
-#, fuzzy
 #| msgid "You don't have permission to the feature"
 msgid "You don't have permission to update existing records."
-msgstr "Vous n'avez pas la permission d'accéder à la fonctionnalité"
+msgstr "Vous n'avez pas la permission de mettre à jour les enregistrements existants."
 
-#, fuzzy
 #| msgid "No file uploaded."
 msgid "Choose a file to upload."
-msgstr "Aucun fichier envoyé."
+msgstr "Choisissez un fichier à téléverser."
 
 msgid "Create Offboarding Stage"
 msgstr "Créer une phase de désintégration"
@@ -20671,10 +20576,9 @@ msgstr "Ajouter une étape"
 msgid "Manage Stage Order"
 msgstr "Gérer l'ordre des étapes"
 
-#, fuzzy
 #| msgid "No stage found matching the query."
 msgid "No Offboarding found matching the query."
-msgstr "Aucune étape trouvée correspondant à la requête."
+msgstr "Aucun offboarding ne correspond à la requête."
 
 #, python-format
 msgid ""
@@ -20687,10 +20591,9 @@ msgstr ""
 msgid "Notice Period"
 msgstr "Période de notification"
 
-#, fuzzy
 #| msgid "Onboarding Tasks"
 msgid "Offboarding Tasks"
-msgstr "Tâches d'intégration"
+msgstr "Tâches de sortie"
 
 msgid "Planned To Leave"
 msgstr "Prévu de partir"
@@ -20728,15 +20631,13 @@ msgstr "Adieu"
 msgid "Planned To Leave On"
 msgstr "Départ prévu le"
 
-#, fuzzy
 #| msgid "Offboarding Updated"
 msgid "Offboarding Created At"
-msgstr "Offboarding mis à jour"
+msgstr "Offboarding créé le"
 
-#, fuzzy
 #| msgid "Exit Reasons"
 msgid "Exit Reason Logged On"
-msgstr "Motifs de départ"
+msgstr "Motif de départ enregistré le"
 
 msgid "Select offboarding..."
 msgstr "Sélectionner un offboarding..."
@@ -20816,15 +20717,13 @@ msgstr "Permettre aux employés de soumettre des demandes de démission"
 msgid "Default days between resignation and last working day"
 msgstr "Jours par défaut entre la démission et le dernier jour ouvrable"
 
-#, fuzzy
 #| msgid "Create role"
 msgid "Created From"
-msgstr "Créer un rôle"
+msgstr "Créé à partir de"
 
-#, fuzzy
 #| msgid "Created"
 msgid "Created Till"
-msgstr "Créé"
+msgstr "Créé jusqu’à"
 
 msgid "No Records found..."
 msgstr "Aucun enregistrement trouvé..."
@@ -20890,10 +20789,9 @@ msgstr "Motifs de départ"
 msgid "Why employees leave"
 msgstr "Pourquoi les employés partent"
 
-#, fuzzy
 #| msgid "Monthly"
 msgid "Monthly Exits"
-msgstr "Mensuel"
+msgstr "Sorties mensuelles"
 
 #, fuzzy
 #| msgid "Employees joined by month"
@@ -28945,51 +28843,42 @@ msgstr "Une étape « %(type)s » existe déjà pour ce recrutement."
 msgid "Inside software"
 msgstr "Logiciel à l'intérieur"
 
-#, fuzzy
 #| msgid "Job Roles"
 msgid "Job Boards"
-msgstr "Rôles de poste"
+msgstr "Sites d'emploi"
 
-#, fuzzy
 #| msgid "Company City"
 msgid "Company Career Site"
-msgstr "Ville de l’entreprise"
+msgstr "Site carrière de l'entreprise"
 
-#, fuzzy
 msgid "Social Media"
 msgstr "Réseaux sociaux"
 
-#, fuzzy
 #| msgid "Employee rate"
 msgid "Employee Referral"
-msgstr "Taux d'employés"
+msgstr "Recommandation par un employé"
 
-#, fuzzy
 #| msgid "Recruitment manager"
 msgid "Recruiter / Headhunter"
-msgstr "Responsable du Recrutement"
+msgstr "Recruteur / Chasseur de têtes"
 
-#, fuzzy
 #| msgid "Search in :Asset"
 msgid "Search Engine"
-msgstr "Rechercher dans :asset"
+msgstr "Moteur de recherche"
 
-#, fuzzy
 msgid "College or University"
 msgstr "École ou université"
 
-#, fuzzy
 #| msgid "Reimbursement / Encashment"
 msgid "Advertisement / Event"
-msgstr "Remboursement / Encaissement"
+msgstr "Publicité / Événement"
 
 msgid "Converted"
 msgstr "Converti"
 
-#, fuzzy
 #| msgid "Forgot Password"
 msgid "Portal Password"
-msgstr "Mot de passe oublié"
+msgstr "Mot de passe du portail"
 
 msgid "Not sent"
 msgstr "Non envoyé"
@@ -29015,10 +28904,9 @@ msgstr "Textarea"
 msgid "Separate choices by ',  '"
 msgstr "Séparer les choix par ', '"
 
-#, fuzzy
 #| msgid "Probation ends"
 msgid "Probation Period (Days)"
-msgstr "Fin de la probation"
+msgstr "Période d’essai (jours)"
 
 msgid ""
 "Default probation period in days, used to auto-fill a candidate's probation "
@@ -29138,63 +29026,54 @@ msgstr "Annuler le rejet"
 msgid "Application Tracking - %(company_name)s"
 msgstr "Suivi des candidatures - %(company_name)s"
 
-#, fuzzy
 #| msgid "Application Form"
 msgid "Your application for"
-msgstr "Formulaire de demande"
+msgstr "Votre candidature pour"
 
-#, fuzzy
 #| msgid "Pending Hours"
 msgid "Pending docs"
-msgstr "Heures en attente"
+msgstr "Documents en attente"
 
 #| msgid "Completed"
 msgid "Complete"
 msgstr "Terminé"
 
-#, fuzzy
 #| msgid "Congratulation on your selection"
 msgid "Congratulations — you've been selected!"
-msgstr "Félicitations pour votre sélection"
+msgstr "Félicitations — vous avez été sélectionné !"
 
 msgid "Please upload your remaining documents to finish onboarding."
 msgstr ""
 
-#, fuzzy
 #| msgid "You cannot delete this question"
 msgid "You were not selected for this position."
-msgstr "Vous ne pouvez pas supprimer cette question"
+msgstr "Vous n'avez pas été sélectionné pour ce poste."
 
-#, fuzzy
 msgid "Thank you for your time and interest."
-msgstr "Merci pour le temps que vous nous avez consacré."
+msgstr "Merci pour le temps et l'intérêt que vous nous avez accordés."
 
-#, fuzzy
 #| msgid "Application under review"
 msgid "Your application is under review."
-msgstr "Demande en cours de révision"
+msgstr "Votre candidature est en cours d'examen."
 
 msgid "We'll keep you posted as it moves through the process."
 msgstr ""
 
-#, fuzzy
 #| msgid "Application Form"
 msgid "Application progress"
-msgstr "Formulaire de demande"
+msgstr "Progression de la candidature"
 
 #| msgid "Sample — %(shown)s of %(total)s"
 msgid "Stage %(position)s of %(total)s"
 msgstr "Étape %(position)s sur %(total)s"
 
-#, fuzzy, python-format
 #| msgid "%(count)s openings"
 msgid "%(count)s to upload"
-msgstr "%(count)s postes ouverts"
+msgstr "%(count)s à téléverser"
 
 msgid "No document requests found."
 msgstr "Aucune demande de document trouvée."
 
-#, fuzzy
 msgid "Write a note…"
 msgstr "Écrire une note…"
 
@@ -29204,20 +29083,17 @@ msgstr "Aucune note n'a été ajoutée pour ce candidat."
 msgid "Not-Hired"
 msgstr "Non embauché"
 
-#, fuzzy
 #| msgid "Click to rename"
 msgid "Click to choose a file"
-msgstr "Cliquez pour renommer"
+msgstr "Cliquez pour choisir un fichier"
 
-#, fuzzy
 #| msgid "Drag and drop files here"
 msgid "or drag and drop it here"
-msgstr "Glisser et déposer des fichiers ici"
+msgstr "ou glissez-déposez-le ici"
 
-#, fuzzy
 #| msgid "Max size (In MB)"
 msgid "Max size"
-msgstr "Taille maximale (en Mo)"
+msgstr "Taille maximale"
 
 msgid "Example: Candidate requested salary details before next round."
 msgstr ""
@@ -29252,10 +29128,9 @@ msgstr " Êtes-vous sûr de vouloir supprimer cet entretien ?"
 msgid "No Interviews Found."
 msgstr "Aucune entrevue trouvée."
 
-#, fuzzy
 #| msgid "Application"
 msgid "Track your application"
-msgstr "Candidature"
+msgstr "Suivre votre candidature"
 
 #, python-format
 msgid ""
@@ -29263,10 +29138,9 @@ msgid ""
 "page using the login details below."
 msgstr ""
 
-#, fuzzy
 #| msgid "Login"
 msgid "Login page"
-msgstr "Se connecter"
+msgstr "Page de connexion"
 
 msgid ""
 "For security, please keep these details private. If you receive a newer "
@@ -29282,10 +29156,9 @@ msgstr "Il n'y a pas d'évaluation à afficher pour le moment."
 msgid "Enter your credentials to view your application status."
 msgstr ""
 
-#, fuzzy
 #| msgid "Enter the same password as before, for verification."
 msgid "Enter the password from your invitation mail"
-msgstr "Entrez le même mot de passe qu'avant, pour vérification."
+msgstr "Saisissez le mot de passe de votre e-mail d'invitation"
 
 msgid "Show Result"
 msgstr "Afficher le résultat"
@@ -29322,12 +29195,10 @@ msgstr ""
 msgid "View more open positions"
 msgstr "Voir plus de postes ouverts"
 
-#, fuzzy
 #| msgid "No interview found matching the query."
 msgid "No interviews match this filter"
-msgstr "Aucun entretien trouvé correspondant à la requête."
+msgstr "Aucun entretien ne correspond à ce filtre"
 
-#, fuzzy
 #| msgid "Loading..."
 msgid "Loading more..."
 msgstr "Chargement..."
@@ -29338,25 +29209,21 @@ msgstr "Fermer la note"
 msgid "'s Onboarding Tasks"
 msgstr "— Tâches d'intégration"
 
-#, fuzzy
 #| msgid "Convert to Employee"
 msgid "Convert To Employee"
-msgstr "Convertir en Employé"
+msgstr "Convertir en employé"
 
-#, fuzzy
 #| msgid "Candidate is Converted "
 msgid "Candidate Is Converted"
 msgstr "Le candidat est converti"
 
-#, fuzzy
 #| msgid "Add to Talent Pool"
 msgid "Add To Talent Pool"
 msgstr "Ajouter au vivier de talents"
 
-#, fuzzy
 #| msgid "Candidate Self Tracking"
 msgid "View Candidate Self Tracking"
-msgstr "Auto-suivi des candidats"
+msgstr "Voir l'auto-suivi du candidat"
 
 msgid ""
 "Email this candidate a new tracking login password? Any earlier password "
@@ -29372,15 +29239,13 @@ msgstr "Ce candidat n'a pas de curriculum vitae dans son dossier."
 msgid "No survey templates have been established yet."
 msgstr "Aucun modèle d'enquête n'a encore été établi."
 
-#, fuzzy
 #| msgid "No document uploaded"
 msgid "No resume uploaded"
-msgstr "Aucun document téléchargé"
+msgstr "Aucun CV téléversé"
 
-#, fuzzy
 #| msgid "Interviewers"
 msgid "No interviewers"
-msgstr "Interviewers"
+msgstr "Aucun intervieweur"
 
 msgid "Interviews Scheduled"
 msgstr "Interviews planifiées"
@@ -29391,9 +29256,8 @@ msgstr ""
 msgid "Are you sure you want to remove this recruitment manager?"
 msgstr "Êtes-vous sûr de vouloir supprimer ce gestionnaire de recrutement?"
 
-#, fuzzy
 msgid "No jobs"
-msgstr "Aucune offre"
+msgstr "Aucun poste"
 
 msgid "Define reasons for rejecting a candidate."
 msgstr "Définissez les motifs de rejet d'un candidat."
@@ -29418,18 +29282,15 @@ msgstr "Vérifier la connexion"
 msgid "Do you want to delete the linkedin account?"
 msgstr "Voulez-vous supprimer le compte lié ?"
 
-#, fuzzy, python-format
 #| msgid "%(counter)s report"
 #| msgid_plural "%(counter)s reports"
 msgid "%(counter)s resume uploaded"
 msgid_plural "%(counter)s resumes uploaded"
-msgstr[0] "%(counter)s rapport"
-msgstr[1] "%(counter)s rapports"
+msgstr "%(counter)s CV téléversé"
 
-#, fuzzy
 #| msgid "Pending requests"
 msgid "Reading resumes..."
-msgstr "Demandes en attente"
+msgstr "Lecture des CV..."
 
 msgid "No rows selected!"
 msgstr "Aucune ligne sélectionnée !"
@@ -29537,41 +29398,35 @@ msgstr "À l'heure actuelle, il n'y a pas de recrutement permanent."
 msgid "Recruitment Dashboard"
 msgstr "Tableau de bord de recrutement"
 
-#, fuzzy
 #| msgid "Candidates by Stage"
 msgid "Candidate By Stage Type"
-msgstr "Candidats par étape"
+msgstr "Candidats par type d'étape"
 
 msgid "Open recruitments · click a stage to show or hide it"
 msgstr ""
 
-#, fuzzy
 #| msgid "Ongoing Recruitments & Managers"
 msgid "Ongoing Recruitment Candidates"
-msgstr "Recrutements en cours et responsables"
+msgstr "Candidats des recrutements en cours"
 
-#, fuzzy
 #| msgid "Hire Rate by Recruitment"
 msgid "Shortlist Rate by Recruitment"
-msgstr "Taux d'embauche par recrutement"
+msgstr "Taux de présélection par recrutement"
 
 msgid "Conversion efficiency"
 msgstr "Efficacité de conversion"
 
-#, fuzzy
 #| msgid "Vacancy is filled"
 msgid "Vacancy vs Shortlisted"
-msgstr "Le poste est pourvu"
+msgstr "Postes à pourvoir vs présélectionnés"
 
-#, fuzzy
 #| msgid "Candidates per recruitment"
 msgid "Positions filled per recruitment"
-msgstr "Candidats par recrutement"
+msgstr "Postes pourvus par recrutement"
 
-#, fuzzy
 #| msgid "Candidates per position"
 msgid "Active candidates per pool"
-msgstr "Candidats par poste"
+msgstr "Candidats actifs par vivier"
 
 msgid "Source Conversion Rate"
 msgstr "Taux de conversion par source"
@@ -29581,34 +29436,28 @@ msgid ""
 "bar to list them"
 msgstr ""
 
-#, fuzzy
 msgid "Shortlisted candidates by joining date"
 msgstr "Candidats présélectionnés par date d’embauche"
 
-#, fuzzy
 #| msgid "rd day of month"
 msgid "From month"
-msgstr "3ème jour du mois"
+msgstr "Mois de début"
 
-#, fuzzy
 #| msgid "This month"
 msgid "To month"
-msgstr "Ce mois-ci"
+msgstr "Mois de fin"
 
-#, fuzzy
 #| msgid "RejectedCandidate not found"
 msgid "Rejected Candidates by Reason"
-msgstr "RejectedCandidate introuvable"
+msgstr "Candidats rejetés par motif"
 
 msgid "Rejected candidates per rejection reason · click a bar to list them"
 msgstr ""
 
-#, fuzzy
 #| msgid "Scoped to period"
 msgid "Scheduled this period"
-msgstr "Limité à la période"
+msgstr "Planifiés sur cette période"
 
-#, fuzzy
 #| msgid "Active recruitments"
 msgid "Active Recruitments"
 msgstr "Recrutements actifs"
@@ -29619,10 +29468,9 @@ msgstr "sur"
 msgid "Total Candidates"
 msgstr "Nombre total de candidats"
 
-#, fuzzy
 #| msgid "Hired / Total"
 msgid "Shortlisted / Total"
-msgstr "Embauchés / Total"
+msgstr "Présélectionnés / Total"
 
 msgid "Acceptance Rate"
 msgstr "Taux d'acceptation"
@@ -29630,17 +29478,14 @@ msgstr "Taux d'acceptation"
 msgid "Accepted Offers"
 msgstr "Offres acceptées"
 
-#, fuzzy
 #| msgid "Offer accepted"
 msgid "Offer Accepted"
 msgstr "Offre acceptée"
 
-#, fuzzy
 #| msgid "No rows selected!"
 msgid "No stage selected"
-msgstr "Aucune ligne sélectionnée !"
+msgstr "Aucune étape sélectionnée"
 
-#, fuzzy
 #| msgid "Total Candidates"
 msgid "Total candidates"
 msgstr "Nombre total de candidats"
@@ -29651,10 +29496,9 @@ msgstr "Non embauché"
 msgid "hired"
 msgstr "embauché"
 
-#, fuzzy
 #| msgid "Not hired"
 msgid "not hired"
-msgstr "Non embauché"
+msgstr "non embauché"
 
 #| msgid "Sources"
 msgid "sources"
@@ -29666,20 +29510,17 @@ msgstr "Aucune donnée de source disponible pour le moment"
 msgid "No interviews scheduled"
 msgstr "Aucun entretien programmé"
 
-#, fuzzy
 #| msgid "Open candidates"
 msgid "Open candidate"
-msgstr "Candidats ouverts"
+msgstr "Candidat ouvert"
 
-#, fuzzy
 #| msgid "recruitment"
 msgid "recruitments"
-msgstr "recrutement"
+msgstr "recrutements"
 
-#, fuzzy
 #| msgid "resolved of"
 msgid "shortlisted of"
-msgstr "résolus sur"
+msgstr "présélectionnés sur"
 
 #| msgid "Remaining"
 msgid "remaining"
@@ -29692,47 +29533,39 @@ msgstr "appliqué"
 msgid "No ongoing recruitments"
 msgstr "Aucun recrutement en cours"
 
-#, fuzzy
 #| msgid "No recent reports yet."
 msgid "No talent pools yet"
-msgstr "Aucun rapport récent pour le moment."
+msgstr "Aucun vivier de talents pour le moment"
 
-#, fuzzy
 #| msgid "No onboarding candidates"
 msgid "No shortlisted candidates yet"
-msgstr "Aucun candidat en intégration"
+msgstr "Aucun candidat présélectionné pour le moment"
 
-#, fuzzy
 #| msgid "Rows listed"
 msgid "shortlisted"
-msgstr "Lignes listées"
+msgstr "présélectionnés"
 
 msgid "No joinings in this period"
 msgstr "Aucune arrivée sur cette période"
 
-#, fuzzy
 #| msgid "Undo Rejected Candidate"
 msgid "No rejected candidates yet"
-msgstr "Annuler le rejet du candidat"
+msgstr "Aucun candidat rejeté pour le moment"
 
-#, fuzzy
 #| msgid "Reject Candidate"
 msgid "rejected candidates"
-msgstr "Rejeter le candidat"
+msgstr "candidats rejetés"
 
-#, fuzzy
 msgid "click a bar to list them"
 msgstr "cliquez sur une barre pour les lister"
 
-#, fuzzy
 #| msgid "Reject Candidate"
 msgid "Rejected candidates"
-msgstr "Rejeter le candidat"
+msgstr "Candidats rejetés"
 
-#, fuzzy
 #| msgid "candidates"
 msgid "candidate(s)"
-msgstr "candidats"
+msgstr "candidat(s)"
 
 msgid "Dear"
 msgstr "Cher/Chère"
@@ -29797,21 +29630,18 @@ msgstr "Total des postes vacants"
 msgid "Title, job position, dates and managers."
 msgstr ""
 
-#, fuzzy
 msgid "Reorder, rename or remove stages."
 msgstr "Réordonner, renommer ou supprimer les étapes."
 
-#, fuzzy
 #| msgid "Default Records Per Page"
 msgid "Default or custom stages."
-msgstr "Enregistrements par défaut par page"
+msgstr "Étapes par défaut ou personnalisées."
 
 msgid ""
 "Drag the stages to reorder them, rename them, change their type or remove "
 "the ones you do not need. Changes are saved with the recruitment."
 msgstr ""
 
-#, fuzzy
 #| msgid "Add Stage"
 msgid "Add stage"
 msgstr "Ajouter une étape"
@@ -29821,40 +29651,32 @@ msgid ""
 "always add, rename or reorder stages later from the pipeline."
 msgstr ""
 
-#, fuzzy
 #| msgid "Default Theme"
 msgid "Default pipeline"
-msgstr "Thème par défaut"
+msgstr "Pipeline par défaut"
 
-#, fuzzy
 msgid "One stage for every stage type."
 msgstr "Une étape pour chaque type d’étape."
 
-#, fuzzy
 #| msgid "pipeline"
 msgid "Custom pipeline"
-msgstr "Pipeline"
+msgstr "Pipeline personnalisé"
 
-#, fuzzy
 msgid "Build the stages you need."
 msgstr "Créez les étapes dont vous avez besoin."
 
-#, fuzzy
 #| msgid "Create a subscription"
 msgid "Create a custom pipeline"
-msgstr "Créer un abonnement"
+msgstr "Créer un pipeline personnalisé"
 
-#, fuzzy
 #| msgid "Badge ID must be unique."
 msgid "Stage names must be unique."
-msgstr "L’identifiant de badge doit être unique."
+msgstr "Les noms d’étape doivent être uniques."
 
-#, fuzzy
 #| msgid "Drag rows to reorder columns"
 msgid "Drag to reorder"
-msgstr "Faites glisser les lignes pour réorganiser les colonnes"
+msgstr "Glisser pour réordonner"
 
-#, fuzzy
 #| msgid "Stage Name"
 msgid "Stage name"
 msgstr "Nom de l'étape"
@@ -29863,15 +29685,13 @@ msgid ""
 "This stage has candidates. Move them to another stage before deleting it."
 msgstr ""
 
-#, fuzzy
 #| msgid "Remove manager"
 msgid "Remove stage"
-msgstr "Retirer le responsable"
+msgstr "Retirer l’étape"
 
-#, fuzzy
 #| msgid "stage"
 msgid "this stage"
-msgstr "étape"
+msgstr "cette étape"
 
 msgid "Its notes and files are removed when you save."
 msgstr ""
@@ -30141,10 +29961,9 @@ msgstr "Le candidat est %(message)s"
 msgid "No %(model_name)s found matching the query."
 msgstr "Aucun %(model_name)s trouvé correspondant à la requête."
 
-#, fuzzy
 #| msgid "Job position"
 msgid "No position"
-msgstr "Poste de travail"
+msgstr "Aucun poste"
 
 #, python-format
 msgid "Hired in %(year)s"
@@ -30351,52 +30170,43 @@ msgstr "La visibilité du classement est activée "
 msgid "Rating visibility is disabled "
 msgstr "La visibilité de la note est désactivée "
 
-#, fuzzy
 #| msgid "Default pagination updated."
 msgid "Default probation period updated"
-msgstr "Page par défaut mise à jour."
+msgstr "Période d’essai par défaut mise à jour"
 
-#, fuzzy
 #| msgid "Enter a valid IPv4 or IPv6 address."
 msgid "Enter a valid number of days"
-msgstr "Saisissez une adresse IPv4 ou IPv6 valide."
+msgstr "Saisissez un nombre de jours valide"
 
-#, fuzzy
 #| msgid ""
 #| "Too many exports are running right now. Please try again in a few minutes."
 msgid "Too many attempts. Please try again in a few minutes."
-msgstr ""
-"Trop d'exports sont en cours d'exécution actuellement. Veuillez réessayer "
-"dans quelques minutes."
+msgstr "Trop de tentatives. Veuillez réessayer dans quelques minutes."
 
 msgid ""
 "Your access to application tracking has been disabled. Please contact the "
 "recruiter."
 msgstr ""
 
-#, fuzzy
 #| msgid "Login successful."
 msgid "Logged in successfully."
 msgstr "Connexion réussie."
 
-#, fuzzy
 #| msgid "Candidate Self Tracking"
 msgid "Candidate self tracking is not enabled."
-msgstr "Auto-suivi des candidats"
+msgstr "L'auto-suivi des candidats n'est pas activé."
 
-#, fuzzy
 #| msgid "Enter at least one email address."
 msgid "The candidate has no email address."
-msgstr "Saisissez au moins une adresse e-mail."
+msgstr "Le candidat n'a pas d'adresse e-mail."
 
 #, python-format
 msgid "Your application tracking login - %(company)s"
 msgstr ""
 
-#, fuzzy
 #| msgid "The contract could not be found."
 msgid "The invitation could not be sent."
-msgstr "Le contrat n'a pas pu être trouvé."
+msgstr "L'invitation n'a pas pu être envoyée."
 
 #| msgid "Mail sent to %(employee)s"
 msgid "Invitation sent to %(email)s."
@@ -30405,15 +30215,13 @@ msgstr "Invitation envoyée à %(email)s."
 msgid "You have been logged out."
 msgstr "Vous avez été déconnecté."
 
-#, fuzzy
 #| msgid "Recruitment Managers"
 msgid "Recruitment Manager"
-msgstr "Responsables du Recrutement"
+msgstr "Responsable du recrutement"
 
-#, fuzzy
 #| msgid "Recruitment"
 msgid "Recruiter"
-msgstr "Recrutement"
+msgstr "Recruteur"
 
 msgid "Reject reason saved"
 msgstr "Motif de rejet enregistré"
@@ -30431,15 +30239,13 @@ msgstr "Compétence créée avec succès"
 msgid "%(title)s is deleted."
 msgstr "%(title)s est supprimé."
 
-#, fuzzy
 #| msgid "Theme not found"
 msgid "Resume not found"
-msgstr "Thème introuvable"
+msgstr "CV introuvable"
 
-#, fuzzy
 #| msgid "Candidate removed from rejected list"
 msgid "Candidate created from resume."
-msgstr "Candidat retiré de la liste des rejetés"
+msgstr "Candidat créé à partir du CV."
 
 #, python-format
 msgid "%(label)s has added a note on the candidate %(candidate)s"
@@ -32313,64 +32119,54 @@ msgstr "Périmètre de l'entreprise active"
 msgid "Scope"
 msgstr "Portée"
 
-#, fuzzy
 #| msgid "My Dashboard"
 msgid "Switch to My Dashboard"
-msgstr "Mon tableau de bord"
+msgstr "Passer à mon tableau de bord"
 
 msgid "Department Headcount"
 msgstr "Effectifs par département"
 
-#, fuzzy
 #| msgid "There are no leave requests at the moment."
 msgid "Unique approved leave requests by department"
-msgstr "Il n'y a pas de demande de permission pour le moment."
+msgstr "Demandes de congé approuvées uniques par service"
 
 msgid "Open Leave dashboard"
 msgstr "Ouvrir le tableau de bord des congés"
 
-#, fuzzy
 #| msgid "Grouped by"
 msgid "Group gender by"
-msgstr "Regroupé par"
+msgstr "Regrouper le genre par"
 
-#, fuzzy
 #| msgid "Leave Breakdown"
 msgid "Leave Type Breakdown"
 msgstr "Répartition des congés"
 
-#, fuzzy
 #| msgid "Worked vs pending hours by department"
 msgid "Approved vs pending by leave type"
-msgstr "Heures travaillées vs en attente par département"
+msgstr "Approuvées vs en attente par type de congé"
 
-#, fuzzy
 #| msgid "Recruitment Pipeline"
 msgid "Recruitment Pipeline Trend"
-msgstr "Pipeline de Recrutement"
+msgstr "Tendance du pipeline de recrutement"
 
 msgid "All open recruitments — active candidates at each stage"
 msgstr ""
 
-#, fuzzy
 #| msgid "Hiring Timeline"
 msgid "Shortlisting Timeline"
-msgstr "Chronologie d'embauche"
+msgstr "Chronologie de la présélection"
 
 msgid "Shortlisted candidates by month, by job position"
 msgstr ""
 
-#, fuzzy
 #| msgid "Open Tickets"
 msgid "Open Tickets by Priority"
-msgstr "Tickets ouverts"
+msgstr "Tickets ouverts par priorité"
 
-#, fuzzy
 #| msgid "Allowance excluded"
 msgid "Closed tickets excluded"
-msgstr "Allocation exclue"
+msgstr "Tickets fermés exclus"
 
-#, fuzzy
 #| msgid "Open Tickets"
 msgid "Open tickets"
 msgstr "Tickets ouverts"
@@ -32381,10 +32177,9 @@ msgstr "Tickets en retard"
 msgid "Open and past deadline, most overdue first"
 msgstr ""
 
-#, fuzzy
 #| msgid "No overdue tickets"
 msgid "Open overdue tickets"
-msgstr "Aucun ticket en retard"
+msgstr "Tickets en retard ouverts"
 
 msgid "Announcements still active, newest first"
 msgstr ""

@@ -908,7 +908,7 @@ def email_send(request):
             if company and company.icon and os.path.exists(company.icon.path):
                 image_path = company.icon.path
             else:
-                image_path = finders.find("images/ui/horilla-sticker-round.png")
+                image_path = finders.find("images/ui/sanad-sticker-round.png")
 
             if image_path:
                 with open(image_path, "rb") as f:

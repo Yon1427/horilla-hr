@@ -3070,7 +3070,9 @@ msgstr ""
 
 msgid "%(counter)s day selected"
 msgid_plural "%(counter)s days selected"
-msgstr ""
+msgstr[0] ""
+msgstr[1] ""
+
 
 msgid "Mark all selected days as"
 msgstr ""
@@ -14400,7 +14402,9 @@ msgstr ""
 #| msgid "employee"
 msgid "%(n)d template archived."
 msgid_plural "%(n)d templates archived."
-msgstr ""
+msgstr[0] ""
+msgstr[1] ""
+
 
 msgid "📝 Set selected templates to DRAFT"
 msgstr ""
@@ -17812,7 +17816,9 @@ msgstr ""
 #| msgid "onboarding"
 msgid "%(counter)s report"
 msgid_plural "%(counter)s reports"
-msgstr ""
+msgstr[0] ""
+msgstr[1] ""
+
 
 #, python-format
 msgid "%(t)s ago"
@@ -18819,7 +18825,9 @@ msgstr ""
 
 msgid "%(counter)s selected"
 msgid_plural "%(counter)s selected"
-msgstr ""
+msgstr[0] ""
+msgstr[1] ""
+
 
 msgid "No Records found"
 msgstr ""
@@ -18862,7 +18870,9 @@ msgstr ""
 #| msgid "onboarding"
 msgid "%(counter)s Penalty"
 msgid_plural "%(counter)s Penalties"
-msgstr ""
+msgstr[0] ""
+msgstr[1] ""
+
 
 msgid "No Penalties"
 msgstr ""
@@ -24750,17 +24760,23 @@ msgstr ""
 #| msgid "onboarding"
 msgid "%(counter)s earning"
 msgid_plural "%(counter)s earnings"
-msgstr ""
+msgstr[0] ""
+msgstr[1] ""
+
 
 #| msgid "onboarding"
 msgid "%(counter)s deduction"
 msgid_plural "%(counter)s deductions"
-msgstr ""
+msgstr[0] ""
+msgstr[1] ""
+
 
 #| msgid "onboarding"
 msgid "%(counter)s employee"
 msgid_plural "%(counter)s employees"
-msgstr ""
+msgstr[0] ""
+msgstr[1] ""
+
 
 msgid ""
 "Their payslips would show basic pay zero, and every component worked out "
@@ -24966,7 +24982,9 @@ msgstr ""
 
 msgid "Generate %(n)s payslip"
 msgid_plural "Generate %(n)s payslips"
-msgstr ""
+msgstr[0] ""
+msgstr[1] ""
+
 
 #| msgid "recruitment"
 msgid "Will be paid"
@@ -25389,7 +25407,9 @@ msgstr ""
 
 msgid "%(counter)s contract selected:"
 msgid_plural "%(counter)s contracts selected:"
-msgstr ""
+msgstr[0] ""
+msgstr[1] ""
+
 
 #| msgid "candidates-view"
 msgid "Nothing is selected."
@@ -29854,7 +29874,9 @@ msgstr ""
 #| msgid "onboarding"
 msgid "%(counter)s resume uploaded"
 msgid_plural "%(counter)s resumes uploaded"
-msgstr ""
+msgstr[0] ""
+msgstr[1] ""
+
 
 #| msgid "user-request-view"
 msgid "Reading resumes..."

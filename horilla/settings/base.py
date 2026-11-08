@@ -374,9 +374,11 @@ LANGUAGE_CODE = "fr"
 TIME_ZONE = env("TIME_ZONE", default="Africa/Algiers")
 # First day of the week for calendar-week ranges such as the Quick Date
 # "This Week" / "Last Week": 0 = Sunday, 1 = Monday ... 6 = Saturday.
-# Monday matches the attendance dashboard and the other week filters.
-# Read as text: an empty or invalid value falls back to Monday (see week_start).
-HORILLA_FIRST_DAY_OF_WEEK = env("HORILLA_FIRST_DAY_OF_WEEK", default="1")
+# Sunday, because the Algerian working week runs Sunday to Thursday and the
+# weekend is Friday/Saturday -- the same Sunday-first convention the payroll
+# weekly-off calendar uses (see month_week_index).
+# Read as text: an empty or invalid value falls back to Sunday (see week_start).
+HORILLA_FIRST_DAY_OF_WEEK = env("HORILLA_FIRST_DAY_OF_WEEK", default="0")
 USE_I18N = True
 USE_TZ = True
 

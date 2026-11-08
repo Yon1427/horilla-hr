@@ -54,11 +54,11 @@ class QuickDateFilterTests(SimpleTestCase):
             ("0", 0),
             ("6", 6),
             (" 2 ", 2),
-            ("", 1),
-            ("abc", 1),
-            ("7", 1),
-            ("-1", 1),
-            (None, 1),
+            ("", 0),
+            ("abc", 0),
+            ("7", 0),
+            ("-1", 0),
+            (None, 0),
         ]:
             with self.subTest(value=value), override_settings(
                 HORILLA_FIRST_DAY_OF_WEEK=value

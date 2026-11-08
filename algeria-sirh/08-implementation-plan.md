@@ -1273,7 +1273,7 @@ git commit -m "feat(payroll): Algerian IRG engine with boundary tests"
 - Create: `payroll/migrations/0019_filingstatus_tax_engine.py`
 - Test: `payroll/tests/test_dz_irg_integration.py`
 
-- [ ] **Step 1: Write the failing test**
+- [x] **Step 1: Write the failing test**
 
 ```python
 from datetime import date
@@ -1294,7 +1294,7 @@ class IntegrationTest(TestCase):
         self.assertEqual(breakdown["mode"], "dz_irg")
 ```
 
-- [ ] **Step 2: Run it and watch it fail**
+- [x] **Step 2: Run it and watch it fail**
 
 ```bash
 python manage.py test payroll.tests.test_dz_irg_integration -v 2
@@ -1302,7 +1302,7 @@ python manage.py test payroll.tests.test_dz_irg_integration -v 2
 
 Expected: `TypeError: ... unexpected keyword argument 'tax_engine'`.
 
-- [ ] **Step 3: Add the field, the branch, and `as_of`**
+- [x] **Step 3: Add the field, the branch, and `as_of`**
 
 ```python
 # FilingStatus
@@ -1359,7 +1359,7 @@ tax, breakdown = compute_yearly_tax(
 
 Add `as_of=date.today()` in `preview_yearly_tax`.
 
-- [ ] **Step 4: Generate the migration and run**
+- [x] **Step 4: Generate the migration and run**
 
 ```bash
 python manage.py makemigrations payroll --name filingstatus_tax_engine
@@ -1368,7 +1368,7 @@ python manage.py test payroll.tests.test_dz_irg_integration payroll.tests.test_d
 
 Expected: PASS.
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 git add payroll/models/models.py payroll/methods/tax_calc.py payroll/migrations/0019_filingstatus_tax_engine.py payroll/tests/test_dz_irg_integration.py

@@ -84,7 +84,7 @@ class BiometricComplianceTests(TestCase):
 
     def test_expired_consent_blocks_new_enrolment(self):
         self.authorise()
-        self.consent(expires_on=date(2025, 12, 31))
+        self.consent(consent_given_on=date(2024, 1, 1), expires_on=date(2025, 12, 31))
         with self.assertRaises(ValidationError):
             self.enrol()
 

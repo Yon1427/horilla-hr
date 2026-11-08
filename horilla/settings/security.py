@@ -83,6 +83,13 @@ def apply_secure_defaults(env, debug: bool) -> dict:
         "SECURE_REFERRER_POLICY": "strict-origin-when-cross-origin",
         "SECURE_PROXY_SSL_HEADER": ("HTTP_X_FORWARDED_PROTO", "https"),
         "SECURE_SSL_REDIRECT": env.bool("SECURE_SSL_REDIRECT", default=False),
+        # Health probes reach the container over plain HTTP from the platform
+        # edge (Railway sends Host: healthcheck.railway.app). Redirecting them
+        # turns a 200 into a 301 and the platform marks the deploy unhealthy,
+        # so /health/ stays reachable over HTTP while everything else is
+        # forced to HTTPS. Matches with or without the leading slash because
+        # SecurityMiddleware tests request.path, which includes it.
+        "SECURE_REDIRECT_EXEMPT": [r"^/?health/?$"],
     }
     if settings["SECURE_SSL_REDIRECT"]:
         settings["SECURE_HSTS_SECONDS"] = env.int(

@@ -28,8 +28,6 @@ msgstr "بطاقات لوحة المعلومات"
 msgid "Apps, e.g. Dashboard"
 msgstr "التطبيقات، مثال: لوحة المعلومات"
 
-
-
 msgid "An unexpected error occurred. Please refresh the page."
 msgstr "حدث خطأ غير متوقع. يُرجى تحديث الصفحة."
 
@@ -179,9 +177,6 @@ msgstr "تم تحديث تسلسل المراحل"
 msgid "Dashboard"
 msgstr "لوحة التحكم"
 
-msgid "Horilla dashboard section"
-msgstr "قسم لوحة تحكم Horilla"
-
 msgid "Mark Attendance"
 msgstr "تسجيل الحضور"
 
@@ -221,9 +216,6 @@ msgstr "خيارات الملف الشخصي وتغيير كلمة المرور"
 msgid "Dashboard Tiles"
 msgstr "بلاطات لوحة التحكم"
 
-msgid "Horilla Dashboard Tiles"
-msgstr "بلاطات لوحة تحكم Horilla"
-
 msgid "Dashboard Actions"
 msgstr "إجراءات لوحة التحكم"
 
@@ -250,9 +242,6 @@ msgstr "وصولك الحالي للشركة"
 
 msgid "App"
 msgstr "برنامج"
-
-msgid "Horilla Hr Apps. eg Dashboard"
-msgstr "تطبيقات Horilla HR مثل لوحة التحكم"
 
 msgid "Pipeline"
 msgstr "خط الأنابيب"

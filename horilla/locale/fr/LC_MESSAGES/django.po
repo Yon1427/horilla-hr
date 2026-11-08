@@ -65,8 +65,6 @@ msgstr "%(brand)s : rapport prêt — %(name)s"
 msgid "%(brand)s report export failed: %(name)s"
 msgstr "Échec de l'export du rapport %(brand)s : %(name)s"
 
-
-
 msgid "Default Employee View"
 msgstr "Vue par défaut des employés"
 
@@ -5392,11 +5390,6 @@ msgstr "Définissez les types de contrat — Temps plein, Temps partiel, Contrat
 msgid "Mail Server"
 msgstr "Serveur de messagerie"
 
-msgid "Configure an outgoing mail server so Horilla can send emails."
-msgstr ""
-"Configurez un serveur de messagerie sortant pour que Horilla puisse envoyer "
-"des e-mails."
-
 msgid "All companies"
 msgstr "Toutes les entreprises"
 
@@ -6734,9 +6727,6 @@ msgstr "Date de création"
 msgid "Import Data"
 msgstr "Exporter les données"
 
-msgid "Bring employees into Horilla from a CSV or Excel file"
-msgstr ""
-
 #, fuzzy
 #| msgid "Update Employee"
 msgid "Update Existing Employees"
@@ -7725,9 +7715,6 @@ msgstr "Notes de version"
 
 msgid "HR setup checklist"
 msgstr "Liste de configuration RH"
-
-msgid "Get started with Horilla HR"
-msgstr "Démarrez avec Horilla HR"
 
 #, fuzzy
 #| msgid "finish setup to unlock your full HR system"
@@ -13927,9 +13914,6 @@ msgstr "Configuration du serveur de messagerie introuvable"
 msgid "Tracked fields updated for %(model)s."
 msgstr "Champs suivis mis à jour pour %(model)s."
 
-msgid "Horilla Auth"
-msgstr "Horilla Auth"
-
 msgid "Users"
 msgstr "Utilisateurs"
 
@@ -14667,14 +14651,6 @@ msgstr "Intégration de Google Meet"
 
 msgid "Enable Google meet"
 msgstr "Activer la rencontre Google"
-
-msgid "Enable this to integrate Google meet to Horilla."
-msgstr "Activez ceci pour intégrer Google meet à Horilla."
-
-msgid "Schedule and join Google Meet video calls directly from Horilla."
-msgstr ""
-"Planifiez et rejoignez des appels vidéo Google Meet directement depuis "
-"Horilla."
 
 msgid "Google Cloud Credential not found."
 msgstr "Identifiant Google Cloud introuvable."
@@ -16330,9 +16306,6 @@ msgstr "Mon entreprise"
 msgid "Main navigation"
 msgstr "Navigation principale"
 
-msgid "Horilla HR version"
-msgstr "Version de Horilla HR"
-
 msgid "Version"
 msgstr "Version"
 
@@ -16365,17 +16338,8 @@ msgstr "Authentification"
 msgid "Database Authentication"
 msgstr "Authentification de la base de données"
 
-msgid ""
-"Authenticate with your password to initialize the Horilla HRMS database."
-msgstr ""
-"Authentifiez-vous avec votre mot de passe pour initialiser la base de "
-"données HRMS Horilla."
-
 msgid "Database authentication password"
 msgstr "Mot de passe d'authentification de la base de données"
-
-msgid "Please sign up to access the Horilla HRMS."
-msgstr "Veuillez vous inscrire pour accéder au HRMS Horilla."
 
 msgid "e.g. Adam"
 msgstr "ex. Alex"
@@ -18199,15 +18163,6 @@ msgstr "Aucun paramètre trouvé"
 
 msgid "Enable Linkedin"
 msgstr "Activer Linkedin"
-
-msgid "Enable this to integrate linkedin to Horilla."
-msgstr "Activez ceci pour intégrer linkedin à Horilla."
-
-msgid ""
-"Post job openings directly to LinkedIn and manage applicants from Horilla."
-msgstr ""
-"Publiez des offres d'emploi directement sur LinkedIn et gérez les candidats "
-"depuis Horilla."
 
 msgid "Prefix added to every auto-generated employee badge ID (e.g. PEP0001)."
 msgstr ""
@@ -20715,11 +20670,6 @@ msgstr "Rien à approuver."
 #, fuzzy
 msgid "Master Data Import"
 msgstr "Import des données de référence"
-
-msgid ""
-"Bring your data into Horilla. Every file is matched and checked before "
-"anything is saved."
-msgstr ""
 
 #, fuzzy
 #| msgid "Import"
@@ -23620,11 +23570,6 @@ msgstr "%(title)s (copie)"
 
 #, python-format
 msgid "%(title)s needs an amount, or a formula to work one out."
-msgstr ""
-
-msgid ""
-"Python formulas are turned off on this server. Use tax slabs, or ask whoever "
-"runs Horilla to set HORILLA_ALLOW_PYTHON_TAX_FORMULAS=True."
 msgstr ""
 
 msgid "Tax code is empty."
@@ -31557,10 +31502,6 @@ msgid "Error occurred while deleting candidate rejection"
 msgstr "Une erreur s'est produite lors de la suppression du rejet du candidat"
 
 #, python-format
-msgid "Horilla report ready: %(name)s"
-msgstr "Rapport Horilla prêt : %(name)s"
-
-#, python-format
 msgid ""
 "Your requested export is attached.\n"
 "\n"
@@ -31571,10 +31512,6 @@ msgstr ""
 "\n"
 "Rapport : %(name)s\n"
 "Format : %(fmt)s"
-
-#, python-format
-msgid "Horilla report export failed: %(name)s"
-msgstr "Échec de l'export du rapport Horilla : %(name)s"
 
 #, python-format
 msgid ""
@@ -31626,9 +31563,6 @@ msgstr "Abonnement mis à jour."
 
 msgid "Comparison"
 msgstr "Comparaison"
-
-msgid "Attached is your scheduled Horilla report:"
-msgstr "Vous trouverez ci-joint votre rapport Horilla planifié :"
 
 #, python-format
 msgid "Showing first %(n)s rows."
@@ -33776,9 +33710,6 @@ msgstr "Marquer comme lu"
 msgid "View all notifications"
 msgstr "Voir toutes les notifications"
 
-msgid "Registration Success - OpenHRMS Dashboard"
-msgstr "Inscription réussie - Tableau de bord OpenHRMS"
-
 msgid "Forget Password Mail Send Successfully"
 msgstr "E-mail de réinitialisation du mot de passe envoyé avec succès"
 
@@ -33889,9 +33820,6 @@ msgstr ""
 
 msgid "WhatsApp Integration"
 msgstr "Intégration WhatsApp"
-
-msgid "Enable this to integrate WhatsApp to Horilla."
-msgstr "Activez ceci pour intégrer WhatsApp à Horilla."
 
 msgid ""
 "Send HR notifications and updates directly through WhatsApp for better "

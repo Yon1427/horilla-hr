@@ -166,9 +166,6 @@ msgstr ""
 msgid "Dashboard"
 msgstr ""
 
-msgid "Horilla dashboard section"
-msgstr ""
-
 msgid "Mark Attendance"
 msgstr ""
 
@@ -208,9 +205,6 @@ msgstr ""
 msgid "Dashboard Tiles"
 msgstr ""
 
-msgid "Horilla Dashboard Tiles"
-msgstr ""
-
 msgid "Dashboard Actions"
 msgstr ""
 
@@ -236,9 +230,6 @@ msgid "Your current company access"
 msgstr ""
 
 msgid "App"
-msgstr ""
-
-msgid "Horilla Hr Apps. eg Dashboard"
 msgstr ""
 
 msgid "Pipeline"

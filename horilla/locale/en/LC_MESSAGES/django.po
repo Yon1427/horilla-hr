@@ -5964,9 +5964,6 @@ msgstr ""
 msgid "Mail Server"
 msgstr ""
 
-msgid "Configure an outgoing mail server so Horilla can send emails."
-msgstr "Configure an outgoing mail server so Horilla can send emails."
-
 #, fuzzy
 #| msgid "company"
 msgid "All companies"
@@ -7391,9 +7388,6 @@ msgstr ""
 msgid "Import Data"
 msgstr "Roster Planner"
 
-msgid "Bring employees into Horilla from a CSV or Excel file"
-msgstr ""
-
 #, fuzzy
 #| msgid "employee"
 msgid "Update Existing Employees"
@@ -8428,9 +8422,6 @@ msgstr "Employee"
 
 msgid "HR setup checklist"
 msgstr ""
-
-msgid "Get started with Horilla HR"
-msgstr "Get started with Horilla HR"
 
 #, fuzzy
 #| msgid "finish setup to unlock your full HR system"
@@ -15383,11 +15374,6 @@ msgstr "Configuration"
 msgid "Tracked fields updated for %(model)s."
 msgstr ""
 
-#, fuzzy
-#| msgid "horilla-theme"
-msgid "Horilla Auth"
-msgstr "Theme Customization"
-
 msgid "Users"
 msgstr ""
 
@@ -16174,12 +16160,6 @@ msgid "Google Meet Integration"
 msgstr "Configuration"
 
 msgid "Enable Google meet"
-msgstr ""
-
-msgid "Enable this to integrate Google meet to Horilla."
-msgstr ""
-
-msgid "Schedule and join Google Meet video calls directly from Horilla."
 msgstr ""
 
 #, fuzzy
@@ -18109,11 +18089,6 @@ msgid "Main navigation"
 msgstr "Onboarding"
 
 #, fuzzy
-#| msgid "horilla-theme"
-msgid "Horilla HR version"
-msgstr "Theme Customization"
-
-#, fuzzy
 #| msgid "employee-permission-assign"
 msgid "Version"
 msgstr "Employee Permissions"
@@ -18147,14 +18122,7 @@ msgstr ""
 msgid "Database Authentication"
 msgstr ""
 
-msgid ""
-"Authenticate with your password to initialize the Horilla HRMS database."
-msgstr ""
-
 msgid "Database authentication password"
-msgstr ""
-
-msgid "Please sign up to access the Horilla HRMS."
 msgstr ""
 
 msgid "e.g. Adam"
@@ -20168,13 +20136,6 @@ msgstr "Shift Requests"
 #| msgid "recruitment"
 msgid "Enable Linkedin"
 msgstr "Recruitment"
-
-msgid "Enable this to integrate linkedin to Horilla."
-msgstr ""
-
-msgid ""
-"Post job openings directly to LinkedIn and manage applicants from Horilla."
-msgstr ""
 
 msgid "Prefix added to every auto-generated employee badge ID (e.g. PEP0001)."
 msgstr "Prefix added to every auto-generated employee badge ID (e.g. PEP0001)."
@@ -22844,11 +22805,6 @@ msgid "Nothing skipped."
 msgstr "Shift Requests"
 
 msgid "Master Data Import"
-msgstr ""
-
-msgid ""
-"Bring your data into Horilla. Every file is matched and checked before "
-"anything is saved."
 msgstr ""
 
 #, fuzzy
@@ -25892,11 +25848,6 @@ msgstr ""
 
 #, python-format
 msgid "%(title)s needs an amount, or a formula to work one out."
-msgstr ""
-
-msgid ""
-"Python formulas are turned off on this server. Use tax slabs, or ask whoever "
-"runs Horilla to set HORILLA_ALLOW_PYTHON_TAX_FORMULAS=True."
 msgstr ""
 
 msgid "Tax code is empty."
@@ -34180,19 +34131,11 @@ msgid "Error occurred while deleting candidate rejection"
 msgstr ""
 
 #, python-format
-msgid "Horilla report ready: %(name)s"
-msgstr ""
-
-#, python-format
 msgid ""
 "Your requested export is attached.\n"
 "\n"
 "Report: %(name)s\n"
 "Format: %(fmt)s"
-msgstr ""
-
-#, python-format
-msgid "Horilla report export failed: %(name)s"
 msgstr ""
 
 #, python-format
@@ -34256,9 +34199,6 @@ msgid "Subscription updated."
 msgstr "Update"
 
 msgid "Comparison"
-msgstr ""
-
-msgid "Attached is your scheduled Horilla report:"
 msgstr ""
 
 #, python-format
@@ -36792,9 +36732,6 @@ msgstr ""
 msgid "View all notifications"
 msgstr ""
 
-msgid "Registration Success - OpenHRMS Dashboard"
-msgstr ""
-
 #, fuzzy
 #| msgid "shift-request-view"
 msgid "Forget Password Mail Send Successfully"
@@ -36933,9 +36870,6 @@ msgid ""
 msgstr ""
 
 msgid "WhatsApp Integration"
-msgstr ""
-
-msgid "Enable this to integrate WhatsApp to Horilla."
 msgstr ""
 
 msgid ""

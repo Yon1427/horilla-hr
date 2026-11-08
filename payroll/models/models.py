@@ -202,6 +202,12 @@ class FilingStatus(HorillaModel):
     )
     use_py = models.BooleanField(verbose_name=_("Python Code"), default=False)
     python_code = models.TextField(null=True)
+    tax_engine = models.CharField(
+        max_length=20,
+        choices=[("standard", _("Standard slabs")), ("dz_irg", _("Algeria IRG"))],
+        default="standard",
+        verbose_name=_("Tax engine"),
+    )
 
     # --- Declarative adjustments -------------------------------------------
     # Applied around whichever mode computes the tax, so slabs and a Python

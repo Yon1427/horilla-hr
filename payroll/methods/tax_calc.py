@@ -42,7 +42,7 @@ class TaxComputationError(Exception):
     """
 
 
-def compute_yearly_tax(filing, yearly_income, employee=None):
+def compute_yearly_tax(filing, yearly_income, employee=None, as_of=None):
     """
     Tax on a yearly income under ``filing``, plus a breakdown of how it got there.
 
@@ -69,6 +69,39 @@ def compute_yearly_tax(filing, yearly_income, employee=None):
     ``employee`` is only used to name who a failure belongs to; the preview has
     nobody and passes None.
     """
+    if getattr(filing, "tax_engine", "standard") == "dz_irg":
+        from payroll.methods.dz_irg import compute_monthly_irg
+        from payroll.models.tax_models import AlgeriaPayrollParameter
+
+        company = None
+        if employee is not None:
+            company = getattr(employee, "get_company", lambda: None)()
+        params = AlgeriaPayrollParameter.for_company(
+            company, as_of or datetime.date.today()
+        )
+        if params is None:
+            raise TaxComputationError(
+                "No Algeria payroll parameters effective on this date."
+            )
+        monthly = compute_monthly_irg(
+            float(yearly_income) / 12,
+            params,
+            disabled=bool(getattr(employee, "is_disabled", False)),
+        )
+        federal_tax = monthly * 12
+        return federal_tax, {
+            "gross_yearly_income": round(float(yearly_income), 2),
+            "standard_deduction": 0.0,
+            "taxable_income": round(float(yearly_income), 2),
+            "tax_before_relief": round(federal_tax, 2),
+            "rebate_applied": 0.0,
+            "rebate_limit": None,
+            "rebate_max": None,
+            "cess_applied": 0.0,
+            "tax": round(federal_tax, 2),
+            "mode": "dz_irg",
+            "slabs": [],
+        }
     gross_yearly_income = yearly_income
     standard_deduction = float(filing.standard_deduction or 0)
     if standard_deduction:
@@ -180,9 +213,9 @@ def compute_yearly_tax(filing, yearly_income, employee=None):
     return federal_tax, breakdown
 
 
-def preview_yearly_tax(filing, yearly_income):
+def preview_yearly_tax(filing, yearly_income, as_of=None):
     """Breakdown only, for the configuration screen. Saves nothing."""
-    _tax, breakdown = compute_yearly_tax(filing, yearly_income)
+    _tax, breakdown = compute_yearly_tax(filing, yearly_income, as_of=as_of)
     return breakdown
 
 
@@ -234,6 +267,7 @@ def calculate_taxable_amount(**kwargs):
         end_date,
         employee=employee,
         pay_frequency=contract.pay_frequency,
+        as_of=end_date,
     )
 
 
@@ -275,7 +309,7 @@ def periods_in_year(pay_frequency, start_date, end_date):
     return periods
 
 
-def period_tax(filing, income, start_date, end_date, employee=None, pay_frequency=None):
+def period_tax(filing, income, start_date, end_date, employee=None, pay_frequency=None, as_of=None):
     """
     The tax for one period, given the figure the filing status taxes.
 
@@ -301,11 +335,15 @@ def period_tax(filing, income, start_date, end_date, employee=None, pay_frequenc
     yearly_income = round(yearly_income, 2)
 
     federal_tax, _breakdown = compute_yearly_tax(
-        filing, yearly_income, employee=employee
+        filing, yearly_income, employee=employee, as_of=as_of or end_date
     )
 
     federal_tax_for_period = 0
-    if federal_tax and (tax_brackets.exists() or filing.use_py):
+    if federal_tax and (
+        tax_brackets.exists()
+        or filing.use_py
+        or getattr(filing, "tax_engine", "standard") == "dz_irg"
+    ):
         if periods:
             federal_tax_for_period = federal_tax / periods
         else:
@@ -323,7 +361,7 @@ def period_tax(filing, income, start_date, end_date, employee=None, pay_frequenc
 
 
 def explain_period_tax(
-    filing, income, start_date, end_date, employee=None, pay_frequency=None
+    filing, income, start_date, end_date, employee=None, pay_frequency=None, as_of=None
 ):
     """
     Everything between a period's taxable pay and its tax, step by step.
@@ -343,7 +381,9 @@ def explain_period_tax(
         yearly_income = income / num_days * total_days
         method = "days"
     yearly_income = round(compute_yearly_taxable_amount(income, yearly_income), 2)
-    yearly_tax, breakdown = compute_yearly_tax(filing, yearly_income, employee=employee)
+    yearly_tax, breakdown = compute_yearly_tax(
+        filing, yearly_income, employee=employee, as_of=as_of or end_date
+    )
     if periods:
         tax = yearly_tax / periods
     else:

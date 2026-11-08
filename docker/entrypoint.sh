@@ -56,6 +56,11 @@ if command -v msgfmt >/dev/null 2>&1; then
     find . -name '*.po' -not -path './node_modules/*' \
       -execdir sh -c '[ -f "${1%.po}.mo" ] || msgfmt "$1" -o "${1%.po}.mo"' _ {} \; 2>/dev/null || true
   fi
+elif [ ! -f horilla/locale/fr/LC_MESSAGES/django.mo ]; then
+  # Loud on purpose: without a compiled catalog every locale renders English
+  # and nothing in the app says so.
+  echo "WARNING: msgfmt not found and no compiled French catalog — the UI will"
+  echo "         render in English. Install gettext, or run: make compilemessages"
 fi
 
 # Run migrations

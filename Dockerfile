@@ -112,6 +112,9 @@ COPY --chown=appuser:appuser . .
 # compiles them, so without this every non-English locale silently renders
 # English. Plain msgfmt, so no Django settings/DB are needed at build time.
 RUN find . -name '*.po' -execdir sh -c 'msgfmt "$1" -o "${1%.po}.mo"' _ {} \;
+# Assert it actually happened. A missing msgfmt used to fail here without
+# failing the build, and the image then served English for every locale.
+RUN test -f horilla/locale/fr/LC_MESSAGES/django.mo
 
 # Copy entrypoint script
 COPY --chown=appuser:appuser docker/entrypoint.sh /entrypoint.sh

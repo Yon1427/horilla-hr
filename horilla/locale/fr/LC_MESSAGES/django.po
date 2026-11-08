@@ -447,22 +447,19 @@ msgstr "Votre demande d'actif a été rejetée!."
 msgid "Asset Request Created Successfully"
 msgstr "Demande d'actif créée avec succès"
 
-#, fuzzy, python-format
 #| msgid "Service Request"
 msgid "Service Request - %(asset)s"
-msgstr "Demande de service"
+msgstr "Demande de service - %(asset)s"
 
 #, fuzzy
 #| msgid "Leave request created successfully.."
 msgid "Service request raised successfully."
 msgstr "Demande de congé créée avec succès..."
 
-#, fuzzy, python-format
 #| msgid ""
 #| "Return request for %(asset_id)s initiated from %(assigned_to_employee_id)s"
 msgid "Service request for %(asset_id)s raised by %(employee)s"
-msgstr ""
-"Demande de retour pour %(asset_id)s initiée par %(assigned_to_employee_id)s"
+msgstr "Demande de service pour %(asset_id)s émise par %(employee)s"
 
 #, fuzzy
 #| msgid "Asset category not found"
@@ -1211,10 +1208,9 @@ msgstr "Ajouter une note"
 msgid "Add a note..."
 msgstr "Ajouter une note"
 
-#, fuzzy, python-format
 #| msgid "%(employee)s is %(message)s"
 msgid "Resolved by %(employee)s on %(date)s"
-msgstr "%(employee)s est %(message)s"
+msgstr "Résolu par %(employee)s le %(date)s"
 
 #, fuzzy
 #| msgid "No leave requests for this month."
@@ -2677,25 +2673,22 @@ msgstr "Aperçu de la présence"
 msgid "On-time, late arrivals & early departures by department"
 msgstr "Arrivées à l'heure, retards et départs anticipés par département"
 
-#, fuzzy, python-format
 #| msgid "Attendance"
 msgid "Attendance %%"
-msgstr "Présence"
+msgstr "Présence %%"
 
 #, fuzzy
 #| msgid "Attendance Deleted"
 msgid "Attendance Percentage"
 msgstr "Participation supprimée"
 
-#, fuzzy, python-format
 #| msgid "Attendance Days"
 msgid "Attendance %% by shift"
-msgstr "Jours de présence"
+msgstr "Présence %% par équipe"
 
-#, fuzzy, python-format
 #| msgid "Count as Attendance"
 msgid "Group attendance %% by"
-msgstr "Compter comme présence"
+msgstr "Regrouper la présence %% par"
 
 #, fuzzy
 #| msgid "Shifts"
@@ -2724,10 +2717,9 @@ msgstr "75–89 %%"
 msgid "50–74%%"
 msgstr "50–74 %%"
 
-#, fuzzy, python-format
 #| msgid "Absent"
 msgid "Absence %%"
-msgstr "Absence"
+msgstr "Absence %%"
 
 #, fuzzy
 #| msgid "Payment Percentage"
@@ -2738,10 +2730,9 @@ msgstr "Pourcentage de paiement"
 msgid "Absence %% by shift"
 msgstr "Absence %% par poste"
 
-#, fuzzy, python-format
 #| msgid "Grouped by"
 msgid "Group absence %% by"
-msgstr "Regroupé par"
+msgstr "Regrouper l'absence %% par"
 
 #, fuzzy
 msgid "10%% or less"
@@ -2886,15 +2877,13 @@ msgstr "Semaine du"
 msgid "present"
 msgstr "présent"
 
-#, fuzzy, python-format
 #| msgid "Attendance rate by department"
 msgid "Attendance %% by department"
-msgstr "Taux de présence par département"
+msgstr "Présence %% par département"
 
-#, fuzzy, python-format
 #| msgid "Attendance rate by department"
 msgid "Attendance %% by work type"
-msgstr "Taux de présence par département"
+msgstr "Présence %% par type de travail"
 
 msgid "groups"
 msgstr "Groupes"
@@ -2902,15 +2891,13 @@ msgstr "Groupes"
 msgid "days present"
 msgstr "jours de présence"
 
-#, fuzzy, python-format
 #| msgid "Attendance rate by department"
 msgid "Absence %% by department"
-msgstr "Taux de présence par département"
+msgstr "Absence %% par département"
 
-#, fuzzy, python-format
 #| msgid "Is permenent work type"
 msgid "Absence %% by work type"
-msgstr "Est un type de travail permenent"
+msgstr "Absence %% par type de travail"
 
 #, fuzzy
 #| msgid "days present"
@@ -5781,10 +5768,9 @@ msgstr "Annulé et rejeté"
 msgid "This document could not be generated safely."
 msgstr "Ce document n'a pas pu être généré en toute sécurité."
 
-#, fuzzy, python-format
 #| msgid "From date"
 msgid "From %(d)s"
-msgstr "À partir de la date"
+msgstr "À partir du %(d)s"
 
 #, fuzzy, python-format
 #| msgid "Dept: %(d)s"
@@ -6065,10 +6051,9 @@ msgid "End value must be greater than the start value in a range."
 msgstr ""
 "La valeur de fin doit être supérieure à la valeur de début dans une plage."
 
-#, fuzzy, python-format
 #| msgid "%(field_label)s: %(error)s"
 msgid "%(field)s %(operator)s %(value)s"
-msgstr "%(field_label)s : %(error)s"
+msgstr "%(field)s %(operator)s %(value)s"
 
 #, python-format
 msgid ""
@@ -7240,10 +7225,9 @@ msgstr "Voir la demande de congé"
 msgid "Unsubscribe here"
 msgstr "Se désabonner ici"
 
-#, fuzzy, python-format
 #| msgid "Test mail from Horilla"
 msgid "Test mail from %(company)s"
-msgstr "Tester le mail de Horilla"
+msgstr "E-mail de test de %(company)s"
 
 msgid ""
 "This is a test email to confirm your mail server configuration is working."
@@ -7263,10 +7247,9 @@ msgid ""
 "This email is being sent as part of mail server testing from %(company)s."
 msgstr ""
 
-#, fuzzy, python-format
 #| msgid "Reset my password"
 msgid "Reset your %(company)s password"
-msgstr "Réinitialiser mon mot de passe"
+msgstr "Réinitialisez votre mot de passe %(company)s"
 
 msgid "Use this link to choose a new password for your account."
 msgstr ""
@@ -9220,10 +9203,9 @@ msgstr ""
 msgid "This account has no email address to send the reset link to."
 msgstr "Votre compte n'a pas d'adresse e-mail pour l'export asynchrone."
 
-#, fuzzy, python-format
 #| msgid "Password reset link sent successfully"
 msgid "Password reset link sent to %(email)s"
-msgstr "Lien de réinitialisation du mot de passe envoyé avec succès"
+msgstr "Lien de réinitialisation envoyé à %(email)s"
 
 msgid "If your account exists, a password reset link has been sent"
 msgstr ""
@@ -11558,10 +11540,9 @@ msgstr ""
 msgid "Import Successful"
 msgstr "Importation réussie"
 
-#, fuzzy, python-format
 #| msgid "Asset report added successfully."
 msgid "All %(model)s were imported successfully."
-msgstr "Rapport d'actif ajouté avec succès."
+msgstr "Tous les %(model)s ont été importés avec succès."
 
 msgid "Imported"
 msgstr "Importé"
@@ -11584,10 +11565,9 @@ msgstr "Enregistrements de la paie"
 msgid "Activity history"
 msgstr "Historique d'activité"
 
-#, fuzzy, python-format
 #| msgid "Remove this company"
 msgid "Welcome to %(company)s"
-msgstr "Retirer cette entreprise"
+msgstr "Bienvenue chez %(company)s"
 
 msgid "Use this link to set your password and get started."
 msgstr ""
@@ -12392,12 +12372,11 @@ msgstr ""
 msgid "This employee has no linked login account."
 msgstr "Cet employé n'est affecté à aucun groupe."
 
-#, fuzzy, python-format
 #| msgid "Do you want to delete this mail server configuration?"
 msgid ""
 "Could not send invitation to %(employee)s. Check the mail server "
 "configuration."
-msgstr "Voulez-vous supprimer cette configuration de serveur de messagerie ?"
+msgstr "Impossible d'envoyer l'invitation à %(employee)s. Vérifiez la configuration du serveur de messagerie."
 
 msgid "No IDs provided."
 msgstr "Aucun ID fourni."
@@ -14583,12 +14562,9 @@ msgstr "Configuration mise à jour avec succès."
 msgid "Google Cloud Credentials"
 msgstr "Identifiant Google Cloud introuvable."
 
-#, fuzzy
 #| msgid "Error deleting Google Cloud Credential: %(e)s"
 msgid "Create Google Cloud Credentials"
-msgstr ""
-"Erreur lors de la suppression des informations d'identification "
-"Google Cloud : %(e)s"
+msgstr "Créer les identifiants Google Cloud"
 
 #, fuzzy
 #| msgid "Enable Google Meet"
@@ -19129,10 +19105,9 @@ msgstr "Il existe déjà une demande de congé pour cette plage de dates."
 msgid "You can't cancel this leave request."
 msgstr "Vous ne pouvez pas annuler cette demande de laisse."
 
-#, fuzzy, python-format
 #| msgid "Cancellation Reason"
 msgid "Cancellation requested: %(reason)s"
-msgstr "Raison de l'annulation"
+msgstr "Annulation demandée : %(reason)s"
 
 #, fuzzy
 #| msgid "Your Leave request has been cancelled"
@@ -19480,25 +19455,22 @@ msgstr "Expire"
 msgid "Allocation: %(before)s &rarr; %(after)s"
 msgstr "Affectation : %(before)s &rarr; %(after)s"
 
-#, fuzzy, python-format
 #| msgid "Carry forward days"
 msgid "Carry forward: %(amount)s"
-msgstr "Effectuez des jours d'avance"
+msgstr "Report : %(amount)s"
 
 #, fuzzy
 #| msgid "Carryforward Expire"
 msgid "Carry Forward Expired"
 msgstr "Expiration de la porte avant"
 
-#, fuzzy, python-format
 #| msgid "The count of carryforward expire period"
 msgid "%(amount)s carried-forward day(s) expired"
-msgstr "Le nombre de période d'expiration de la date de transfert"
+msgstr "%(amount)s jour(s) reporté(s) expiré(s)"
 
-#, fuzzy, python-format
 #| msgid "Deduct From Carryforward"
 msgid "Incl. %(amount)s from carryforward"
-msgstr "Déduire du report"
+msgstr "Dont %(amount)s issus du report"
 
 #, fuzzy
 #| msgid "Related entries exist."
@@ -23563,10 +23535,9 @@ msgstr "Déduit séparément, pas du salaire de base"
 msgid "Give the new line a name."
 msgstr "Nommez la nouvelle ligne."
 
-#, fuzzy, python-format
 #| msgid "%(title)s (copy)"
 msgid "%(title)s: %(problem)s"
-msgstr "%(title)s (copie)"
+msgstr "%(title)s : %(problem)s"
 
 #, python-format
 msgid "%(title)s needs an amount, or a formula to work one out."
@@ -24432,10 +24403,9 @@ msgstr "Signalé (net nul ou plafonné)"
 msgid "Payroll Batch"
 msgstr "Fiche de paie par lot"
 
-#, fuzzy, python-format
 #| msgid "Status already in {} status"
 msgid "It is already %(status)s."
-msgstr "Statut déjà dans le statut {}"
+msgstr "Le statut est déjà %(status)s."
 
 #, fuzzy, python-format
 msgid "%(status)s is not a status."
@@ -25536,10 +25506,9 @@ msgstr "Sélectionnés"
 msgid "All Employees"
 msgstr "Voir tous les employés"
 
-#, fuzzy, python-format
 #| msgid "Choose Report"
 msgid "Choose %(t)s"
-msgstr "Choisir un rapport"
+msgstr "Choisir %(t)s"
 
 #, fuzzy
 #| msgid "Selected Employees"
@@ -25683,10 +25652,9 @@ msgid ""
 "Wage."
 msgstr ""
 
-#, fuzzy
 #| msgid "Add another %(model)s"
 msgid "Add another rule"
-msgstr "Ajouter un(e) autre %(model)s"
+msgstr "Ajouter une autre règle"
 
 #, fuzzy
 #| msgid "Add Condition"
@@ -25954,10 +25922,9 @@ msgstr "Conditions"
 msgid "on %(basis)s"
 msgstr "sur %(basis)s"
 
-#, fuzzy, python-format
 #| msgid "%(created_count)s employees created."
 msgid "%(rate)s%% employer"
-msgstr "%(created_count)s salariés créés."
+msgstr "%(rate)s%% employeur"
 
 #, fuzzy
 #| msgid "Other employees"
@@ -26468,10 +26435,9 @@ msgstr "À quoi cela sert-il ?"
 msgid "Work the amount out with a formula"
 msgstr "Calculer le montant avec une formule"
 
-#, fuzzy
 #| msgid "Preview — %(name)s"
 msgid "Preview — not saved yet"
-msgstr "Aperçu — %(name)s"
+msgstr "Aperçu — pas encore enregistré"
 
 #, fuzzy
 msgid "How The Income Tax Is Worked Out"
@@ -26744,10 +26710,9 @@ msgstr "Aucun fichier disponible pour le moment."
 msgid "Do you want to delete this attachment?"
 msgstr "Voulez-vous supprimer cette pièce jointe ?"
 
-#, fuzzy, python-format
 #| msgid "bonus points for "
 msgid "Available bonus points for %(name)s:"
-msgstr "points bonus pour"
+msgstr "Points bonus disponibles pour %(name)s :"
 
 msgid "No comments available at the moment."
 msgstr "Aucun commentaire disponible pour le moment."
@@ -26917,10 +26882,9 @@ msgstr ""
 msgid "Up to"
 msgstr "Jusqu'à 5 Mo"
 
-#, fuzzy, python-format
 #| msgid "Rate %"
 msgid "Rate %%"
-msgstr "Taux %"
+msgstr "Taux %%"
 
 #, fuzzy
 #| msgid "Add step"
@@ -27235,10 +27199,9 @@ msgstr "Période non trouvée."
 msgid "Pay period deleted."
 msgstr "Fiche de paie supprimée"
 
-#, fuzzy, python-format
 #| msgid "No payslips generated for this month."
 msgid "%(n)s payslips generated for %(period)s."
-msgstr "Aucun bulletin de paie généré pour ce mois-ci."
+msgstr "%(n)s bulletins de paie générés pour %(period)s."
 
 #, python-format
 msgid "No new payslips: everyone already has one for %(period)s."
@@ -27424,10 +27387,9 @@ msgstr "Demande de remboursement introuvable."
 msgid "Attachment deleted"
 msgstr "Pièce jointe supprimée"
 
-#, fuzzy, python-format
 #| msgid "New leave request created for %(employee)s."
 msgid "%(added)s added, %(removed)s removed for %(employee)s."
-msgstr "Nouvelle demande de congé créée pour %(employee)s."
+msgstr "%(added)s ajouté(s), %(removed)s supprimé(s) pour %(employee)s."
 
 #, fuzzy
 #| msgid "Nothing to cancel."
@@ -28149,10 +28111,9 @@ msgstr "Pour le développeur"
 msgid "Enter question"
 msgstr "Saisir une question"
 
-#, fuzzy, python-format
 #| msgid "Options"
 msgid "Option %s"
-msgstr "Options"
+msgstr "Option %s"
 
 msgid "Add a comment..."
 msgstr "Ajouter un commentaire..."
@@ -29975,10 +29936,9 @@ msgstr "La date de fin ne peut pas être inférieure à la date de début."
 msgid "A stage of this type already exists for this recruitment."
 msgstr "Cette étape existe déjà pour ce recrutement."
 
-#, fuzzy, python-format
 #| msgid "This stage already exists for the recruitment."
 msgid "A '%(type)s' stage already exists for this recruitment."
-msgstr "Cette étape existe déjà pour ce recrutement."
+msgstr "Une étape « %(type)s » existe déjà pour ce recrutement."
 
 msgid "Inside software"
 msgstr "Logiciel à l'intérieur"
@@ -30172,10 +30132,9 @@ msgstr "Êtes-vous sûr de vouloir annuler ce rejet ?"
 msgid "Cancel Rejection"
 msgstr "Annuler le rejet"
 
-#, fuzzy, python-format
 #| msgid "Application Tracking is enabled "
 msgid "Application Tracking - %(company_name)s"
-msgstr "Le suivi des applications est activé"
+msgstr "Suivi des candidatures - %(company_name)s"
 
 #, fuzzy
 #| msgid "Application Form"
@@ -30222,10 +30181,9 @@ msgstr ""
 msgid "Application progress"
 msgstr "Formulaire de demande"
 
-#, fuzzy, python-format
 #| msgid "Sample — %(shown)s of %(total)s"
 msgid "Stage %(position)s of %(total)s"
-msgstr "Échantillon — %(shown)s sur %(total)s"
+msgstr "Étape %(position)s sur %(total)s"
 
 #, fuzzy, python-format
 #| msgid "%(count)s openings"
@@ -31234,10 +31192,9 @@ msgstr "Aucun candidat trouvé correspondant à la requête."
 msgid "File size exceeds the limit. Maximum size is 5 MB"
 msgstr "La taille du fichier dépasse la limite. La taille maximale est de 5 Mo"
 
-#, fuzzy
 #| msgid "File type %(ext)s is not allowed."
 msgid "That file type isn't allowed."
-msgstr "Le type de fichier %(ext)s n'est pas autorisé."
+msgstr "Ce type de fichier n'est pas autorisé."
 
 msgid "Your answers are submitted."
 msgstr "Vos réponses sont envoyées."
@@ -31444,10 +31401,9 @@ msgstr ""
 msgid "The invitation could not be sent."
 msgstr "Le contrat n'a pas pu être trouvé."
 
-#, fuzzy, python-format
 #| msgid "Mail sent to %(employee)s"
 msgid "Invitation sent to %(email)s."
-msgstr "Mail envoyé à %(employee)s"
+msgstr "Invitation envoyée à %(email)s."
 
 msgid "You have been logged out."
 msgstr "Vous avez été déconnecté."
@@ -33113,18 +33069,16 @@ msgstr "Employés à %(loc)s"
 msgid "Employees · %(job)s"
 msgstr "Employés · %(job)s"
 
-#, fuzzy, python-format
 #| msgid "Exits · Rolling 6 months"
 msgid "Exits · %(month)s"
-msgstr "Départs · 6 mois glissants"
+msgstr "Départs · %(month)s"
 
 msgid "Exits · Rolling 6 months"
 msgstr "Départs · 6 mois glissants"
 
-#, fuzzy, python-format
 #| msgid "Hires (6m)"
 msgid "Hires · %(month)s"
-msgstr "Embauches (6 mois)"
+msgstr "Embauches · %(month)s"
 
 msgid "Exits in period"
 msgstr "Départs sur la période"

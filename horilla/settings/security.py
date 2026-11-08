@@ -29,7 +29,9 @@ def is_production_mode(debug: bool, horilla_env: str) -> bool:
     return (not debug) or (horilla_env or "").strip().lower() == "production"
 
 
-def validate_production_secrets(secret_key, allowed_hosts, db_init_password):
+def validate_production_secrets(
+    secret_key, allowed_hosts, db_init_password, brand="SIRH"
+):
     """Raise ImproperlyConfigured when production uses unsafe defaults."""
     errors = []
 
@@ -63,7 +65,7 @@ def validate_production_secrets(secret_key, allowed_hosts, db_init_password):
 
     if errors:
         raise ImproperlyConfigured(
-            "Horilla production security check failed:\n- " + "\n- ".join(errors)
+            f"{brand} production security check failed:\n- " + "\n- ".join(errors)
         )
 
 

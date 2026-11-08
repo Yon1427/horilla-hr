@@ -131,7 +131,7 @@
                                         <span
                                             class="oh-info mr-2"
                                             title="{% trans 'By enabling this, you track the late comes and early outs of employees in their attendance.' %}"
-                                            data-doc-url="{{ DOC_BASE_URL }}/blogs/how-horilla-hrms-handles-late-come-and-early-out-tracking/"
+                                            {% if DOC_BASE_URL %}data-doc-url="{{ DOC_BASE_URL }}/blogs/how-horilla-hrms-handles-late-come-and-early-out-tracking/"{% endif %}
                                         >
                                         </span>
                                     </div>
@@ -181,7 +181,7 @@
                                     <span
                                         class="oh-info mr-2"
                                         title="{% trans 'Enable this feature to restrict attendance marking to specific IP addresses only.' %}"
-                                        data-doc-url="{{ DOC_BASE_URL }}/blogs/how-to-configure-ip-restrictions-check-inout-controls-in-horilla-hrms/"
+                                        {% if DOC_BASE_URL %}data-doc-url="{{ DOC_BASE_URL }}/blogs/how-to-configure-ip-restrictions-check-inout-controls-in-horilla-hrms/"{% endif %}
                                     >
                                     </span>
                                 </div>
@@ -239,7 +239,7 @@
                                         <span
                                             class="oh-info mr-2"
                                             title="{% trans 'Once you enable this option, a new submenu called Biometric Devices will be added under the Attendance menu.' %}"
-                                            data-doc-url="{{ DOC_BASE_URL }}/blogs/how-to-integrate-biometric-devices-in-horilla-hrms/"
+                                            {% if DOC_BASE_URL %}data-doc-url="{{ DOC_BASE_URL }}/blogs/how-to-integrate-biometric-devices-in-horilla-hrms/"{% endif %}
                                         >
                                         </span>
                                     </div>
@@ -345,7 +345,7 @@
                     <span
                         class="oh-info mr-2"
                         title="{% trans 'Configure the location and radius within which employees are allowed to mark their attendance.' %}"
-                        data-doc-url="{{ DOC_BASE_URL }}/blogs/how-to-set-up-geofencing-for-location-based-attendance-in-horilla-hrms/"
+                        {% if DOC_BASE_URL %}data-doc-url="{{ DOC_BASE_URL }}/blogs/how-to-set-up-geofencing-for-location-based-attendance-in-horilla-hrms/"{% endif %}
                     ></span>
                 </span>
             </h5>

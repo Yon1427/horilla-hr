@@ -8,6 +8,7 @@ import calendar
 import logging
 from dataclasses import dataclass
 from datetime import datetime, timedelta
+from django.conf import settings
 from typing import Optional
 
 from dateutil.relativedelta import relativedelta
@@ -206,7 +207,7 @@ def deliver_subscription(
         )
         filters_pairs = filters.summary_pairs()
         meta = {
-            "product_name": "Horilla HR · Standard Reports",
+            "product_name": f"{getattr(settings, 'SIRH_BRAND_NAME', 'Sanad')} · Standard Reports",
             "company": company,
             "user": (
                 str(subscription.owner)
@@ -249,14 +250,14 @@ def deliver_subscription(
 
         report_title = str(definition.name)
         body = (
-            f"{_('Attached is your scheduled Horilla report:')}\n\n"
+            f"{_('Attached is your scheduled report:')}\n\n"
             f"{report_title}\n"
             f"{_('Period')}: {filters.from_date} → {filters.to_date}\n"
             f"{_('Subscription')}: {subscription.name}\n"
             f"{_('Format')}: {fmt.upper()}\n"
         )
         email = EmailMessage(
-            subject=f"[Horilla] {subscription.name}",
+            subject=f"[{getattr(settings, 'SIRH_BRAND_NAME', 'Sanad')}] {subscription.name}",
             body=body,
             from_email=from_email,
             to=recipients,

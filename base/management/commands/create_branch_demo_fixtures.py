@@ -1334,7 +1334,7 @@ class ExtrasMixin:
         from employee.models import Employee, EmployeeWorkInformation
         from payroll.models.models import Contract, FilingStatus
 
-        admin = Employee.objects.get(email="adam@horilla.com")
+        admin = Employee.objects.get(email="adam@exemple.dz")
         Contract.objects.filter(employee_id=admin).delete()
         contract = Contract.objects.create(
             contract_name="Adam Admin — Standard",
@@ -1418,7 +1418,7 @@ class ExtrasMixin:
         from pms.models import EmployeeKeyResult, EmployeeObjective, Objective
         from project.models import Task
 
-        admin = Employee.objects.filter(email="adam@horilla.com").first()
+        admin = Employee.objects.filter(email="adam@exemple.dz").first()
         work_info = getattr(admin, "employee_work_info", None) if admin else None
         if not admin or not work_info or work_info.company_id_id != company.pk:
             return
@@ -2745,12 +2745,12 @@ class Command(ExtrasMixin, BaseCommand):
         user = make_user(
             "admin",
             password="admin",
-            email="adam@horilla.com",
+            email="adam@exemple.dz",
             is_superuser=True,
         )
         make_employee(
             company=company,
-            email="adam@horilla.com",
+            email="adam@exemple.dz",
             first_name="Adam",
             last_name="Admin",
             user=user,
@@ -2935,7 +2935,7 @@ class Command(ExtrasMixin, BaseCommand):
         # promoted to that department's head (reporting to Admin) the first
         # time that department is seen, everyone else in it reporting to
         # that head -- so the Organization Chart has more than a lone node.
-        admin_employee = Employee.objects.filter(email="adam@horilla.com").first()
+        admin_employee = Employee.objects.filter(email="adam@exemple.dz").first()
         dept_heads = {}
         employees = []
         for i in range(EMPLOYEES_PER_COMPANY):

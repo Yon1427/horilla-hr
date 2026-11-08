@@ -341,6 +341,7 @@ TEMPLATES = [
                 "base.context_processors.horilla_version",
                 "base.context_processors.get_companies",
                 "base.context_processors.white_labelling_company",
+                "base.context_processors.sirh_brand",
                 "base.context_processors.doc_base_url",
                 "base.context_processors.resignation_request_enabled",
                 "base.context_processors.timerunner_enabled",
@@ -384,6 +385,23 @@ LANGUAGES = (
 )
 
 LOCALE_PATHS = [join(BASE_DIR, "horilla", "locale")]
+
+# ========================================
+# PRODUCT BRAND
+# ========================================
+# One source of truth for the product identity. Templates and Python read it
+# through base.context_processors.sirh_brand (as brand_name / brand_name_ar /
+# brand_tagline), never as a literal, so renaming the product is this block
+# plus the loose assets (favicons, PWA manifest) -- not a template sweep.
+# An env var wins so a deployment can white-label without a code change.
+SIRH_BRAND_NAME = env("SIRH_BRAND_NAME", default="Sanad")
+SIRH_BRAND_NAME_AR = env("SIRH_BRAND_NAME_AR", default="سند")
+SIRH_BRAND_TAGLINE = env("SIRH_BRAND_TAGLINE", default="SIRH Algérie")
+# Reachable contact points shown in API docs and help surfaces. Deliberately
+# env-driven: a deployment points them at its own support desk, and no upstream
+# vendor address is baked into the code.
+SIRH_SUPPORT_EMAIL = env("SIRH_SUPPORT_EMAIL", default="support@example.dz")
+SIRH_TERMS_URL = env("SIRH_TERMS_URL", default="")
 
 # ========================================
 # LOGGING, MESSAGES, OTHER GLOBALS
@@ -667,7 +685,9 @@ from horilla.settings.security import (  # noqa: E402
 IS_PRODUCTION = is_production_mode(DEBUG, HORILLA_ENV)
 
 if IS_PRODUCTION:
-    validate_production_secrets(SECRET_KEY, ALLOWED_HOSTS, DB_INIT_PASSWORD)
+    validate_production_secrets(
+        SECRET_KEY, ALLOWED_HOSTS, DB_INIT_PASSWORD, brand=SIRH_BRAND_NAME
+    )
 
 if IS_PRODUCTION:
     # Same switch as the secrets gate above: HORILLA_ENV=production must not

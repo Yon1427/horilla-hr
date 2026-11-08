@@ -21,7 +21,7 @@
                             <span
                                 class="oh-info mr-2"
                                 title="{% trans 'By enabling this compensatory leave feature will available on Leave.' %}"
-                                data-doc-url="{{ DOC_BASE_URL }}/blogs/what-is-compensatory-leave-for-employees/"
+                                {% if DOC_BASE_URL %}data-doc-url="{{ DOC_BASE_URL }}/blogs/what-is-compensatory-leave-for-employees/"{% endif %}
                             >
                             </span>
                         </div>

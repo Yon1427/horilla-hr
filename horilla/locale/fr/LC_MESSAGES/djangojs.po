@@ -18,6 +18,17 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
+msgid "Dashboard section"
+msgstr "Section du tableau de bord"
+
+msgid "Dashboard tiles"
+msgstr "Tuiles du tableau de bord"
+
+msgid "Apps, e.g. Dashboard"
+msgstr "Applications, p. ex. Tableau de bord"
+
+
+
 msgid "An unexpected error occurred. Please refresh the page."
 msgstr "Une erreur inattendue s'est produite. Veuillez rafraîchir la page."
 

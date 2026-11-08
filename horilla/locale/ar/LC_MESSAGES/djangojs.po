@@ -19,6 +19,17 @@ msgstr ""
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
+msgid "Dashboard section"
+msgstr "قسم لوحة المعلومات"
+
+msgid "Dashboard tiles"
+msgstr "بطاقات لوحة المعلومات"
+
+msgid "Apps, e.g. Dashboard"
+msgstr "التطبيقات، مثال: لوحة المعلومات"
+
+
+
 msgid "An unexpected error occurred. Please refresh the page."
 msgstr "حدث خطأ غير متوقع. يُرجى تحديث الصفحة."
 

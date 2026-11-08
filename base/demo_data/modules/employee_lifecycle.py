@@ -34,15 +34,15 @@ EXIT_COUNT = 7
 # employees are load-bearing for the Roles & Permissions demo and must stay
 # untouched (still active, still with their original join date).
 _PROTECTED_EMAILS = {
-    "alexander.smith@horilla.com",
-    "michael.brown@horilla.com",
-    "sarah.anderson@horilla.com",
-    "emily.clark@horilla.com",
-    "jessica.evans@horilla.com",
-    "benjamin.parker@horilla.com",
-    "lily.campbell@horilla.com",
-    "matthew.harris@horilla.com",
-    "david.king@horilla.com",
+    "alexander.smith@exemple.dz",
+    "michael.brown@exemple.dz",
+    "sarah.anderson@exemple.dz",
+    "emily.clark@exemple.dz",
+    "jessica.evans@exemple.dz",
+    "benjamin.parker@exemple.dz",
+    "lily.campbell@exemple.dz",
+    "matthew.harris@exemple.dz",
+    "david.king@exemple.dz",
 }
 
 

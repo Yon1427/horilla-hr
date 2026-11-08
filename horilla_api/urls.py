@@ -6,16 +6,28 @@ from rest_framework import permissions
 
 from horilla_api.schema import OrderedTagSchemaGenerator
 
+# Product identity and contact points come from settings so a white-labelled
+# deployment advertises its own support desk, not the upstream vendor's.
+_brand = getattr(settings, "SIRH_BRAND_NAME", "Sanad")
+_info = {
+    "title": f"{_brand} API",
+    "default_version": "v1",
+    "description": (
+        f"API documentation for {_brand}. Click the 'Authorize' button at the "
+        "top to authenticate."
+    ),
+    "contact": openapi.Contact(
+        email=getattr(settings, "SIRH_SUPPORT_EMAIL", "support@example.dz")
+    ),
+    # The fork ships under the upstream licence; this is a fact, not branding.
+    "license": openapi.License(name="LGPL-2.1"),
+}
+if getattr(settings, "SIRH_TERMS_URL", ""):
+    _info["terms_of_service"] = settings.SIRH_TERMS_URL
+
 # Create schema view for Swagger and ReDoc
 schema_view = get_schema_view(
-    openapi.Info(
-        title="Horilla API",
-        default_version="v1",
-        description="API documentation for Horilla HRMS. Click the 'Authorize' button at the top to authenticate.",
-        terms_of_service="https://www.horilla.com/terms/",
-        contact=openapi.Contact(email="support@horilla.com"),
-        license=openapi.License(name="BSD License"),
-    ),
+    openapi.Info(**_info),
     public=settings.DEBUG,
     permission_classes=(
         (permissions.AllowAny,) if settings.DEBUG else (permissions.IsAdminUser,)

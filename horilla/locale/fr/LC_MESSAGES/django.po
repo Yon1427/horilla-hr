@@ -1,7 +1,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: horilla-hrms\n"
+"Project-Id-Version: sanad-sirh\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-11-05 12:04+0530\n"
 "PO-Revision-Date: 2026-08-04 09:08+0000\n"
@@ -15,8 +15,57 @@ msgstr ""
 "X-Crowdin-File: django.po\n"
 "X-Crowdin-File-ID: 18\n"
 "X-Crowdin-Language: fr\n"
-"X-Crowdin-Project: horilla-hrms\n"
+"X-Crowdin-Project: sanad-sirh\n"
 "X-Crowdin-Project-ID: 855866\n"
+
+msgid "Get started with"
+msgstr "Commencez avec"
+
+msgid "Bring your data into"
+msgstr "Importez vos données dans"
+
+msgid "Bring employees in from a CSV or Excel file"
+msgstr "Importer des salariés depuis un fichier CSV ou Excel"
+
+msgid "Configure an outgoing mail server so the system can send emails."
+msgstr "Configurez un serveur de messagerie sortant pour que le système puisse envoyer des e-mails."
+
+msgid "Authenticate with your password to initialize the database."
+msgstr "Authentifiez-vous avec votre mot de passe pour initialiser la base de données."
+
+msgid "Please sign up to access"
+msgstr "Veuillez vous inscrire pour accéder à"
+
+msgid "Enable this to integrate Google Meet to"
+msgstr "Activez ceci pour intégrer Google Meet à"
+
+msgid "Enable this to integrate WhatsApp to"
+msgstr "Activez ceci pour intégrer WhatsApp à"
+
+msgid "Enable this to integrate LinkedIn to"
+msgstr "Activez ceci pour intégrer LinkedIn à"
+
+msgid "Schedule and join Google Meet video calls directly from"
+msgstr "Planifiez et rejoignez des appels vidéo Google Meet directement depuis"
+
+msgid "Post job openings directly to LinkedIn and manage applicants from"
+msgstr "Publiez des offres directement sur LinkedIn et gérez les candidats depuis"
+
+msgid "Attached is your scheduled report:"
+msgstr "Vous trouverez ci-joint votre rapport planifié :"
+
+msgid "Authentication"
+msgstr "Authentification"
+
+#, python-format
+msgid "%(brand)s report ready: %(name)s"
+msgstr "%(brand)s : rapport prêt — %(name)s"
+
+#, python-format
+msgid "%(brand)s report export failed: %(name)s"
+msgstr "Échec de l'export du rapport %(brand)s : %(name)s"
+
+
 
 msgid "Default Employee View"
 msgstr "Vue par défaut des employés"

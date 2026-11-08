@@ -10,7 +10,7 @@ Examples:
     DEBUG = False
     ALLOWED_HOSTS = ["client.example.com"]
     WHITE_LABELLING = True
-    DOC_BASE_URL = "https://www.horilla.com"
+    DOC_BASE_URL = "https://docs.example.dz"  # your own docs site; empty hides help links
 
     # Extend lists via selective import (same list object as base):
     from .base import INSTALLED_APPS, MIDDLEWARE

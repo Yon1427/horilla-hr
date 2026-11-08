@@ -12,12 +12,12 @@
                             <h3 class="text-sm font-medium">{% trans "Enable Google meet" %}</h3>
                             <span
                                 class="oh-info"
-                                title="{% trans 'Enable this to integrate Google meet to Horilla.' %}"
-                                data-doc-url="{{ DOC_BASE_URL }}/blogs/how-to-set-up-meeting-integration-in-horilla-crm/"
+                                title="{% trans 'Enable this to integrate Google Meet to' %} {{ brand_name }}"
+                                {% if DOC_BASE_URL %}data-doc-url="{{ DOC_BASE_URL }}/blogs/how-to-set-up-meeting-integration-in-horilla-crm/"{% endif %}
                             ></span>
                         </div>
                         <p class="text-xs text-gray-500">
-                            {% trans "Schedule and join Google Meet video calls directly from Horilla." %}
+                            {% trans "Schedule and join Google Meet video calls directly from" %} {{ brand_name }}.
                         </p>
                     </div>
                     <label class="toggle-label" for="is_enabled">

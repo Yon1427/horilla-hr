@@ -1,0 +1,20 @@
+Sanad — SIRH Algérie
+====================
+
+This product is a modified version of Horilla HRMS.
+
+Upstream project: https://github.com/horilla/horilla-hr
+Upstream copyright: see the copyright notices in the source files and LICENSE.
+
+Sanad is distributed under the GNU Lesser General Public License, version 2.1
+(LGPL-2.1). The full licence text is in LICENSE and is not modified.
+
+Modifications made in this fork include: an Algerian payroll engine (SNMG,
+CNAS, IRG, TFPC/TAPP, CASNOS) driven by effective-dated parameter rows,
+Decimal money handling, CSV formula-injection protection, transactional
+payroll and leave generation, French/Arabic interface work, and product
+branding (Sanad).
+
+Nothing in this notice removes or replaces the upstream licence or copyright.
+Redistribution, with or without modification, must keep LICENSE and the
+original copyright notices.

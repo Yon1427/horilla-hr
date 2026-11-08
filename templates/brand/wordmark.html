@@ -1,0 +1,25 @@
+{% comment %}
+Bilingual product wordmark.
+
+Renders the company logo when the deployment has one, otherwise a text lockup
+(Latin name above the Arabic name) so the product ships without requiring a
+brand image asset. The names come from base.context_processors.sirh_brand, so
+renaming the product is settings.SIRH_BRAND_NAME, never a template sweep.
+
+Usage:
+    {% include "brand/wordmark.html" %}
+    {% include "brand/wordmark.html" with size="sm" %}
+{% endcomment %}
+{% if white_label_company.icon %}
+    <img
+        src="{{ white_label_company.icon.url }}"
+        alt="{{ white_label_company_name }}"
+        class="m-auto mb-4"
+        width="{% if size == 'sm' %}48{% else %}80{% endif %}"
+    >
+{% else %}
+    <div class="m-auto mb-4 text-center" aria-label="{{ brand_name }}" data-brand-wordmark>
+        <span class="block font-bold tracking-tight leading-none {% if size == 'sm' %}text-lg{% else %}text-3xl{% endif %}">{{ brand_name }}</span>
+        <span class="block mt-1 text-color-600 {% if size == 'sm' %}text-[11px]{% else %}text-base{% endif %}" dir="rtl" lang="ar">{{ brand_name_ar }}</span>
+    </div>
+{% endif %}

@@ -1,7 +1,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: horilla-hrms\n"
+"Project-Id-Version: sanad-sirh\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-11-05 12:04+0530\n"
 "PO-Revision-Date: 2026-08-04 09:08+0000\n"
@@ -16,8 +16,57 @@ msgstr ""
 "X-Crowdin-File: django.po\n"
 "X-Crowdin-File-ID: 18\n"
 "X-Crowdin-Language: ar\n"
-"X-Crowdin-Project: horilla-hrms\n"
+"X-Crowdin-Project: sanad-sirh\n"
 "X-Crowdin-Project-ID: 855866\n"
+
+msgid "Get started with"
+msgstr "ابدأ مع"
+
+msgid "Bring your data into"
+msgstr "استورد بياناتك إلى"
+
+msgid "Bring employees in from a CSV or Excel file"
+msgstr "استيراد الموظفين من ملف CSV أو Excel"
+
+msgid "Configure an outgoing mail server so the system can send emails."
+msgstr "قم بتكوين خادم بريد صادر حتى يتمكن النظام من إرسال رسائل البريد الإلكتروني."
+
+msgid "Authenticate with your password to initialize the database."
+msgstr "تحقق من هويتك بكلمة المرور لتهيئة قاعدة البيانات."
+
+msgid "Please sign up to access"
+msgstr "يرجى التسجيل للوصول إلى"
+
+msgid "Enable this to integrate Google Meet to"
+msgstr "فعّل هذا لدمج Google Meet مع"
+
+msgid "Enable this to integrate WhatsApp to"
+msgstr "فعّل هذا لدمج WhatsApp مع"
+
+msgid "Enable this to integrate LinkedIn to"
+msgstr "فعّل هذا لدمج LinkedIn مع"
+
+msgid "Schedule and join Google Meet video calls directly from"
+msgstr "جدول مكالمات Google Meet وانضم إليها مباشرة من"
+
+msgid "Post job openings directly to LinkedIn and manage applicants from"
+msgstr "انشر الوظائف مباشرة على LinkedIn وأدر المتقدمين من"
+
+msgid "Attached is your scheduled report:"
+msgstr "تجد مرفقًا تقريرك المجدول:"
+
+msgid "Authentication"
+msgstr "المصادقة"
+
+#, python-format
+msgid "%(brand)s report ready: %(name)s"
+msgstr "تقرير %(brand)s جاهز: %(name)s"
+
+#, python-format
+msgid "%(brand)s report export failed: %(name)s"
+msgstr "فشل تصدير تقرير %(brand)s: %(name)s"
+
+
 
 msgid "Default Employee View"
 msgstr "عرض الموظف الافتراضي"

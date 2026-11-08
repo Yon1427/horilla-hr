@@ -216,6 +216,22 @@ urlpatterns.append(
 )
 
 
+def sirh_brand(request):
+    """The product identity, in one place for every template.
+
+    Renaming the product (or white-labelling a deployment) is
+    settings.SIRH_BRAND_NAME plus this context processor; templates must not
+    hard-code the brand. Kept separate from white_labelling_company so the
+    product name survives when no Company row exists yet (login, setup wizard,
+    error pages).
+    """
+    return {
+        "brand_name": getattr(settings, "SIRH_BRAND_NAME", "Sanad"),
+        "brand_name_ar": getattr(settings, "SIRH_BRAND_NAME_AR", "سند"),
+        "brand_tagline": getattr(settings, "SIRH_BRAND_TAGLINE", "SIRH Algérie"),
+    }
+
+
 def white_labelling_company(request):
     white_labelling = getattr(settings, "WHITE_LABELLING", False)
     if white_labelling:
@@ -230,12 +246,16 @@ def white_labelling_company(request):
             company = hq
 
         return {
-            "white_label_company_name": company.company if company else "Horilla",
+            "white_label_company_name": company.company
+            if company
+            else getattr(settings, "SIRH_BRAND_NAME", "Sanad"),
             "white_label_company": company,
         }
     else:
         return {
-            "white_label_company_name": "Horilla",
+            "white_label_company_name": getattr(
+                settings, "SIRH_BRAND_NAME", "Sanad"
+            ),
             "white_label_company": None,
         }
 
@@ -247,7 +267,7 @@ def doc_base_url(request):
     white-labelled deployments.
     """
     return {
-        "DOC_BASE_URL": getattr(settings, "DOC_BASE_URL", "https://www.horilla.com")
+        "DOC_BASE_URL": getattr(settings, "DOC_BASE_URL", "")
     }
 
 

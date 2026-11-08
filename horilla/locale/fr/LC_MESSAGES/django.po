@@ -157,10 +157,9 @@ msgstr "Filtre d'accessibilité sauvegardé"
 msgid "All filter cleared"
 msgstr "Tous les filtres ont été effacés"
 
-#, fuzzy
 #| msgid "Sl No."
 msgid "Serial No."
-msgstr "N° de Sl"
+msgstr "N° de série"
 
 msgid "Asset Name"
 msgstr "Nom de l'actif"
@@ -192,10 +191,9 @@ msgstr "Numéro de lot d'actif"
 msgid "Create Batch Number"
 msgstr "Créer un numéro de lot"
 
-#, fuzzy
 #| msgid "Batch number not found"
 msgid "Batch number not found."
-msgstr "Numéro de lot introuvable"
+msgstr "Numéro de lot introuvable."
 
 msgid "Batch Number Update"
 msgstr "Mise à jour du numéro de lot"
@@ -224,10 +222,9 @@ msgstr "Catégorie d'actif mise à jour avec succès"
 msgid "Asset category created successfully"
 msgstr "Catégorie d'actif créée avec succès"
 
-#, fuzzy
 #| msgid "Asset Category"
 msgid "Create Asset Category"
-msgstr "Catégorie d'actif"
+msgstr "Créer une catégorie d'actif"
 
 msgid "Asset Creation"
 msgstr "Création d'actif"
@@ -262,10 +259,9 @@ msgstr "Catégorie"
 msgid "Batch Number"
 msgstr "Numéro de lot"
 
-#, fuzzy
 #| msgid "Asset Category"
 msgid "Create Category"
-msgstr "Catégorie d'actif"
+msgstr "Créer une catégorie"
 
 msgid "Import"
 msgstr "Importation"
@@ -321,10 +317,9 @@ msgstr "Catégorie d'actif"
 msgid "Requested Date"
 msgstr "Date de demande"
 
-#, fuzzy
 #| msgid "Expiry Date"
 msgid "Warranty Expiry Date"
-msgstr "Expiry Date"
+msgstr "Date d'expiration de la garantie"
 
 msgid "Asset Request / Employee"
 msgstr "Demande d'actif / Employé"
@@ -350,10 +345,9 @@ msgstr "Attribution d'actif / Date de retour"
 msgid "Return Date"
 msgstr "Date de retour"
 
-#, fuzzy
 #| msgid "Requested"
 msgid "Requested By"
-msgstr "Demandé"
+msgstr "Demandé par"
 
 msgid "Requested"
 msgstr "Demandé"
@@ -403,46 +397,39 @@ msgstr "Informations sur l'actif"
 msgid "Request Description"
 msgstr "Description de la requête"
 
-#, fuzzy
 #| msgid "Version History"
 msgid "Service History"
-msgstr "Historique des versions"
+msgstr "Historique des interventions"
 
-#, fuzzy
 #| msgid "Service Request"
 msgid "Service Requests"
-msgstr "Demande de service"
+msgstr "Demandes de service"
 
-#, fuzzy
 #| msgid "Description"
 msgid "Issue Description"
-msgstr "Libellé"
+msgstr "Description du problème"
 
 msgid "Notes"
 msgstr "Notes"
 
-#, fuzzy
 #| msgid "Leave request not found."
 msgid "Service request not found."
-msgstr "Demande de congé non trouvée."
+msgstr "Demande de service introuvable."
 
 msgid "You don't have permission."
 msgstr "Vous n'avez pas la permission."
 
-#, fuzzy
 #| msgid "Survey question updated."
 msgid "Service request updated."
-msgstr "Question du sondage mise à jour."
+msgstr "Demande de service mise à jour."
 
-#, fuzzy
 #| msgid "Your asset request has been approved!"
 msgid "Your asset service request has been completed!"
-msgstr "Votre demande d'actif a été approuvée !"
+msgstr "Votre demande de maintenance de l'actif a été terminée !"
 
-#, fuzzy
 #| msgid "Your asset request rejected!."
 msgid "Your asset service request was rejected."
-msgstr "Votre demande d'actif a été rejetée!."
+msgstr "Votre demande de maintenance de l'actif a été rejetée."
 
 msgid "Asset Request Created Successfully"
 msgstr "Demande d'actif créée avec succès"
@@ -451,20 +438,18 @@ msgstr "Demande d'actif créée avec succès"
 msgid "Service Request - %(asset)s"
 msgstr "Demande de service - %(asset)s"
 
-#, fuzzy
 #| msgid "Leave request created successfully.."
 msgid "Service request raised successfully."
-msgstr "Demande de congé créée avec succès..."
+msgstr "Demande de service créée avec succès."
 
 #| msgid ""
 #| "Return request for %(asset_id)s initiated from %(assigned_to_employee_id)s"
 msgid "Service request for %(asset_id)s raised by %(employee)s"
 msgstr "Demande de service pour %(asset_id)s émise par %(employee)s"
 
-#, fuzzy
 #| msgid "Asset category not found"
 msgid "Asset allocation not found."
-msgstr "Catégorie d'actif introuvable"
+msgstr "Allocation d'actif introuvable."
 
 msgid "Asset allocated Successfully"
 msgstr "Actif alloué avec succès"
@@ -502,10 +487,9 @@ msgstr "Date d'achat"
 msgid "Created At"
 msgstr "Créé le"
 
-#, fuzzy
 #| msgid "Asset Expiry Date"
 msgid "Asset Warranty Expiry Date"
-msgstr "Date d'expiration de l'actif"
+msgstr "Date d'expiration de la garantie de l'actif"
 
 msgid "Name or Badge ID"
 msgstr "Nom ou matricule"
@@ -519,7 +503,6 @@ msgstr "Date de demande d'actif"
 msgid "e.g. John, PEP01, PEP02"
 msgstr "ex. John, PEP01, PEP02"
 
-#, fuzzy
 #| msgid "Currently assigned"
 msgid "Currently held"
 msgstr "Actuellement attribué"
@@ -530,15 +513,13 @@ msgstr "Rechercher un actif..."
 msgid "Asset Allocated Date"
 msgstr "Date d'allocation de l'actif"
 
-#, fuzzy
 #| msgid "Expiry Date From"
 msgid "Warranty Expiry Date From"
-msgstr "Date d'expiration (à partir de)"
+msgstr "Date d'expiration de la garantie (à partir de)"
 
-#, fuzzy
 #| msgid "Expiry Date To"
 msgid "Warranty Expiry Date To"
-msgstr "Date d'expiration (jusqu'à)"
+msgstr "Date d'expiration de la garantie (jusqu'à)"
 
 msgid "Assigned Date From"
 msgstr "Date d'attribution (à partir de)"
@@ -584,10 +565,9 @@ msgstr "La date de retour ne peut pas être dans le futur."
 msgid "The laptop screen flickers and shuts down randomly."
 msgstr ""
 
-#, fuzzy
 #| msgid "There is already a leave request for this date range."
 msgid "There is already an open service request for this asset."
-msgstr "Il existe déjà une demande de congé pour cette plage de dates."
+msgstr "Il existe déjà une demande de service ouverte pour cet actif."
 
 msgid "Replacement Asset"
 msgstr "Actif de remplacement"
@@ -598,10 +578,9 @@ msgstr "Nom"
 msgid "Asset Categories"
 msgstr "Catégories d'actif"
 
-#, fuzzy
 #| msgid "Asset Fine"
 msgid "Enable Asset Fine"
-msgstr "Asset Fine"
+msgstr "Activer les amendes d'actif"
 
 msgid ""
 "Enabling this allows adding a fine for an employee when an asset is returned."
@@ -658,10 +637,9 @@ msgstr "Condition de retour"
 msgid "Asset Allocations"
 msgstr "Allocations d'actifs"
 
-#, fuzzy
 #| msgid "Service Request"
 msgid "Service Requested"
-msgstr "Demande de service"
+msgstr "Service demandé"
 
 msgid "In use"
 msgstr "En cours d'utilisation"
@@ -684,36 +662,31 @@ msgstr "Requêtes d'actif"
 msgid "Comment"
 msgstr "Commenter"
 
-#, fuzzy
 #| msgid "Resolved"
 msgid "Resolved By"
-msgstr "Résolu"
+msgstr "Résolu par"
 
 msgid "Resolved Date"
 msgstr "Date de résolution"
 
-#, fuzzy
 #| msgid "Service Request"
 msgid "Asset Service Request"
-msgstr "Demande de service"
+msgstr "Demande de service d'actif"
 
-#, fuzzy
 #| msgid "Service Request"
 msgid "Asset Service Requests"
-msgstr "Demande de service"
+msgstr "Demandes de service d'actif"
 
 msgid "Note"
 msgstr "Note"
 
-#, fuzzy
 #| msgid "Service Request"
 msgid "Service Request Note"
-msgstr "Demande de service"
+msgstr "Note de demande de service"
 
-#, fuzzy
 #| msgid "Service Request"
 msgid "Service Request Notes"
-msgstr "Demande de service"
+msgstr "Notes de demande de service"
 
 #, python-format
 msgid "The Asset '%(asset_name)s' expires in %(notify_before)s days"
@@ -729,10 +702,9 @@ msgstr "Tableau de bord"
 msgid "Requests & Allocation"
 msgstr "Demandes et allocation"
 
-#, fuzzy
 #| msgid "Asset Request"
 msgid "Asset Rule"
-msgstr "Demande d'actif"
+msgstr "Règle d'actif"
 
 msgid "Allow adding a fine for an employee when an asset is returned"
 msgstr ""
@@ -899,10 +871,9 @@ msgstr "Demandes d'actifs"
 msgid "Assets by Category"
 msgstr "Actifs par catégorie"
 
-#, fuzzy
 #| msgid "In use vs available per category"
 msgid "Share of in use, available and not available per category"
-msgstr "En cours d'utilisation vs disponible par catégorie"
+msgstr "Répartition des actifs en cours d'utilisation, disponibles et indisponibles par catégorie"
 
 msgid "Value by Category"
 msgstr "Valeur par catégorie"
@@ -925,15 +896,13 @@ msgstr "Répartition de l'âge du parc"
 msgid "Expiring Soon"
 msgstr "Expire bientôt"
 
-#, fuzzy
 #| msgid "No documents expiring in the next 90 days."
 msgid "Assets expiring in the next 30 days"
-msgstr "Aucun document n'arrive à expiration dans les 90 prochains jours."
+msgstr "Actifs arrivant à expiration dans les 30 prochains jours"
 
-#, fuzzy
 #| msgid "Next 30 days"
 msgid "Next 30 Days"
-msgstr "Prochains 30 jours"
+msgstr "30 prochains jours"
 
 msgid "Loading..."
 msgstr "Chargement..."
@@ -941,10 +910,9 @@ msgstr "Chargement..."
 msgid "Recent Allocations"
 msgstr "Attributions récentes"
 
-#, fuzzy
 #| msgid "Assets are located within this category."
 msgid "Assets allocated in this period"
-msgstr "Les actifs sont situés dans cette catégorie."
+msgstr "Actifs attribués dans cette période"
 
 msgid "Customize Dashboard"
 msgstr "Personnaliser le tableau de bord"
@@ -970,15 +938,13 @@ msgstr "Total des actifs"
 msgid "Pending Requests"
 msgstr "Demandes en attente"
 
-#, fuzzy
 #| msgid "Awaiting approval"
 msgid "Awaiting Approval"
 msgstr "En attente d'approbation"
 
-#, fuzzy
 #| msgid "Expiring Soon"
 msgid "Warranty Expiring Soon"
-msgstr "Expire bientôt"
+msgstr "Garantie expirant bientôt"
 
 msgid "Could not load KPIs"
 msgstr "Impossible de charger les indicateurs"
@@ -1050,14 +1016,12 @@ msgstr "Voulez-vous rejeter cette demande ?"
 msgid "No records available at the moment."
 msgstr "Aucun enregistrement disponible pour le moment."
 
-#, fuzzy
 #| msgid "Asset Request"
 msgid "Asset Rules"
-msgstr "Demande d'actif"
+msgstr "Règles d'actif"
 
-#, fuzzy
 msgid "Configure asset-related rules."
-msgstr "Configurer les règles des équipements."
+msgstr "Configurer les règles liées aux actifs."
 
 msgid "Asset Fine"
 msgstr "Asset Fine"
@@ -1173,10 +1137,9 @@ msgstr "Excel columns"
 msgid "Export Asset History"
 msgstr "Exporter l'historique des actifs"
 
-#, fuzzy
 #| msgid "Request User"
 msgid "Request Service"
-msgstr "Demander un utilisateur"
+msgstr "Demander un service"
 
 msgid "Return"
 msgstr "Retour"
@@ -1199,19 +1162,17 @@ msgstr "Actif actuel"
 msgid "Add Note"
 msgstr "Ajouter une note"
 
-#, fuzzy
 #| msgid "Add a note"
 msgid "Add a note..."
-msgstr "Ajouter une note"
+msgstr "Ajouter une note..."
 
 #| msgid "%(employee)s is %(message)s"
 msgid "Resolved by %(employee)s on %(date)s"
 msgstr "Résolu par %(employee)s le %(date)s"
 
-#, fuzzy
 #| msgid "No leave requests for this month."
 msgid "No service requests raised for this asset yet."
-msgstr "Aucune demande de permission pour ce mois-ci."
+msgstr "Aucune demande de service pour cet actif pour le moment."
 
 msgid "History"
 msgstr "Historique"
@@ -1331,30 +1292,24 @@ msgstr "Attribution d'actif introuvable"
 msgid "Serial No. already exists. Each asset needs a unique Serial No."
 msgstr ""
 
-#, fuzzy
 #| msgid "This User ID already exists."
 msgid "This record already exists."
-msgstr "Cet identifiant d'utilisateur existe déjà."
+msgstr "Cet enregistrement existe déjà."
 
-#, fuzzy
 #| msgid "required parameter is missing"
 msgid "A required value is missing in this row."
-msgstr "un paramètre requis est manquant"
+msgstr "Une valeur obligatoire est manquante dans cette ligne."
 
 msgid "A related Category or Batch number is invalid."
 msgstr ""
 
-#, fuzzy
 #| msgid "Please select a valid date format."
 msgid "Please select a file to upload."
-msgstr "Veuillez sélectionner un format de date valide."
+msgstr "Veuillez sélectionner un fichier à importer."
 
-#, fuzzy
 #| msgid "Unsupported file format. Please upload a CSV or Excel file."
 msgid "Unsupported file type. Please upload a .csv or .xlsx file."
-msgstr ""
-"Format de fichier non pris en charge. Veuillez télécharger un fichier CSV ou "
-"Excel."
+msgstr "Type de fichier non pris en charge. Veuillez importer un fichier .csv ou .xlsx."
 
 msgid "These required headers are missing in the uploaded file: "
 msgstr "Ces en-têtes requis sont manquants dans le fichier téléchargé : "
@@ -1395,10 +1350,9 @@ msgstr "actifs en cours d'utilisation"
 msgid "Employee not found."
 msgstr "Employé introuvable."
 
-#, fuzzy, python-brace-format
 #| msgid "The file has been successfully deleted."
 msgid "Asset fine has been successfully {}."
-msgstr "Le fichier a été supprimé avec succès."
+msgstr "L'amende d'actif a été {} avec succès."
 
 msgid "enabled"
 msgstr "Activé"
@@ -1406,10 +1360,9 @@ msgstr "Activé"
 msgid "disabled"
 msgstr "désactivée"
 
-#, fuzzy
 #| msgid "Not Added"
 msgid "Note added."
-msgstr "Non Ajouté"
+msgstr "Note ajoutée."
 
 msgid "Attendance Date"
 msgstr "Date de présence"
@@ -1504,10 +1457,9 @@ msgstr "Rejet en bloc"
 msgid "Activities"
 msgstr "Activités"
 
-#, fuzzy
 #| msgid "Attendance Requests"
 msgid "Attendance Request"
-msgstr "Demandes de présence"
+msgstr "Demande de présence"
 
 msgid "Update Attendance Request"
 msgstr "Mettre à jour la demande de présence"
@@ -1580,10 +1532,9 @@ msgstr "Montant de la pénalité"
 msgid "Penalty Type"
 msgstr "Type de pénalité"
 
-#, fuzzy
 #| msgid "Applicable For"
 msgid "Applied For"
-msgstr "Applicable à"
+msgstr "Appliqué à"
 
 msgid "Are you sure you want to delete this penalty?"
 msgstr "Êtes-vous sûr de vouloir supprimer cette pénalité ?"
@@ -1603,10 +1554,9 @@ msgstr "En ligne"
 msgid "Shifts"
 msgstr "Majuscules"
 
-#, fuzzy
 #| msgid "Auto Validate Till"
 msgid "Auto Validate From"
-msgstr "Auto Validate Till"
+msgstr "Validation automatique à partir de"
 
 msgid "Auto Validate Till"
 msgstr "Auto Validate Till"
@@ -1861,10 +1811,9 @@ msgstr "Demandé ?"
 msgid "Approved Request?"
 msgstr "Demande approuvée ?"
 
-#, fuzzy
 #| msgid "On Time"
 msgid "On Time?"
-msgstr "À l'heure"
+msgstr "À l'heure ?"
 
 msgid "Pending Hour Greater or Equal"
 msgstr "Heures en attente supérieures ou égales"
@@ -1872,45 +1821,37 @@ msgstr "Heures en attente supérieures ou égales"
 msgid "Pending Hour Lesser or Equal"
 msgstr "Heures en attente inférieures ou égales à"
 
-#, fuzzy
 #| msgid "Present"
 msgid "Present On"
-msgstr "Présent"
+msgstr "Présent le"
 
-#, fuzzy
 #| msgid "Present"
 msgid "Present From"
-msgstr "Présent"
+msgstr "Présent de"
 
-#, fuzzy
 #| msgid "Present Today"
 msgid "Present To"
-msgstr "Présents aujourd'hui"
+msgstr "Présent à"
 
-#, fuzzy
 #| msgid "Check In"
 msgid "Checked In On"
-msgstr "Enregistrement"
+msgstr "Arrivée le"
 
-#, fuzzy
 #| msgid "Total Present"
 msgid "Not Present On"
-msgstr "Total présent"
+msgstr "Absent le"
 
-#, fuzzy
 #| msgid "Expected working"
 msgid "Expected to Check In"
-msgstr "Fonctionnement attendu"
+msgstr "Heure d'arrivée prévue"
 
-#, fuzzy
 #| msgid "Attendance Dates"
 msgid "Attendance Status"
-msgstr "Dates de présence"
+msgstr "Statut de présence"
 
-#, fuzzy, python-format
 #| msgid "Enable %(label)s"
 msgid "Create %(label)s"
-msgstr "Activer %(label)s"
+msgstr "Créer %(label)s"
 
 msgid "Batch Attendance"
 msgstr "Participation par lot"
@@ -1924,26 +1865,21 @@ msgstr "Ce champ est obligatoire"
 msgid "Employee not chosen"
 msgstr "Employé non choisi"
 
-#, fuzzy
 #| msgid "Worked Hours Auto Approve Till"
 msgid "Minimum Worked Hours to Auto Approve"
-msgstr "Approbation automatique des heures de travail"
+msgstr "Heures travaillées minimum pour approbation automatique"
 
-#, fuzzy
 #| msgid ""
 #| "Do not Auto Validate Attendance if an Employee Works More Than this "
 #| "Amount of Duration"
 msgid ""
 "Do not Auto Validate Attendance if an Employee Works Less Than this Amount "
 "of Duration"
-msgstr ""
-"Ne pas valider automatiquement la présence si un employé travaille au-delà "
-"de cette durée"
+msgstr "Ne pas valider automatiquement la présence si un employé travaille moins que cette durée"
 
-#, fuzzy
 #| msgid "Worked Hours Auto Approve Till"
 msgid "Maximum Worked Hours to Auto Approve"
-msgstr "Approbation automatique des heures de travail"
+msgstr "Heures travaillées maximum pour approbation automatique"
 
 msgid ""
 "Do not Auto Validate Attendance if an Employee Works More Than this Amount "
@@ -1961,17 +1897,14 @@ msgstr "Temps supplémentaire maximum autorisé par jour"
 msgid "Leave empty to apply to every shift that has no condition of its own."
 msgstr ""
 
-#, fuzzy
 #| msgid "Maximum income must be greater than minimum income."
 msgid "Minimum hours cannot be greater than the maximum hours."
-msgstr "Le revenu maximum doit être supérieur au revenu minimum."
+msgstr "Les heures minimum ne peuvent pas être supérieures aux heures maximum."
 
-#, fuzzy
 #| msgid "A condition with the provided fields already exists"
 msgid "A condition for all shifts already exists."
-msgstr "Une condition avec les champs fournis existe déjà"
+msgstr "Une condition pour tous les postes existe déjà."
 
-#, fuzzy, python-format
 msgid "%(shifts)s already has a condition."
 msgstr "%(shifts)s a déjà une condition."
 
@@ -2005,7 +1938,6 @@ msgstr "Créer un lot de présence"
 msgid "Update attendance batch"
 msgstr "Mettre à jour le lot de présence"
 
-#, fuzzy
 msgid "Calendar Month (1st To Last Day)"
 msgstr "Mois civil (du 1er au dernier jour)"
 
@@ -2029,33 +1961,28 @@ msgstr ""
 msgid "Last Day"
 msgstr "Dernier jour"
 
-#, fuzzy
 #| msgid "Prev Month"
 msgid "Previous Month"
 msgstr "Mois précédent"
 
-#, fuzzy
 #| msgid "Last Month"
 msgid "The Whole Of Last Month"
-msgstr "Mois dernier"
+msgstr "Tout le mois dernier"
 
-#, fuzzy
 msgid "Pay Period (From Payroll)"
-msgstr "Période de paie (paie)"
+msgstr "Période de paie (depuis la paie)"
 
-#, fuzzy
 #| msgid "Monthly"
 msgid "Month Cycle"
-msgstr "Mensuel"
+msgstr "Cycle mensuel"
 
 msgid ""
 "Could not verify your location. Please allow location access and try again."
 msgstr ""
 
-#, fuzzy
 #| msgid "Check-In Restricted: Your current network is not authorized "
 msgid "Check-In Restricted: You are outside the permitted work location."
-msgstr "Pointage d'arrivée restreint : votre réseau actuel n'est pas autorisé"
+msgstr "Pointage d'arrivée restreint : vous êtes en dehors du lieu de travail autorisé."
 
 msgid "Invalid format, it should be HH:MM:SS format"
 msgstr "Format invalide, il doit être au format HH:MM:SS"
@@ -2144,12 +2071,10 @@ msgstr "Attendance Validate"
 msgid "Overtime In Second"
 msgstr "Temps supplémentaire en seconde"
 
-#, fuzzy
 #| msgid "Is validate request"
 msgid "Validate request"
-msgstr "Est une demande de validation"
+msgstr "Valider la demande"
 
-#, fuzzy
 #| msgid "Is validate request approved"
 msgid "Validate request approved"
 msgstr "Demande de validation approuvée"
@@ -2169,18 +2094,16 @@ msgstr "Soldes d'heures"
 msgid "Year must be an integer value between 1900 and 2100"
 msgstr "L'année doit être un nombre entier compris entre 1900 et 2100"
 
-#, fuzzy
 #| msgid "Hours to Validate"
 msgid "Minimum Hours to Auto Validate"
-msgstr "Heures à valider"
+msgstr "Heures minimum pour validation automatique"
 
 msgid "Worked Hours Auto Approve Till"
 msgstr "Approbation automatique des heures de travail"
 
-#, fuzzy
 #| msgid "All shifts"
 msgid "All Shifts"
-msgstr "Toutes les équipes"
+msgstr "Tous les postes"
 
 msgid "Allowed Clock-In"
 msgstr "Horloge Autorisée"
@@ -2283,26 +2206,22 @@ msgstr "Modifié manuellement"
 msgid "Attendance Summary Hours"
 msgstr "Heures du résumé de présence"
 
-#, fuzzy
 msgid "Days present. Half days count as 0.5."
 msgstr "Jours de présence. Les demi-journées comptent 0,5."
 
 msgid "Reason"
 msgstr "Raison"
 
-#, fuzzy
 msgid "Why the counted figures were replaced."
-msgstr "Pourquoi les chiffres retenus ont été remplacés."
+msgstr "Pourquoi les chiffres comptés ont été remplacés."
 
-#, fuzzy
 #| msgid "Attendance Summary"
 msgid "Attendance Summary Override"
-msgstr "Résumé de présence"
+msgstr "Remplacement du résumé de présence"
 
-#, fuzzy
 #| msgid "Attendance Summary Hours"
 msgid "Attendance Summary Overrides"
-msgstr "Heures du résumé de présence"
+msgstr "Remplacements du résumé de présence"
 
 msgid "Modified At"
 msgstr "Modifié le"
@@ -2397,10 +2316,9 @@ msgstr "Lot"
 msgid "---Choose Shift---"
 msgstr "---Choisissez Maj---"
 
-#, fuzzy
 #| msgid "Batch Attendance"
 msgid "Create Batch Attendance"
-msgstr "Participation par lot"
+msgstr "Créer une présence par lot"
 
 msgid "Import Attendances"
 msgstr "Importer des présences"
@@ -2516,18 +2434,16 @@ msgstr "Exporter les présences"
 msgid "No group result found!"
 msgstr "Aucun résultat de groupe trouvé !"
 
-#, fuzzy
 #| msgid "Imported"
 msgid "Import failed"
-msgstr "Importé"
+msgstr "Échec de l'import"
 
 msgid "Please correct the file and upload it again."
 msgstr ""
 
-#, fuzzy
 #| msgid "Dismissal"
 msgid "Dismiss"
-msgstr "Licenciement"
+msgstr "Fermer"
 
 msgid "Atwork"
 msgstr "Participation"
@@ -2643,26 +2559,21 @@ msgstr "Taux de présence quotidien"
 msgid "Present rate by day"
 msgstr "Taux de présence par jour"
 
-#, fuzzy
 msgid "80%% or more"
 msgstr "80 %% ou plus"
 
-#, fuzzy
 msgid "50–79%%"
 msgstr "50–79 %%"
 
-#, fuzzy
 msgid "25–49%%"
 msgstr "25–49 %%"
 
-#, fuzzy
 msgid "Below 25%%"
 msgstr "Moins de 25 %%"
 
-#, fuzzy
 #| msgid "Attendance Overview"
 msgid "Attendance Daily Overview"
-msgstr "Aperçu de la présence"
+msgstr "Aperçu quotidien de la présence"
 
 msgid "On-time, late arrivals & early departures by department"
 msgstr "Arrivées à l'heure, retards et départs anticipés par département"
@@ -2671,10 +2582,9 @@ msgstr "Arrivées à l'heure, retards et départs anticipés par département"
 msgid "Attendance %%"
 msgstr "Présence %%"
 
-#, fuzzy
 #| msgid "Attendance Deleted"
 msgid "Attendance Percentage"
-msgstr "Participation supprimée"
+msgstr "Pourcentage de présence"
 
 #| msgid "Attendance Days"
 msgid "Attendance %% by shift"
@@ -2684,30 +2594,24 @@ msgstr "Présence %% par équipe"
 msgid "Group attendance %% by"
 msgstr "Regrouper la présence %% par"
 
-#, fuzzy
 #| msgid "Shifts"
 msgid "Shift-wise"
-msgstr "Majuscules"
+msgstr "Par poste"
 
-#, fuzzy
 #| msgid "Departments"
 msgid "Department-wise"
-msgstr "Services"
+msgstr "Par département"
 
-#, fuzzy
 #| msgid "Work Types"
 msgid "Work Type-wise"
-msgstr "Types de travail"
+msgstr "Par type de travail"
 
-#, fuzzy
 msgid "90%% or more"
 msgstr "90 %% ou plus"
 
-#, fuzzy
 msgid "75–89%%"
 msgstr "75–89 %%"
 
-#, fuzzy
 msgid "50–74%%"
 msgstr "50–74 %%"
 
@@ -2715,12 +2619,10 @@ msgstr "50–74 %%"
 msgid "Absence %%"
 msgstr "Absence %%"
 
-#, fuzzy
 #| msgid "Payment Percentage"
 msgid "Absence Percentage"
-msgstr "Pourcentage de paiement"
+msgstr "Pourcentage d'absence"
 
-#, fuzzy
 msgid "Absence %% by shift"
 msgstr "Absence %% par poste"
 
@@ -2728,19 +2630,15 @@ msgstr "Absence %% par poste"
 msgid "Group absence %% by"
 msgstr "Regrouper l'absence %% par"
 
-#, fuzzy
 msgid "10%% or less"
 msgstr "10 %% ou moins"
 
-#, fuzzy
 msgid "11–25%%"
 msgstr "11–25 %%"
 
-#, fuzzy
 msgid "26–49%%"
 msgstr "26–49 %%"
 
-#, fuzzy
 msgid "50%% or more"
 msgstr "50 %% ou plus"
 
@@ -2750,12 +2648,10 @@ msgstr "Aujourd'hui — par département"
 msgid "Avg Working Hours"
 msgstr "Heures de travail moyennes"
 
-#, fuzzy
 #| msgid "Net pay by department"
 msgid "Per day by department"
-msgstr "Salaire net par département"
+msgstr "Par jour et par département"
 
-#, fuzzy
 msgid "8h or more"
 msgstr "8 h ou plus"
 
@@ -4216,10 +4112,9 @@ msgstr "Jours ouvrés sans pointage."
 msgid "From the roster. Change the roster, not this."
 msgstr ""
 
-#, fuzzy
 #| msgid "No active company found"
 msgid "From the company calendar."
-msgstr "Aucune entreprise active trouvée"
+msgstr "À partir du calendrier de l'entreprise."
 
 msgid ""
 "Adds up the day columns as you type. Every day of the period belongs in one "
@@ -4230,9 +4125,8 @@ msgstr ""
 msgid "Days with both attendance and leave. Stating the totals settles them."
 msgstr ""
 
-#, fuzzy, python-format
 msgid "No employee with badge ID %(badge)s"
-msgstr "Aucun salarié avec le matricule %(badge)s"
+msgstr "Aucun employé avec le matricule %(badge)s"
 
 #, python-format
 msgid "%(cols)s must be a number of days, or left blank"
@@ -4244,15 +4138,13 @@ msgid ""
 "has to be accounted for."
 msgstr ""
 
-#, fuzzy
 #| msgid "The contract could not be found."
 msgid "That file could not be read."
-msgstr "Le contrat n'a pas pu être trouvé."
+msgstr "Le fichier n'a pas pu être lu."
 
 msgid "The period this sheet covers was not given."
 msgstr ""
 
-#, fuzzy
 msgid "The file has no Badge ID column."
 msgstr "Le fichier n’a pas de colonne « matricule »."
 
@@ -4260,10 +4152,9 @@ msgstr "Le fichier n’a pas de colonne « matricule »."
 msgid "The file has none of these columns: %(cols)s"
 msgstr ""
 
-#, fuzzy, python-format
 #| msgid "Roster published for %(count)s employee(s)."
 msgid "Stated the month's totals for %(count)s employee(s)."
-msgstr "Planning publié pour %(count)s employé(s)."
+msgstr "Totaux du mois indiqués pour %(count)s employé(s)."
 
 #| msgid "Nothing to cancel."
 msgid "Nothing was changed."
@@ -4321,10 +4212,9 @@ msgstr "Votre demande de présence pour le %(attendance_date)s est rejetée"
 msgid "Attendance request not found"
 msgstr "Demande de présence introuvable"
 
-#, fuzzy
 #| msgid "New attendance request created"
 msgid "No attendance request selected"
-msgstr "Nouvelle demande de présence créée"
+msgstr "Aucune demande de présence sélectionnée"
 
 msgid "The requested attendance is rejected."
 msgstr "La présence demandée est rejetée."
@@ -4339,24 +4229,20 @@ msgstr ""
 msgid "No shift times set, halves split at 13:00"
 msgstr ""
 
-#, fuzzy
 #| msgid "First Half"
 msgid "First-half leave"
-msgstr "Première moitié"
+msgstr "Congé de première moitié"
 
-#, fuzzy
 #| msgid "Second Half"
 msgid "Second-half leave"
-msgstr "Seconde moitié"
+msgstr "Congé de seconde moitié"
 
-#, fuzzy
 msgid "before 13:00"
 msgstr "avant 13 h"
 
-#, fuzzy
 #| msgid "after"
 msgid "after 13:00"
-msgstr "après"
+msgstr "après 13 h"
 
 #, python-format
 msgid ""
@@ -4376,37 +4262,31 @@ msgid ""
 "late is allowed)."
 msgstr ""
 
-#, fuzzy
 #| msgid "Overtime approved"
 msgid "Override cleared"
-msgstr "Temps supplémentaire approuvé"
+msgstr "Remplacement effacé"
 
 msgid "Changed"
 msgstr "Modifié"
 
-#, fuzzy
 #| msgid "Hours set to"
 msgid "Hours edit removed"
-msgstr "Heures définies à"
+msgstr "Modification des heures supprimée"
 
-#, fuzzy
 #| msgid "Not Sent"
 msgid "Not Set"
-msgstr "Non Envoyé"
+msgstr "Non défini"
 
-#, fuzzy
 msgid "Choose A Start Day."
 msgstr "Choisissez un jour de début."
 
-#, fuzzy
 #| msgid "Missing Sequence"
 msgid "Missing Punch"
-msgstr "Séquence manquante"
+msgstr "Pointage manquant"
 
-#, fuzzy
 #| msgid "Department"
 msgid "No Department"
-msgstr "Service"
+msgstr "Aucun service"
 
 msgid "All Departments"
 msgstr "Tous les départements"
@@ -4415,10 +4295,9 @@ msgstr "Tous les départements"
 msgid "half day"
 msgstr "Demi-journée"
 
-#, fuzzy
 #| msgid "Upcoming"
 msgid "rest upcoming"
-msgstr "À venir"
+msgstr "restants à venir"
 
 #| msgid "Conflict"
 msgid "conflict"
@@ -4448,10 +4327,9 @@ msgstr "Week-end"
 msgid "Leave / Holiday"
 msgstr "Congé / jour férié"
 
-#, fuzzy
 #| msgid "Value can't be negative."
 msgid "Hours cannot be negative."
-msgstr "La valeur ne peut pas être négative."
+msgstr "Les heures ne peuvent pas être négatives."
 
 msgid "Attendance added."
 msgstr "Participation ajoutée."
@@ -4906,10 +4784,9 @@ msgstr "Nom de la fête"
 msgid "Recurring"
 msgstr "Récurrents"
 
-#, fuzzy
 #| msgid "Available / Total"
 msgid "Available for All"
-msgstr "Disponible / Total"
+msgstr "Disponible pour tous"
 
 msgid "Public Holidays"
 msgstr "Jours fériés"
@@ -4926,10 +4803,9 @@ msgstr "Vacances mises à jour avec succès"
 msgid "New Holiday Created Successfully"
 msgstr "Nouvelles vacances créées avec succès"
 
-#, fuzzy
 #| msgid "Update Holiday"
 msgid "Duplicate Holiday"
-msgstr "Mettre à jour les vacances"
+msgstr "Dupliquer le jour férié"
 
 msgid "Create Job Position"
 msgstr "Créer un poste"
@@ -5015,10 +4891,9 @@ msgstr "Règles d'approbation multiples"
 msgid "Create Multiple Approval Condition"
 msgstr "Créer une condition d'approbation multiple"
 
-#, fuzzy
 #| msgid "At least 4 characters required"
 msgid "At least one approval manager is required."
-msgstr "Au moins 4 caractères requis"
+msgstr "Au moins un responsable d'approbation est requis."
 
 msgid "Multiple approval condition Created Successfully"
 msgstr "Conditon d'approbation multiple créé avec succès"
@@ -5036,12 +4911,10 @@ msgstr "Conditon d'approbation multiple mis à jour avec succès"
 msgid "Deduct Leave"
 msgstr "Déduire le congé"
 
-#, fuzzy
 #| msgid "Created at"
 msgid "Create Penalty"
-msgstr "Créé le"
+msgstr "Créer une pénalité"
 
-#, fuzzy
 #| msgid "Penalty/Fine added"
 msgid "Penalty added"
 msgstr "Pénalité/amende ajoutée"
@@ -5059,10 +4932,9 @@ msgstr "Publier le planning"
 msgid "Roster published for %(dept)s (%(range)s)."
 msgstr "Planning publié pour %(dept)s (%(range)s)."
 
-#, fuzzy, python-format
 #| msgid "Roster published for %(dept)s (%(range)s)."
 msgid "Nothing to publish for %(dept)s (%(range)s)."
-msgstr "Planning publié pour %(dept)s (%(range)s)."
+msgstr "Rien à publier pour %(dept)s (%(range)s)."
 
 #, python-format
 msgid "Roster published for %(count)s employee(s)."
@@ -5233,10 +5105,9 @@ msgstr "Requêtes de Maj allouées"
 msgid "Previous Shift"
 msgstr "Maj précédent"
 
-#, fuzzy
 #| msgid "Is permenent shift"
 msgid "Permenent shift"
-msgstr "Est un décalage permenent"
+msgstr "Poste permanent"
 
 msgid "Shift Created"
 msgstr "Maj créé"
@@ -5295,10 +5166,9 @@ msgstr "Type de travail actuel"
 msgid "Previous Work Type"
 msgstr "Type de travail précédent"
 
-#, fuzzy
 #| msgid "Is Permanent Work Type"
 msgid "Permanent Work Type"
-msgstr "Est un type de travail permanent"
+msgstr "Type de travail permanent"
 
 msgid "Create Work Type"
 msgstr "Créer un type de travail"
@@ -5374,10 +5244,9 @@ msgstr "Autres"
 msgid "Not Specified"
 msgstr "Non spécifié"
 
-#, fuzzy
 #| msgid "department"
 msgid "No department"
-msgstr "service"
+msgstr "Aucun service"
 
 msgid "Exits in last 6 months ÷ Active employees × 100"
 msgstr ""
@@ -5388,10 +5257,9 @@ msgstr "Tous les départs — voir le rapport standard pour le détail"
 msgid "Your account is not linked to an employee record."
 msgstr "Votre compte n'est pas lié à un dossier d'employé."
 
-#, fuzzy
 #| msgid "Cancel Request"
 msgid "Cancel Requested"
-msgstr "Annuler la demande"
+msgstr "Annulation demandée"
 
 msgid "Cancelled"
 msgstr "Annulé"
@@ -5399,20 +5267,17 @@ msgstr "Annulé"
 msgid "Select job role..."
 msgstr "Sélectionner un rôle professionnel..."
 
-#, fuzzy
 #| msgid "Select shift..."
 msgid "Select rotating shift..."
-msgstr "Sélectionner une équipe..."
+msgstr "Sélectionner un poste rotatif..."
 
-#, fuzzy
 #| msgid "Select work type..."
 msgid "Select rotating work type..."
-msgstr "Sélectionner un type de travail..."
+msgstr "Sélectionner un type de travail rotatif..."
 
-#, fuzzy
 #| msgid "Available / Total"
 msgid "Available for all"
-msgstr "Disponible / Total"
+msgstr "Disponible pour tous"
 
 msgid "First Week"
 msgstr "Première Semaine"
@@ -5429,20 +5294,17 @@ msgstr "Quatrième Semaine"
 msgid "Fifth Week"
 msgstr "Cinquième semaine"
 
-#, fuzzy
 #| msgid "Late Come & Early Out"
 msgid "Late Come / Early Out"
-msgstr "En retard de sortie"
+msgstr "Retard / Départ anticipé"
 
-#, fuzzy
 #| msgid "January"
 msgid "Manual"
-msgstr "Janvier"
+msgstr "Manuel"
 
-#, fuzzy
 #| msgid "Maximum Amount"
 msgid "Minimum Amount"
-msgstr "Montant maximal"
+msgstr "Montant minimum"
 
 msgid "Maximum Amount"
 msgstr "Montant maximal"
@@ -5556,15 +5418,13 @@ msgstr ""
 msgid "Shift schedule is already exist for {day}"
 msgstr "Le calendrier de décalage existe déjà pour {day}"
 
-#, fuzzy
 #| msgid "New password must be different from the old password."
 msgid "The next shift must be different from the previous shift."
-msgstr "Le nouveau mot de passe doit être différent de l'ancien mot de passe."
+msgstr "Le poste suivant doit être différent du poste précédent."
 
-#, fuzzy
 #| msgid "An approved shift request already exists during this time period."
 msgid "An approved shift request already exists for the selected date(s)."
-msgstr "Une demande de poste approuvée existe déjà durant cette période."
+msgstr "Une demande de poste approuvée existe déjà pour la ou les dates sélectionnées."
 
 msgid "Old password"
 msgstr "Ancien mot de passe"
@@ -5699,20 +5559,17 @@ msgid ""
 "Available for All."
 msgstr ""
 
-#, fuzzy
 #| msgid "All companies"
 msgid "All Companies"
 msgstr "Toutes les entreprises"
 
-#, fuzzy
 #| msgid "Choose employees to assign this leave type"
 msgid "This employee has no balance for the selected leave type."
-msgstr "Choisissez les employés à assigner ce type de congé"
+msgstr "Cet employé n'a pas de solde pour le type de congé sélectionné."
 
-#, fuzzy
 #| msgid "Carry forward days"
 msgid "carry forward days"
-msgstr "Effectuez des jours d'avance"
+msgstr "jours reportés"
 
 #| msgid "Available days"
 msgid "available days"
@@ -5753,10 +5610,9 @@ msgstr "Ce document n'a pas pu être généré en toute sécurité."
 msgid "From %(d)s"
 msgstr "À partir du %(d)s"
 
-#, fuzzy, python-format
 #| msgid "Dept: %(d)s"
 msgid "Until %(d)s"
-msgstr "Département : %(d)s"
+msgstr "Jusqu’au %(d)s"
 
 msgid "An employee related to this user's credentials does not exist."
 msgstr "Un employé lié aux identifiants de cet utilisateur n'existe pas."
@@ -6051,10 +5907,9 @@ msgstr ""
 msgid "Multiple Approval Managers"
 msgstr "Gestionnaires d'approbation multiples"
 
-#, fuzzy
 #| msgid "Publish"
 msgid "Publish to all"
-msgstr "Publier"
+msgstr "Publier pour tous"
 
 msgid ""
 "When enabled, the announcement is visible to every employee in the selected "
@@ -6102,15 +5957,13 @@ msgstr "Spécifique"
 msgid "Assigning Type"
 msgstr "Type d'assignation"
 
-#, fuzzy
 #| msgid "This department already exists in this company"
 msgid "A holiday already exists for this date range in this company."
-msgstr "Ce département existe déjà dans cette entreprise."
+msgstr "Un jour férié existe déjà pour cette plage de dates dans cette entreprise."
 
-#, fuzzy
 #| msgid "This stage already exists for the recruitment."
 msgid "A holiday already exists for this date range for all companies."
-msgstr "Cette étape existe déjà pour ce recrutement."
+msgstr "Un jour férié existe déjà pour cette plage de dates pour toutes les entreprises."
 
 msgid "Weekly Off Day"
 msgstr "Jour de repos hebdomadaire"
@@ -6118,10 +5971,9 @@ msgstr "Jour de repos hebdomadaire"
 msgid "Leave type"
 msgstr "Quitter le type"
 
-#, fuzzy
 #| msgid "Restrict Leaves"
 msgid "Deduct Leaves"
-msgstr "Restreindre les feuilles"
+msgstr "Déduire les congés"
 
 msgid "Deduct from Carry Forward"
 msgstr "Déduire du solde reporté"
@@ -6129,7 +5981,6 @@ msgstr "Déduire du solde reporté"
 msgid "Penalty Amount"
 msgstr "Montant de la pénalité"
 
-#, fuzzy
 #| msgid "Additional info"
 msgid "Additional Info"
 msgstr "Infos supplémentaires"
@@ -6682,28 +6533,24 @@ msgstr "Identifiant du méta-numéro de téléphone"
 msgid "WhatsApp Meta phone number identifier"
 msgstr "Identifiant du numéro de téléphone WhatsApp Meta"
 
-#, fuzzy
 #| msgid "Created Date"
 msgid "Master Data"
-msgstr "Date de création"
+msgstr "Données de base"
 
-#, fuzzy
 #| msgid "Export Data"
 msgid "Import Data"
-msgstr "Exporter les données"
+msgstr "Importer les données"
 
-#, fuzzy
 #| msgid "Update Employee"
 msgid "Update Existing Employees"
-msgstr "Mettre à jour l'employé"
+msgstr "Mettre à jour les employés existants"
 
 msgid "Change many employees at once from a sheet"
 msgstr ""
 
-#, fuzzy
 #| msgid "Import Roster"
 msgid "Import History"
-msgstr "Importer le planning"
+msgstr "Historique des imports"
 
 msgid "Every file brought in through Master Data Import"
 msgstr ""
@@ -7078,7 +6925,6 @@ msgstr ""
 msgid "My Dashboard"
 msgstr "Mon tableau de bord"
 
-#, fuzzy
 msgid "Switch to the main dashboard"
 msgstr "Aller au tableau de bord principal"
 
@@ -7089,35 +6935,29 @@ msgstr "Tableau de bord administrateur"
 msgid "Previous month"
 msgstr "Mois précédent"
 
-#, fuzzy
 #| msgid "Due Next Month"
 msgid "Next month"
-msgstr "À échéance le mois prochain"
+msgstr "Mois suivant"
 
-#, fuzzy
 #| msgid "Interviews"
 msgid "My Interviews"
-msgstr "Entretiens"
+msgstr "Mes entretiens"
 
-#, fuzzy
 #| msgid "Assigned Leaves"
 msgid "Assigned interviews"
-msgstr "Feuilles assignées"
+msgstr "Entretiens assignés"
 
-#, fuzzy
 #| msgid "Assigned to"
 msgid "Assigned to you"
-msgstr "Assigné à"
+msgstr "Assigné à vous"
 
-#, fuzzy
 #| msgid "Birthday"
 msgid "Birthdays"
-msgstr "Date d'anniversaire"
+msgstr "Anniversaires"
 
-#, fuzzy
 #| msgid "started this month"
 msgid "Birthdays this month"
-msgstr "démarré ce mois-ci"
+msgstr "Anniversaires ce mois-ci"
 
 msgid "Upcoming Holidays"
 msgstr "Jours fériés à venir"
@@ -7125,20 +6965,17 @@ msgstr "Jours fériés à venir"
 msgid "Next 30 days"
 msgstr "Prochains 30 jours"
 
-#, fuzzy
 #| msgid "Pending Leaves Requests"
 msgid "Pending Leave Requests"
-msgstr "Demandes de feuilles en attente"
+msgstr "Demandes de congé en attente"
 
-#, fuzzy
 #| msgid "Assigned To"
 msgid "Assigned Tasks"
-msgstr "Attribué à"
+msgstr "Tâches assignées"
 
-#, fuzzy
 #| msgid "in progress"
 msgid "to do & in progress"
-msgstr "en cours"
+msgstr "à faire et en cours"
 
 msgid "Open Goals"
 msgstr "Objectifs ouverts"
@@ -7146,18 +6983,16 @@ msgstr "Objectifs ouverts"
 msgid "active objectives"
 msgstr "objectifs actifs"
 
-#, fuzzy
 #| msgid "Unable to load attendance data"
 msgid "Unable to load attendance summary"
-msgstr "Impossible de charger les données de présence"
+msgstr "Impossible de charger le résumé de présence"
 
 msgid "No announcements"
 msgstr "Aucune annonce"
 
-#, fuzzy
 #| msgid "No leaves this month"
 msgid "No more birthdays this month"
-msgstr "Aucun congé ce mois-ci"
+msgstr "Aucun autre anniversaire ce mois-ci"
 
 msgid "No upcoming holidays"
 msgstr "Aucun jour férié à venir"
@@ -7212,10 +7047,9 @@ msgid ""
 "This is a test email to confirm your mail server configuration is working."
 msgstr ""
 
-#, fuzzy
 #| msgid "Mail sent successfully"
 msgid "Email tested successfully"
-msgstr "Courriel envoyé avec succès"
+msgstr "E-mail testé avec succès"
 
 msgid "Hi,"
 msgstr "Bonjour,"
@@ -7232,15 +7066,13 @@ msgstr "Réinitialisez votre mot de passe %(company)s"
 msgid "Use this link to choose a new password for your account."
 msgstr ""
 
-#, fuzzy
 #| msgid "Reset my password"
 msgid "Reset your password"
-msgstr "Réinitialiser mon mot de passe"
+msgstr "Réinitialisez votre mot de passe"
 
-#, fuzzy, python-format
 #| msgid "Edit %(name)s"
 msgid "Hi %(name)s,"
-msgstr "Modifier %(name)s"
+msgstr "Bonjour %(name)s,"
 
 #, python-format
 msgid ""
@@ -7248,7 +7080,6 @@ msgid ""
 "Choose a new one with the button below."
 msgstr ""
 
-#, fuzzy
 #| msgid "Reset Password"
 msgid "Reset password"
 msgstr "Réinitialiser le mot de passe"
@@ -7677,7 +7508,6 @@ msgstr "Notes de version"
 msgid "HR setup checklist"
 msgstr "Liste de configuration RH"
 
-#, fuzzy
 #| msgid "finish setup to unlock your full HR system"
 msgid "Finish setup to unlock your full HR system"
 msgstr "Terminez la configuration pour débloquer tout votre système RH"
@@ -7790,15 +7620,13 @@ msgstr "Exporter le type de travail rotatif assigné"
 msgid "Primary mail is not configured!"
 msgstr "La messagerie principale n'est pas configurée !"
 
-#, fuzzy
 #| msgid "No joinings in this period"
 msgid "No job positions in this department"
-msgstr "Aucune arrivée sur cette période"
+msgstr "Aucun poste dans ce service"
 
-#, fuzzy
 #| msgid "Name of the job position"
 msgid "No job roles in this job position"
-msgstr "Nom du poste"
+msgstr "Aucun rôle de travail pour ce poste"
 
 msgid "Test email"
 msgstr "Test email"
@@ -7893,31 +7721,26 @@ msgstr "Ajouter plus de managers.."
 msgid "There are currently no multiple approvals to consider."
 msgstr "Il n'y a actuellement aucune approbation multiple à considérer."
 
-#, fuzzy
 msgid "Add a penalty for an employee"
 msgstr "Ajouter une pénalité pour un salarié"
 
 msgid "Deduct From Carryforward"
 msgstr "Déduire du report"
 
-#, fuzzy
 #| msgid "Choose employees to assign this leave type"
 msgid "Select an employee to see their leave balance"
-msgstr "Choisissez les employés à assigner ce type de congé"
+msgstr "Sélectionnez un employé pour voir son solde de congés"
 
-#, fuzzy
 #| msgid "Leave type is optional when 'minus leave' is 0"
 msgid "Leave type is optional when 'deduct leave' is 0"
-msgstr "Laisser le type est optionnel quand 'moins parti' est 0"
+msgstr "Le type de congé est optionnel quand « déduire congé » vaut 0"
 
 msgid "Deduct leave cannot be more than the employee's available days"
 msgstr ""
 
-#, fuzzy
 #| msgid "By default minus leave will cut/deduct from available leaves"
 msgid "By default deduct leave will cut/deduct from available leaves"
-msgstr ""
-"Par défaut, moins la permission couper/déduire des feuilles disponibles"
+msgstr "Par défaut, la déduction de congé retirera/déduira des congés disponibles"
 
 msgid "Deducted From "
 msgstr "Déduit de "
@@ -8000,10 +7823,9 @@ msgstr "Type de travail demandé"
 msgid "Previous work type"
 msgstr "Type de travail précédent"
 
-#, fuzzy
 #| msgid "Is permenent work type"
 msgid "Permenent work type"
-msgstr "Est un type de travail permenent"
+msgstr "Type de travail permanent"
 
 msgid "There are no work type requests to display."
 msgstr "Il n'y a pas de requètes de type de travail à afficher."
@@ -8830,10 +8652,9 @@ msgstr "mise à jour du candidat"
 msgid "create-payslip"
 msgstr "Bulletin de paie"
 
-#, fuzzy
 #| msgid "Work Status"
 msgid "work-status"
-msgstr "Statut de travail"
+msgstr "work-status"
 
 msgid "edit-profile"
 msgstr "modifier-profil"
@@ -9176,10 +8997,9 @@ msgstr "Le serveur de messagerie principal n'est pas configuré"
 msgid "No account found with this username or email. Check it and try again."
 msgstr ""
 
-#, fuzzy
 #| msgid "Your account has no email address for async export."
 msgid "This account has no email address to send the reset link to."
-msgstr "Votre compte n'a pas d'adresse e-mail pour l'export asynchrone."
+msgstr "Ce compte n'a pas d'adresse e-mail pour envoyer le lien de réinitialisation."
 
 #| msgid "Password reset link sent successfully"
 msgid "Password reset link sent to %(email)s"
@@ -9703,25 +9523,21 @@ msgstr "La fonction de présence biométrique a été désactivée avec succès.
 msgid "New holiday created successfully.."
 msgstr "Nouvelles vacances créées avec succès..."
 
-#, fuzzy, python-brace-format
 #| msgid "Employee is not working in the selected company."
 msgid "Company is required and must match the selected company '{}'."
-msgstr "L'employé ne travaille pas dans la société sélectionnée."
+msgstr "La société est requise et doit correspondre à la société sélectionnée '{}'."
 
-#, fuzzy, python-brace-format
 #| msgid "Employee does not exist"
 msgid "Company '{}' does not exist."
-msgstr "L'employé n'existe pas"
+msgstr "La société '{}' n'existe pas."
 
-#, fuzzy, python-brace-format
 #| msgid "Employee is not working in the selected company."
 msgid "Company '{}' does not match the selected company."
-msgstr "L'employé ne travaille pas dans la société sélectionnée."
+msgstr "La société '{}' ne correspond pas à la société sélectionnée."
 
-#, fuzzy
 #| msgid "There is already a leave request for this date range."
 msgid "A holiday already exists for this date range."
-msgstr "Il existe déjà une demande de congé pour cette plage de dates."
+msgstr "Un jour férié existe déjà pour cette plage de dates."
 
 msgid "Invalid start date format."
 msgstr "Format de date de début invalide."
@@ -10391,23 +10207,20 @@ msgstr "Identifiant de l'employé manquant."
 msgid "No Employee found matching the query."
 msgstr "Aucun employé trouvé correspondant à la requête."
 
-#, fuzzy
 #| msgid "This employee is not eligible for any allowances."
 msgid "This employee has no login account."
-msgstr "Cet employé n'est admissible à aucune indemnité."
+msgstr "Cet employé n'a pas de compte de connexion."
 
 msgid "This account's login access can't be changed from here."
 msgstr ""
 
-#, fuzzy
 #| msgid "Dashboard access provided"
 msgid "Login access provided"
-msgstr "Accès au tableau de bord fourni"
+msgstr "Accès de connexion fourni"
 
-#, fuzzy
 #| msgid "Dashboard access removed"
 msgid "Login access removed"
-msgstr "Accès au tableau de bord supprimé"
+msgstr "Accès de connexion supprimé"
 
 msgid "Action Taken"
 msgstr "Action prise"
@@ -10505,15 +10318,13 @@ msgstr "Réinitialiser le mot de passe"
 msgid "This will immediately invalidate the current password. Continue?"
 msgstr ""
 
-#, fuzzy
 #| msgid "Main navigation"
 msgid "Send Invitation"
-msgstr "Navigation principale"
+msgstr "Envoyer l'invitation"
 
-#, fuzzy
 #| msgid "Do you want to delete this employee?"
 msgid "Send an invitation email to this employee?"
-msgstr "Voulez-vous supprimer cet employé ?"
+msgstr "Envoyer un e-mail d'invitation à cet employé ?"
 
 msgid "Do you want to archive this employee?"
 msgstr "Voulez-vous archiver cet employé ?"
@@ -10603,25 +10414,21 @@ msgstr "Non assigné"
 msgid "Unknown"
 msgstr "Inconnu"
 
-#, fuzzy
 #| msgid "Joined"
 msgid "Joined from"
-msgstr "Inscrit"
+msgstr "Embauché à partir de"
 
-#, fuzzy
 #| msgid "End till"
 msgid "Joined till"
-msgstr "End till"
+msgstr "Embauché jusqu’à"
 
-#, fuzzy
 #| msgid "End date from"
 msgid "Exited from"
-msgstr "Date de fin du"
+msgstr "Quitté à partir de"
 
-#, fuzzy
 #| msgid "End till"
 msgid "Exited till"
-msgstr "End till"
+msgstr "Quitté jusqu’à"
 
 msgid "Search in : Employee"
 msgstr "Rechercher dans : Employé"
@@ -10629,20 +10436,17 @@ msgstr "Rechercher dans : Employé"
 msgid "Search in : Reporting manager"
 msgstr "Rechercher dans : Gestionnaire de rapports"
 
-#, fuzzy
 #| msgid "Job Position"
 msgid "No Job Position"
-msgstr "Poste de travail"
+msgstr "Aucun poste"
 
-#, fuzzy
 #| msgid "Basic Salary"
 msgid "Basic Salary (from)"
-msgstr "Salaire de base"
+msgstr "Salaire de base (à partir de)"
 
-#, fuzzy
 #| msgid "Basic Salary"
 msgid "Basic Salary (till)"
-msgstr "Salaire de base"
+msgstr "Salaire de base (jusqu’à)"
 
 msgid "Select employee type..."
 msgstr "Sélectionner un type d'employé..."
@@ -10656,15 +10460,13 @@ msgstr "Sélectionner des permissions..."
 msgid "Date Joining"
 msgstr "Date d'embauche"
 
-#, fuzzy
 #| msgid "Expires"
 msgid "Expires from"
-msgstr "Expire"
+msgstr "Expire à partir de"
 
-#, fuzzy
 #| msgid "Expires"
 msgid "Expires till"
-msgstr "Expire"
+msgstr "Expire jusqu’à"
 
 #, python-brace-format
 msgid "An Employee with this Email already exists in company {}"
@@ -10781,42 +10583,35 @@ msgstr "Quitter la demande d'allocation"
 msgid "Compensatory Leave Request"
 msgstr "Demande de congés compensatoires"
 
-#, fuzzy
 #| msgid "Hours & Overtime"
 msgid "Hours & Overtime Balance"
-msgstr "Heures et heures supplémentaires"
+msgstr "Solde d'heures et d'heures supplémentaires"
 
-#, fuzzy
 msgid "Clock In / Clock Out Activity"
-msgstr "Activité d’entrée/sortie"
+msgstr "Activité d'entrée / sortie de pointage"
 
-#, fuzzy
 #| msgid "Recruitment Pipeline"
 msgid "Recruitment Application"
-msgstr "Pipeline de Recrutement"
+msgstr "Application de recrutement"
 
-#, fuzzy
 #| msgid "CandidateRating not found"
 msgid "Candidate Ratings Given"
-msgstr "CandidateRating introuvable"
+msgstr "Évaluations de candidat attribuées"
 
-#, fuzzy
 #| msgid "Create Objective"
 msgid "Performance Objective"
-msgstr "Créer un objectif"
+msgstr "Objectif de performance"
 
 msgid "Key Result"
 msgstr "Résultat de la clé"
 
-#, fuzzy
 #| msgid "360 Feedback"
 msgid "360° Feedback"
 msgstr "Évaluation à 360°"
 
-#, fuzzy
 #| msgid "Performance Reports"
 msgid "Performance Bonus Points"
-msgstr "Rapports de performance"
+msgstr "Points de bonus de performance"
 
 msgid "Feedback Answer"
 msgstr "Réponse au commentaire"
@@ -14121,22 +13916,19 @@ msgstr "Structures salariales"
 msgid "Wage Bases"
 msgstr "Type de salaire"
 
-#, fuzzy
 msgid "Statutory Rules"
 msgstr "Règles légales"
 
 msgid "Payroll Settings"
 msgstr "Paramètres de la paie"
 
-#, fuzzy
 #| msgid "Employee Contribution"
 msgid "Employee Compensation"
-msgstr "Contribution de l'employé"
+msgstr "Rémunération de l'employé"
 
-#, fuzzy
 #| msgid "Loan & Advance Ledger"
 msgid "Loans, Advances & Fines"
-msgstr "Registre des prêts et avances"
+msgstr "Prêts, avances et amendes"
 
 msgid "Reimbursements"
 msgstr "Remboursements"
@@ -14144,10 +13936,9 @@ msgstr "Remboursements"
 msgid "Generate"
 msgstr "Générer"
 
-#, fuzzy
 #| msgid "Batch"
 msgid "New Batch"
-msgstr "Lot"
+msgstr "Nouveau lot"
 
 msgid "Review"
 msgstr "Révision"
@@ -14525,47 +14316,40 @@ msgstr ""
 msgid "Configuration updated successfully."
 msgstr "Configuration mise à jour avec succès."
 
-#, fuzzy
 #| msgid "Google Cloud Credential not found."
 msgid "Google Cloud Credentials"
-msgstr "Identifiant Google Cloud introuvable."
+msgstr "Identifiants Google Cloud"
 
 #| msgid "Error deleting Google Cloud Credential: %(e)s"
 msgid "Create Google Cloud Credentials"
 msgstr "Créer les identifiants Google Cloud"
 
-#, fuzzy
 #| msgid "Enable Google Meet"
 msgid "Create Google Meet"
-msgstr "Activer Google Meet"
+msgstr "Créer un Google Meet"
 
-#, fuzzy
 #| msgid "Google Meet"
 msgid "Google Meet Rules"
-msgstr "Rencontre Google"
+msgstr "Règles Google Meet"
 
 msgid "Meetings"
 msgstr "Réunions"
 
-#, fuzzy
 #| msgid "Google Meet"
 msgid "Google Meet View"
-msgstr "Rencontre Google"
+msgstr "Vue Google Meet"
 
-#, fuzzy
 #| msgid "Send Meeting Link"
 msgid "Meeting Link"
-msgstr "Envoyer le lien de la réunion"
+msgstr "Lien de la réunion"
 
-#, fuzzy
 #| msgid "Meeting"
 msgid "Meeting URL"
-msgstr "Réunion"
+msgstr "URL de la réunion"
 
-#, fuzzy
 #| msgid "Events"
 msgid "Event ID"
-msgstr "Événements"
+msgstr "ID de l'événement"
 
 msgid "Join Meeting"
 msgstr "Rejoindre la réunion"
@@ -14579,10 +14363,9 @@ msgstr "Durée en minutes"
 msgid "Meeting with this Event already exists"
 msgstr "La réunion avec cet événement existe déjà"
 
-#, fuzzy
 #| msgid "attendees"
 msgid "No attendees"
-msgstr "participants"
+msgstr "Aucun participant"
 
 msgid "Attendees"
 msgstr "Participants"
@@ -14678,10 +14461,9 @@ msgstr ""
 msgid "Views"
 msgstr "Vues"
 
-#, fuzzy
 #| msgid "Published"
 msgid "Published to all"
-msgstr "Publié"
+msgstr "Publié pour tous"
 
 msgid "Comments disabled"
 msgstr "Commentaires désactivés"
@@ -15015,7 +14797,6 @@ msgstr "Nouveau nom d'utilisateur"
 msgid "Number of records shown per page across all list views."
 msgstr "Nombre d'enregistrements affichés par page dans toutes les listes."
 
-#, fuzzy
 msgid "Show The Steps In Between"
 msgstr "Afficher les étapes intermédiaires"
 
@@ -15104,16 +14885,13 @@ msgstr "ex. Paris"
 msgid "e.g. 12345"
 msgstr "ex. 12345"
 
-#, fuzzy
 msgid "How Did You Hear About Us?"
 msgstr "Comment avez-vous entendu parler de nous ?"
 
-#, fuzzy
 #| msgid "Is Specific"
 msgid "Please Specify"
-msgstr "Est spécifique"
+msgstr "Veuillez préciser"
 
-#, fuzzy
 msgid "Tell us how you heard about us"
 msgstr "Indiquez comment vous avez entendu parler de nous"
 
@@ -15138,55 +14916,47 @@ msgstr "Trier"
 msgid "Newest first"
 msgstr "Plus récents d'abord"
 
-#, fuzzy
 msgid "Oldest first"
 msgstr "Plus anciens d’abord"
 
-#, fuzzy
 #| msgid "Back to listings"
 msgid "Back to history"
-msgstr "Retour aux annonces"
+msgstr "Retour à l’historique"
 
-#, fuzzy
 #| msgid "selected"
 msgid "View selected"
-msgstr "sélectionné(s)"
+msgstr "Voir la sélection"
 
 msgid ""
 "Showing matches from all models. Clear the search to go back to the selected "
 "model."
 msgstr ""
 
-#, fuzzy
 #| msgid "This recruitment has no stages yet."
 msgid "This record type isn't tracked yet."
-msgstr "Ce recrutement n'a pas encore d'étapes."
+msgstr "Ce type d'enregistrement n'est pas encore suivi."
 
-#, fuzzy
 #| msgid "Enable Face Detection"
 msgid "Enable tracking in Settings"
-msgstr "Activer la détection faciale"
+msgstr "Activer le suivi dans les paramètres"
 
-#, fuzzy
 #| msgid "Selected Shifts"
 msgid "Selected history"
-msgstr "Majuscules sélectionnées"
+msgstr "Historique sélectionné"
 
 msgid "Entries you picked across records and models"
 msgstr ""
 
-#, fuzzy
 #| msgid "Export selected"
 msgid "Nothing selected"
-msgstr "Exporter la sélection"
+msgstr "Aucune sélection"
 
 msgid "Add attachments"
 msgstr "Ajouter des pièces jointes"
 
-#, fuzzy
 #| msgid "Write your message here..."
 msgid "Write your note here..."
-msgstr "Écrivez votre message ici..."
+msgstr "Écrivez votre note ici..."
 
 msgid "Send"
 msgstr "Envoyer"
@@ -15194,12 +14964,10 @@ msgstr "Envoyer"
 msgid "Are you sure you want to delete this note?"
 msgstr "Êtes-vous sûr de vouloir supprimer cette note ?"
 
-#, fuzzy
 #| msgid "Remove filter"
 msgid "Remove file"
-msgstr "Retirer le filtre"
+msgstr "Retirer le fichier"
 
-#, fuzzy
 #| msgid "Are you sure you want to delete this file?"
 msgid "Are you sure you want to remove this file?"
 msgstr "Êtes-vous sûr de vouloir supprimer ce fichier ?"
@@ -15246,10 +15014,9 @@ msgstr "Voulez-vous supprimer ce commentaire ?"
 msgid "Do you want to delete this allowance ?"
 msgstr "Voulez-vous supprimer cette autorisation ?"
 
-#, fuzzy
 #| msgid "Loan account cannot be deleted"
 msgid "Standard pay item — cannot be deleted"
-msgstr "Le compte de prêt ne peut pas être supprimé"
+msgstr "Élément de paie standard — ne peut pas être supprimé"
 
 msgid "Do you want to delete this deduction?"
 msgstr "Voulez-vous supprimer cette déduction?"
@@ -15291,23 +15058,20 @@ msgstr "Statut de la lettre de l'offre"
 msgid "Hired"
 msgstr "Embauché"
 
-#, fuzzy
 #| msgid "Rejection Reason"
 msgid "Rejection Details"
 msgstr "Motif de rejet"
 
-#, fuzzy
 #| msgid "Candidate Rejection Reason"
 msgid "Edit Rejection Details"
-msgstr "Motif de rejet du candidat"
+msgstr "Modifier le motif de rejet"
 
 msgid "Reject Reasons"
 msgstr "Motifs de rejet"
 
-#, fuzzy
 #| msgid "Rejected"
 msgid "Rejected On"
-msgstr "Rejeté"
+msgstr "Rejeté le"
 
 msgid "Employee Details"
 msgstr "Détails de l'employé"
@@ -15372,20 +15136,17 @@ msgstr "Voulez-vous archiver ce résultat clé ?"
 msgid "Do you want to delete this Key result?"
 msgstr "Voulez-vous supprimer le résultat de cette clé?"
 
-#, fuzzy
 #| msgid "Do you really want to approve this request?"
 msgid "Do you really want to approve this cancellation request?"
-msgstr "Voulez-vous vraiment approuver cette demande ?"
+msgstr "Voulez-vous vraiment approuver cette demande d’annulation ?"
 
-#, fuzzy
 #| msgid "Approve cancellation request"
 msgid "Approve Cancellation"
-msgstr "Approuver la demande d'annulation"
+msgstr "Approuver la demande d’annulation"
 
-#, fuzzy
 #| msgid "Reason for Cancellation"
 msgid "Reject Cancellation"
-msgstr "Raison de l'annulation"
+msgstr "Rejeter la demande d’annulation"
 
 msgid "This leave request is for the month of"
 msgstr "Cette demande de congé concerne le mois de"
@@ -15405,19 +15166,16 @@ msgstr "Approbations multiples"
 msgid "Are you sure you want to delete this leave type?"
 msgstr "Êtes-vous sûr de vouloir supprimer ce type de congé ?"
 
-#, fuzzy
 msgid "Run missed resets"
 msgstr "Exécuter les réinitialisations manquées"
 
-#, fuzzy
 #| msgid "No overdue tickets"
 msgid "No overdue resets"
-msgstr "Aucun ticket en retard"
+msgstr "Aucune réinitialisation en retard"
 
-#, fuzzy
 #| msgid "This leave type does not exist."
 msgid "This leave type does not reset"
-msgstr "Ce type de permission n'existe pas."
+msgstr "Ce type de congé n’est pas réinitialisé"
 
 msgid "Loan Details"
 msgstr "Détails du prêt"
@@ -15467,15 +15225,13 @@ msgstr "Voulez-vous archiver cette réunion ?"
 msgid "Are you sure to delete this meeting?"
 msgstr "Êtes-vous sûr de vouloir supprimer cette réunion ?"
 
-#, fuzzy
 #| msgid "Approve cancellation request"
 msgid "Cancellation already requested"
-msgstr "Approuver la demande d'annulation"
+msgstr "Annulation déjà demandée"
 
-#, fuzzy
 #| msgid "Cancellation Reason"
 msgid "Cancellation Requested"
-msgstr "Raison de l'annulation"
+msgstr "Annulation demandée"
 
 msgid "Are you sure you want to delete this leave request?"
 msgstr "Êtes-vous sûr de vouloir supprimer cette demande de permission ?"
@@ -15501,10 +15257,9 @@ msgstr "Voulez-vous désarchiver l'objectif de cet employé ?"
 msgid "Do you want to archive this employee objective?"
 msgstr "Voulez-vous archiver l'objectif de cet employé ?"
 
-#, fuzzy
 #| msgid "No notes have been added for this employee"
 msgid "No key results have been added for this employee"
-msgstr "Aucune note n'a été ajoutée pour cet employé"
+msgstr "Aucun résultat clé n'a été ajouté pour cet employé"
 
 msgid "mail open outline"
 msgstr ""
@@ -15563,10 +15318,9 @@ msgstr "Aucune description disponible"
 msgid "Managers"
 msgstr "Responsables"
 
-#, fuzzy
 #| msgid "No tags assigned"
 msgid "No managers assigned"
-msgstr "Aucun tag assigné"
+msgstr "Aucun responsable assigné"
 
 msgid "'s Projects"
 msgstr "Projets de"
@@ -15810,28 +15564,24 @@ msgstr "Hiérarchie et localisation"
 msgid "Contact & Compensation"
 msgstr "Contact et rémunération"
 
-#, fuzzy
 msgid "Salary (from the contract)"
 msgstr "Salaire (selon le contrat)"
 
-#, fuzzy
 #| msgid "Employment contract"
 msgid "Open the contract"
-msgstr "Contrat de travail"
+msgstr "Ouvrir le contrat"
 
-#, fuzzy
 #| msgid "No active contract"
 msgid "Edit in contract"
-msgstr "Aucun contrat actif"
+msgstr "Modifier dans le contrat"
 
 #| msgid "Monthly"
 msgid "Monthly CTC"
 msgstr "CTC mensuel"
 
-#, fuzzy
 #| msgid "An active contract already exists for this employee."
 msgid "No active contract. Pay is set on the employee's contract."
-msgstr "Un contrat actif existe déjà pour cet employé."
+msgstr "Aucun contrat actif. La paie est définie sur le contrat de l'employé."
 
 msgid "Create tags used to group and filter employees."
 msgstr "Créez des étiquettes pour regrouper et filtrer les employés."
@@ -15856,10 +15606,9 @@ msgid "Define work modes such as office, remote, or hybrid."
 msgstr ""
 "Définissez les modes de travail tels que bureau, télétravail ou hybride."
 
-#, fuzzy
 #| msgid "Feedback"
 msgid "Feedback for"
-msgstr "Vos commentaires"
+msgstr "Commentaires pour"
 
 msgid "Star"
 msgstr "Étoiles"
@@ -15891,41 +15640,35 @@ msgstr "Moyenne"
 msgid "Bad"
 msgstr "Mauvais"
 
-#, fuzzy
 #| msgid "Self Feedback"
 msgid "Submit Feedback"
-msgstr "Auto-feedback"
+msgstr "Envoyer les commentaires"
 
 msgid "Unanswered questions will be skipped and cannot be answered later."
 msgstr ""
 
-#, fuzzy
 #| msgid "You have a new leave request to validate."
 msgid "You have answered every question."
-msgstr "Vous avez une nouvelle demande de permission à valider."
+msgstr "Vous avez répondu à toutes les questions."
 
-#, fuzzy
 #| msgid "Self Feedback"
 msgid "Submit Feedback?"
-msgstr "Auto-feedback"
+msgstr "Envoyer les commentaires ?"
 
-#, fuzzy
 #| msgid "Answer"
 msgid "Answered"
-msgstr "Répondre"
+msgstr "Répondu"
 
 msgid "Answers"
 msgstr "Réponses"
 
-#, fuzzy
 #| msgid "Your answers are submitted."
 msgid "No answers have been submitted yet"
-msgstr "Vos réponses sont envoyées."
+msgstr "Aucune réponse n'a encore été soumise"
 
-#, fuzzy
 #| msgid "Add more managers.."
 msgid "Loading more answers..."
-msgstr "Ajouter plus de managers.."
+msgstr "Chargement des réponses..."
 
 msgid "Do you want archive this Feedback ?"
 msgstr "Voulez-vous archiver ce commentaire ?"
@@ -16013,15 +15756,13 @@ msgstr ""
 msgid "Forgot Password"
 msgstr "Mot de passe oublié"
 
-#, fuzzy
 #| msgid "Type in your username to reset the password."
 msgid "Type in your username or email to reset the password."
-msgstr "Tapez votre nom d'utilisateur pour réinitialiser le mot de passe."
+msgstr "Saisissez votre nom d'utilisateur ou votre e-mail pour réinitialiser le mot de passe."
 
-#, fuzzy
 #| msgid "Username"
 msgid "Username or email"
-msgstr "Nom d'utilisateur"
+msgstr "Nom d'utilisateur ou e-mail"
 
 msgid "e.g. jane.doe@acme.com"
 msgstr "ex. jane.dupont@acme.com"
@@ -16039,10 +15780,9 @@ msgstr "Rechercher par champ ou valeur…"
 msgid "No changes match your filters."
 msgstr "Aucune modification ne correspond à vos filtres."
 
-#, fuzzy
 #| msgid "Select all for this feature"
 msgid "Select this entry"
-msgstr "Tout sélectionner pour cette fonctionnalité"
+msgstr "Sélectionner cette entrée"
 
 msgid "more"
 msgstr "plus"
@@ -16101,12 +15841,10 @@ msgstr "Confirmation de la suppression des enregistrements liés et protégés"
 msgid "Action Required"
 msgstr "Action requise"
 
-#, fuzzy
 #| msgid "File name:"
 msgid "File name"
-msgstr "Nom du fichier :"
+msgstr "Nom du fichier"
 
-#, fuzzy
 msgid "Leave blank for the default name"
 msgstr "Laisser vide pour garder le nom par défaut"
 
@@ -16335,15 +16073,13 @@ msgstr "Aucun commentaire n'a été ajouté pour cette demande de congé"
 msgid "Create Leave Type"
 msgstr "Créer un type de congé"
 
-#, fuzzy
 #| msgid "Mail Details"
 msgid "Basic Details"
-msgstr "Détails du courriel"
+msgstr "Détails de base"
 
-#, fuzzy
 #| msgid "New attendance request created"
 msgid "Name, payment and request rules."
-msgstr "Nouvelle demande de présence créée"
+msgstr "Nom, paiement et règles de demande."
 
 #| msgid "Objectives need attention"
 msgid "Something on this step needs attention"
@@ -16371,10 +16107,9 @@ msgid ""
 "Allow unused balance of this leave type to be converted into a cash payout."
 msgstr ""
 
-#, fuzzy
 #| msgid "Remove icon"
 msgid "Remove Icon"
-msgstr "Retirer l'icône"
+msgstr "Retirer l’icône"
 
 msgid "Require Approval"
 msgstr "Exiger une approbation"
@@ -16405,10 +16140,9 @@ msgid ""
 "there is no reset)."
 msgstr ""
 
-#, fuzzy
 #| msgid "Leave Balance"
 msgid "Reset Leave Balance"
-msgstr "Solde de congés"
+msgstr "Réinitialiser le solde de congés"
 
 msgid ""
 "Restore the leave balance automatically at the end of every reset period."
@@ -16417,7 +16151,6 @@ msgstr ""
 msgid "Reset Period"
 msgstr "Reset Period"
 
-#, fuzzy
 msgid "How often the leave balance is reset."
 msgstr "Fréquence de réinitialisation du solde de congés."
 
@@ -16433,14 +16166,11 @@ msgstr "Réinitialiser le jour de la semaine"
 msgid "Custom Reset Days"
 msgstr "Jours de réinitialisation personnalisés"
 
-#, fuzzy
 #| msgid ""
 #| "Number of days after which an announcement automatically expires when no "
 #| "expiry date is set."
 msgid "Number of days after which the leave balance is reset."
-msgstr ""
-"Nombre de jours après lesquels une annonce expire automatiquement si aucune "
-"date d'expiration n'est définie."
+msgstr "Nombre de jours après lesquels le solde de congés est réinitialisé."
 
 msgid "Carryforward Type"
 msgstr "Type d'Avant-Poing"
@@ -16450,16 +16180,14 @@ msgid ""
 "forward, or carried forward until it expires."
 msgstr ""
 
-#, fuzzy
 #| msgid "Carryforward Max"
 msgid "Carryforward Maximum"
-msgstr "Avant-droit max"
+msgstr "Plafond de report"
 
-#, fuzzy
 #| msgid "The maximum number of leave that can be carried forward."
 msgid ""
 "The maximum number of days that can be carried forward to the next period."
-msgstr "Le nombre maximum de congés pouvant être reportés."
+msgstr "Nombre maximum de jours pouvant être reportés à la période suivante."
 
 msgid "Carryforward Expires In"
 msgstr "Le Carryforward expire dans"
@@ -16469,18 +16197,16 @@ msgid ""
 "expiry period."
 msgstr ""
 
-#, fuzzy
 #| msgid "Carryforward Expire Period"
 msgid "Carryforward Expiry Period"
-msgstr "Période d'Expiration du Carryforward"
+msgstr "Période d'expiration du report"
 
 msgid "The unit of time (days, months or years) for the carryforward expiry."
 msgstr ""
 
-#, fuzzy
 #| msgid "Carryforward Expire Date"
 msgid "Carryforward Expiry Date"
-msgstr "Date d'expiration du Carryforward"
+msgstr "Date d'expiration du report"
 
 msgid ""
 "The date on which carryforward leave resets to 0. After this reset, the date "
@@ -16490,10 +16216,9 @@ msgstr ""
 "réinitialisation, la date sera mise à jour à la prochaine période "
 "d'expiration."
 
-#, fuzzy
 #| msgid "Exclude Company Leaves"
 msgid "Exclude Company Weekoff"
-msgstr "Exclure les Feuilles d'Entreprise"
+msgstr "Exclure le repos hebdomadaire de l'entreprise"
 
 msgid ""
 "When on, company weekoff days that fall within the leave dates are not "
@@ -16557,30 +16282,25 @@ msgstr "Congé total pris"
 msgid "Carried-forward leave lapses on this date"
 msgstr ""
 
-#, fuzzy
 #| msgid "Carryforward Expire"
 msgid "Carry Forward Expiry"
-msgstr "Expiration de la porte avant"
+msgstr "Expiration du report"
 
-#, fuzzy
 #| msgid "Nothing to approve"
 msgid "Nothing to expire"
-msgstr "Rien à approuver"
+msgstr "Rien à expirer"
 
-#, fuzzy
 #| msgid "Unscheduled absence rate"
 msgid "Next scheduled leave reset"
-msgstr "Taux d'absence imprévue"
+msgstr "Prochaine réinitialisation de congé planifiée"
 
-#, fuzzy
 #| msgid "New Leave Request"
 msgid "Next Leave Reset"
-msgstr "Nouvelle demande de congé"
+msgstr "Prochaine réinitialisation des congés"
 
-#, fuzzy
 #| msgid "Balance"
 msgid "Balance after"
-msgstr "Solde"
+msgstr "Solde après"
 
 msgid "Welcome to"
 msgstr "Bienvenue sur"
@@ -16792,7 +16512,6 @@ msgstr "Contribution de l'employé"
 msgid "Employer Contribution"
 msgstr "Contribution de l'employeur"
 
-#, fuzzy
 msgid "More info"
 msgstr "Plus d’informations"
 
@@ -16812,12 +16531,10 @@ msgstr "Atteint"
 msgid "Unpaid days"
 msgstr "Jours non payés"
 
-#, fuzzy
 #| msgid "Rotate after day"
 msgid "Flat amount per day"
-msgstr "Rotation après la journée"
+msgstr "Montant forfaitaire par jour"
 
-#, fuzzy
 msgid "loss of pay = unpaid days × flat amount"
 msgstr "perte de salaire = jours sans solde × montant forfaitaire"
 
@@ -16831,19 +16548,16 @@ msgstr "Salaire brut"
 msgid "Basic pay"
 msgstr "Paiement de base"
 
-#, fuzzy
 #| msgid "Total Days"
 msgid "Total days"
 msgstr "Nombre total de jours"
 
-#, fuzzy
 msgid "per-day amount = wage ÷ total days"
 msgstr "montant journalier = salaire ÷ nombre total de jours"
 
-#, fuzzy
 #| msgid "Capped for display"
 msgid "(rounded for display)"
-msgstr "Plafonné pour l'affichage"
+msgstr "(arrondi pour l’affichage)"
 
 msgid "loss of pay = unpaid days × per-day amount"
 msgstr ""
@@ -16879,10 +16593,9 @@ msgstr "Envoyer par mail"
 msgid "A paid payslip cannot be edited"
 msgstr "Un bulletin de paie payé ne peut pas être modifié"
 
-#, fuzzy
 #| msgid "Deduction components"
 msgid "Edit or add components"
-msgstr "Composants de déduction"
+msgstr "Modifier ou ajouter des composants"
 
 msgid "Total Deductions"
 msgstr "Déductions totales"
@@ -16899,12 +16612,10 @@ msgstr "Taux horaire"
 msgid "Regular hours"
 msgstr "Heures normales"
 
-#, fuzzy
 #| msgid "Validate the attendance"
 msgid "paid at the rate"
-msgstr "Valider la présence"
+msgstr "payé au taux de"
 
-#, fuzzy
 #| msgid "Week Off OT"
 msgid "Week off OT"
 msgstr "HS repos hebdomadaire"
@@ -16920,17 +16631,14 @@ msgid ""
 "them."
 msgstr ""
 
-#, fuzzy
 #| msgid "Contracts"
 msgid "Contract Basic"
-msgstr "Contrats"
+msgstr "Salaire de base du contrat"
 
-#, fuzzy
 #| msgid "Updated Basic Pay"
 msgid "Adjusted Basic"
-msgstr "Paiement de base mis à jour"
+msgstr "Base ajustée"
 
-#, fuzzy
 msgid "Why This Is Adjusted"
 msgstr "Motif de l’ajustement"
 
@@ -16943,9 +16651,8 @@ msgstr ""
 msgid "Paid days"
 msgstr "Jours payés"
 
-#, fuzzy
 msgid "What counts as paid"
-msgstr "Éléments pris en compte comme payés"
+msgstr "Ce qui compte comme payé"
 
 msgid ""
 "Counts every day except absence and unpaid leave: present days, paid leave, "
@@ -16970,10 +16677,9 @@ msgstr "Gains"
 msgid "Basic Pay"
 msgstr "Paiement de base"
 
-#, fuzzy
 #| msgid "Where candidates come from"
 msgid "Where this comes from"
-msgstr "D'où viennent les candidats"
+msgstr "D’où cela vient"
 
 msgid ""
 "The contract wage under a Gross Up structure; under CTC Down the structure's "
@@ -16998,14 +16704,11 @@ msgstr "Déduit du salaire de base"
 msgid "Leave Payment Reduction"
 msgstr "Réduction du paiement des congés"
 
-#, fuzzy, python-format
 #| msgid ""
 #| "Partial deduction — %(partial_pay_days)s day(s) on a partially paid leave "
 #| "type"
 msgid "%(partial_pay_days)s day(s) on a partially paid leave type"
-msgstr ""
-"Déduction partielle — %(partial_pay_days)s jour(s) sur un type de congé "
-"partiellement payé"
+msgstr "%(partial_pay_days)s jour(s) sur un type de congé partiellement payé"
 
 #| msgid "Basic pay"
 msgid "off basic pay"
@@ -17079,10 +16782,9 @@ msgstr "Aucun statut de déclaration de revenus n'a été enregistré."
 msgid "Score"
 msgstr "Score"
 
-#, fuzzy
 #| msgid "Need verification"
 msgid "Needs verification"
-msgstr "Besoin de vérification"
+msgstr "Nécessite une vérification"
 
 msgid "Candidate Added"
 msgstr "Candidat ajouté"
@@ -17090,15 +16792,13 @@ msgstr "Candidat ajouté"
 msgid "Create Candidate"
 msgstr "Créer un candidat"
 
-#, fuzzy
 #| msgid "Are you sure you want to delete this user?"
 msgid "Are you sure you want to delete this resume?"
-msgstr "Êtes-vous sûr de vouloir supprimer cet utilisateur ?"
+msgstr "Êtes-vous sûr de vouloir supprimer ce CV ?"
 
-#, fuzzy
 #| msgid "No document uploaded yet"
 msgid "No resumes uploaded yet."
-msgstr "Aucun document téléversé pour le moment"
+msgstr "Aucun CV téléversé pour le moment."
 
 msgid "Add a note"
 msgstr "Ajouter une note"
@@ -17137,11 +16837,10 @@ msgstr ""
 msgid "Record and track disciplinary incidents for employees."
 msgstr "Enregistrez et suivez les incidents disciplinaires des employés."
 
-#, fuzzy
 #| msgid "On-time, late arrivals & early departures by department"
 msgid ""
 "Penalties applied to employees for late arrivals, early departures and leave."
-msgstr "Arrivées à l'heure, retards et départs anticipés par département"
+msgstr "Amendes appliquées aux employés pour retards, départs anticipés et congés."
 
 msgid "Create and manage company policies shared with employees."
 msgstr ""
@@ -17236,19 +16935,17 @@ msgstr ""
 "En activant cette fonctionnalité, les candidats peuvent voir leur évaluation "
 "globale de recrutement"
 
-#, fuzzy
 #| msgid "Probation ends"
 msgid "Probation Period"
-msgstr "Fin de la probation"
+msgstr "Période d’essai"
 
 msgid ""
 "Used to auto-fill a candidate's probation end date from their joining date."
 msgstr ""
 
-#, fuzzy
 #| msgid "Default Notice Period"
 msgid "Default Probation Period (Days)"
-msgstr "Période de notification par défaut"
+msgstr "Période d’essai par défaut (jours)"
 
 msgid "Replace"
 msgstr "Remplacer"
@@ -17578,10 +17275,9 @@ msgstr "Vue grille"
 msgid "Export selected"
 msgstr "Exporter la sélection"
 
-#, fuzzy
 #| msgid "Schedule date"
 msgid "Schedule selected"
-msgstr "Date du calendrier"
+msgstr "Planning sélectionné"
 
 msgid "Add to view…"
 msgstr "Ajouter à la vue…"
@@ -17629,26 +17325,23 @@ msgstr "Nom de la vue"
 msgid "e.g. Q3 board pack"
 msgstr "ex. dossier du conseil T3"
 
-#, fuzzy
 #| msgid "Scheduled from"
 msgid "Schedule reports"
-msgstr "Planifié à partir de"
+msgstr "Planifier les rapports"
 
 msgid "Recipients"
 msgstr "Destinataires"
 
-#, fuzzy
 #| msgid "Leave type is not assigned for the selected employee."
 msgid "The report is emailed to each selected employee."
-msgstr "Le type de congé n'est pas affecté à l'employé sélectionné."
+msgstr "Le rapport est envoyé par e-mail à chaque employé sélectionné."
 
 msgid "Frequency"
 msgstr "Fréquence"
 
-#, fuzzy
 #| msgid "Weekly"
 msgid "Weekday"
-msgstr "Hebdomadaire"
+msgstr "Jour de la semaine"
 
 msgid "Add to view"
 msgstr "Ajouter à la vue"
@@ -17684,15 +17377,13 @@ msgstr "rapport(s) mis en file d'attente — consultez votre e-mail sous peu."
 msgid "report(s) selected."
 msgstr "rapport(s) sélectionné(s)."
 
-#, fuzzy
 #| msgid "Select at least one report."
 msgid "Select at least one recipient."
-msgstr "Sélectionnez au moins un rapport."
+msgstr "Sélectionnez au moins un destinataire."
 
-#, fuzzy
 #| msgid "Shift schedule created."
 msgid "schedule(s) created."
-msgstr "Calendrier de décalage créé."
+msgstr "planification(s) créée(s)."
 
 msgid "skipped (no access)."
 msgstr "ignoré (pas d'accès)."

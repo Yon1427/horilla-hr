@@ -368,7 +368,7 @@ WSGI_APPLICATION = "horilla.wsgi.application"
 # ========================================
 # INTERNATIONALIZATION
 # ========================================
-LANGUAGE_CODE = "en-us"
+LANGUAGE_CODE = "fr"
 TIME_ZONE = env("TIME_ZONE", default="Asia/Kolkata")
 # First day of the week for calendar-week ranges such as the Quick Date
 # "This Week" / "Last Week": 0 = Sunday, 1 = Monday ... 6 = Saturday.
@@ -379,9 +379,8 @@ USE_I18N = True
 USE_TZ = True
 
 LANGUAGES = (
-    ("en", "English (US)"),
     ("fr", "Français"),
-    ("ar", "العربية"),
+    ("en", "English (US)"),
 )
 
 LOCALE_PATHS = [join(BASE_DIR, "horilla", "locale")]

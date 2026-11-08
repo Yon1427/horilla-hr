@@ -20,11 +20,7 @@
                             style="width: 10px; height: 10px; border-radius: 100%; background-color: hsl(8deg, 77%, 56%); display: inline-block; right: 5px"
                         ></span>
                     {% endif %}
-                    {% if LANGUAGE_CODE == 'ar' %}
-                        <p class="oh-navbar__notification-text" class="oh-navbar__notification-text--unread">
-                            {{ notification.data.verb_ar }}
-                        </p>
-                    {% elif LANGUAGE_CODE == 'fr' %}
+                    {% if LANGUAGE_CODE == 'fr' %}
                         <p class="oh-navbar__notification-text" class="oh-navbar__notification-text--unread">
                             {{ notification.data.verb_fr }}
                         </p>

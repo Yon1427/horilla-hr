@@ -501,27 +501,16 @@ def export_access_enabled(request):
 
 def navbar_languages(request):
     """
-    Exposes the list of languages available in the navbar language
-    switcher for the user's current company. The switcher is only shown
-    when a company has explicitly enabled more than one language; with
-    zero or one language enabled, there is nothing to switch to, so it
-    stays hidden.
+    Exposes the languages offered in the navbar language switcher.
+
+    Always every configured language: the switcher used to be hidden unless a
+    company had explicitly enabled more than one in CompanyLanguageSetting,
+    which on a fresh install hid it entirely and left users stuck in the
+    default language with no way to change it.
     """
-    selected_company = request.session.get("selected_company")
-    if not selected_company or selected_company == "all":
-        company = None
-    else:
-        company = Company.objects.filter(id=selected_company).first()
-
-    setting = CompanyLanguageSetting.objects.filter(company_id=company).first()
-    if setting and setting.enabled_languages:
-        enabled_codes = set(setting.enabled_languages)
-        languages = [
-            language for language in settings.LANGUAGES if language[0] in enabled_codes
-        ]
-        if len(languages) > 1:
-            return {"navbar_languages": languages, "show_language_switcher": True}
-
+    languages = list(settings.LANGUAGES)
+    if len(languages) > 1:
+        return {"navbar_languages": languages, "show_language_switcher": True}
     return {"navbar_languages": [], "show_language_switcher": False}
 
 

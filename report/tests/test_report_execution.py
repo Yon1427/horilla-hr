@@ -1330,7 +1330,7 @@ class ExportLabelTranslationTests(TestCase):
         from django.utils import translation
 
         filters = self._filters()
-        for lang in ("en", "fr", "ar"):
+        for lang in ("fr", "en"):
             with self.subTest(lang=lang), translation.override(lang):
                 chips = filters.summary_labels()
                 self.assertTrue(chips)

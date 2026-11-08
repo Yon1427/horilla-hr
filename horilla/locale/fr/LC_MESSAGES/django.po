@@ -23189,49 +23189,40 @@ msgstr "Aucune donnée de type de travail"
 msgid "per overtime hour"
 msgstr "Heures supplémentaires"
 
-#, fuzzy
 msgid "per week-off hour"
 msgstr "par heure de repos hebdomadaire"
 
-#, fuzzy
 #| msgid "Update Holiday"
 msgid "per holiday hour"
-msgstr "Mettre à jour les vacances"
+msgstr "par heure de jour férié"
 
-#, fuzzy
 #| msgid "Not configured outlook"
 msgid "Not configured"
-msgstr "Perspectives non configurées"
+msgstr "Non configuré"
 
-#, fuzzy
 msgid "Inherited"
 msgstr "Hérité"
 
-#, fuzzy
 #| msgid "Employer Rate :"
 msgid "Employer share only"
-msgstr "Taux d'employeur :"
+msgstr "Part employeur uniquement"
 
 msgid "—"
 msgstr ""
 
-#, fuzzy
 msgid "Set, but no figure"
 msgstr "Défini, sans montant"
 
-#, fuzzy
 msgid "Always"
 msgstr "Toujours"
 
-#, fuzzy
 #| msgid "Between"
 msgid "between"
 msgstr "Entre"
 
-#, fuzzy
 #| msgid "Excel"
 msgid "Except"
-msgstr "Excel"
+msgstr "Sauf"
 
 #, python-format
 msgid ""
@@ -23288,29 +23279,23 @@ msgid ""
 "Since No Hours Are Scheduled."
 msgstr ""
 
-#, fuzzy
 msgid "Added by hand on this payslip"
 msgstr "Ajouté manuellement sur ce bulletin"
 
-#, fuzzy
 #| msgid "Penalty amount"
 msgid "Set amount"
-msgstr "Montant de la pénalité"
+msgstr "Montant fixe"
 
-#, fuzzy
 #| msgid "Notice period"
 msgid "For this period"
-msgstr "Période de notification"
+msgstr "Pour cette période"
 
-#, fuzzy, python-format
 msgid "Prorated: %(how)s."
 msgstr "Proratisé : %(how)s."
 
-#, fuzzy, python-format
 msgid "Applies when: %(rule)s."
 msgstr "S’applique lorsque : %(rule)s."
 
-#, fuzzy
 #| msgid "Contract Wage"
 msgid "The contract wage"
 msgstr "Salaire contractuel"
@@ -23325,87 +23310,69 @@ msgid ""
 "component works it out from the CTC instead."
 msgstr ""
 
-#, fuzzy
 #| msgid "Loss of Pay"
 msgid "Before loss of pay"
-msgstr "Perte de salaire"
+msgstr "Avant la perte de salaire"
 
-#, fuzzy
 #| msgid "Loss of Pay"
 msgid "Less loss of pay"
-msgstr "Perte de salaire"
+msgstr "Moins la perte de salaire"
 
-#, fuzzy
 msgid "Changed by hand on this payslip."
 msgstr "Modifié manuellement sur ce bulletin."
 
-#, fuzzy
 #| msgid "Create Salary Structure"
 msgid "Extra Pay, Outside The Salary Structure."
-msgstr "Créer une structure salariale"
+msgstr "Rémunération supplémentaire, hors structure salariale."
 
 msgid "It Is Added On Top Of The CTC, So The Other Earnings Stay The Same."
 msgstr ""
 
-#, fuzzy
 msgid "Counts toward taxable gross."
 msgstr "Compté dans le brut imposable."
 
-#, fuzzy
 #| msgid "Non Taxable"
 msgid "Not taxable."
-msgstr "Non imposable"
+msgstr "Non imposable."
 
-#, fuzzy
 msgid "Comes off basic pay."
 msgstr "Déduit du salaire de base."
 
-#, fuzzy
 msgid "Comes off gross pay."
 msgstr "Déduit du salaire brut."
 
-#, fuzzy
 msgid "Taken before income tax is worked out."
 msgstr "Déduit avant le calcul de l’impôt sur le revenu."
 
-#, fuzzy
 msgid "Taken after income tax."
 msgstr "Déduit après l’impôt sur le revenu."
 
-#, fuzzy
 msgid "A tax charged alongside income tax."
 msgstr "Taxe prélevée en plus de l’impôt sur le revenu."
 
-#, fuzzy
 #| msgid "Comments of - "
 msgid "Comes off net pay."
-msgstr "Commentaires de -"
+msgstr "Déduit du salaire net."
 
-#, fuzzy
 #| msgid "No holidays in this period."
 msgid "Gross pay this period"
-msgstr "Aucun jour férié sur cette période."
+msgstr "Salaire brut de cette période"
 
-#, fuzzy
 #| msgid "Top components this period"
 msgid "Taxable gross this period"
-msgstr "Principaux composants de cette période"
+msgstr "Brut imposable de cette période"
 
-#, fuzzy
 #| msgid "comparison period"
 msgid "Basic pay this period"
-msgstr "période de comparaison"
+msgstr "Salaire de base de cette période"
 
-#, fuzzy
 #| msgid "Yearly"
 msgid "Yearly income"
-msgstr "Annuel"
+msgstr "Revenu annuel"
 
-#, fuzzy
 msgid "Taxable yearly income"
 msgstr "Revenu annuel imposable"
 
-#, fuzzy
 msgid "Tax for the year"
 msgstr "Impôt de l’année"
 
@@ -23420,16 +23387,13 @@ msgid ""
 "Employer Contribution: %(rate)s%(amount)s. It Is Not Taken From This Payslip."
 msgstr ""
 
-#, fuzzy
 #| msgid "Loss of Pay"
 msgid "Loss Of Pay"
 msgstr "Perte de salaire"
 
-#, fuzzy
 msgid "Taken separately, not off basic pay"
 msgstr "Déduit séparément, pas du salaire de base"
 
-#, fuzzy
 msgid "Give the new line a name."
 msgstr "Nommez la nouvelle ligne."
 
@@ -23527,15 +23491,13 @@ msgstr "Salaire brut imposable"
 msgid "Python Code"
 msgstr "Code Python"
 
-#, fuzzy
 #| msgid "Add Deduction"
 msgid "Standard deduction"
-msgstr "Ajouter déduction"
+msgstr "Déduction forfaitaire"
 
 msgid "Subtracted from yearly income before tax is worked out. 0 for none."
 msgstr ""
 
-#, fuzzy
 msgid "Rebate income limit"
 msgstr "Plafond de revenu pour l’abattement"
 
@@ -23544,15 +23506,13 @@ msgid ""
 "rebate below is applied. Leave blank for no rebate."
 msgstr ""
 
-#, fuzzy
 #| msgid "Maximum Unit"
 msgid "Maximum rebate"
-msgstr "Unité maximale"
+msgstr "Abattement maximal"
 
 msgid "The most tax the rebate can cancel out. Tax never goes below zero."
 msgstr ""
 
-#, fuzzy
 msgid "Cess / surcharge (%)"
 msgstr "Cess / surcharge (%)"
 
@@ -23614,10 +23574,9 @@ msgid ""
 "day rate, or an hourly rate."
 msgstr ""
 
-#, fuzzy
 #| msgid "Hourly"
 msgid "Hourly wage"
-msgstr "Heures"
+msgstr "Salaire horaire"
 
 msgid ""
 "Pay for one hour. Used when Wage Type is Hourly, multiplied by the hours "
@@ -23633,7 +23592,6 @@ msgstr ""
 msgid "Notice period in total days."
 msgstr "Période de notification au total des jours."
 
-#, fuzzy
 msgid "Take Loss Of Pay Off Basic Pay"
 msgstr "Déduire la perte de salaire du salaire de base"
 
@@ -23659,10 +23617,9 @@ msgstr ""
 msgid "Deduction For One Leave Amount"
 msgstr "Déduction pour un montant de congé"
 
-#, fuzzy
 #| msgid "Calculate Daily Leave Amount"
 msgid "Daily Leave Amount From"
-msgstr "Calculer le montant de congés quotidiens"
+msgstr "Montant journalier de congé à partir de"
 
 msgid ""
 "Which figure a day of unpaid leave is a share of. Gross pay is only known "
@@ -23671,7 +23628,6 @@ msgid ""
 "being taken out of basic first."
 msgstr ""
 
-#, fuzzy
 #| msgid "Loss of Pay"
 msgid "Loss Of Pay Is Pre-Tax"
 msgstr "La perte de salaire est déduite avant impôt"
@@ -23682,20 +23638,17 @@ msgid ""
 "had been paid it."
 msgstr ""
 
-#, fuzzy
 #| msgid "For working days on a month"
 msgid "Working days in the month"
-msgstr "Pour les jours ouvrables sur un mois"
+msgstr "Jours ouvrables du mois"
 
-#, fuzzy
 #| msgid "Calendar working days × headcount"
 msgid "Calendar days in the month"
-msgstr "Jours ouvrés du calendrier × effectif"
+msgstr "Jours calendaires du mois"
 
-#, fuzzy
 #| msgid "Calculate Daily Leave Amount"
 msgid "Daily Leave Amount Divided By"
-msgstr "Calculer le montant de congés quotidiens"
+msgstr "Montant journalier de congé divisé par"
 
 msgid ""
 "Working days makes each unpaid day cost more: a 44,000 wage over 22 working "
@@ -23703,42 +23656,34 @@ msgid ""
 "default for a new contract."
 msgstr ""
 
-#, fuzzy
 msgid "From the structure"
 msgstr "Issu de la structure"
 
-#, fuzzy
 #| msgid "Added Employee"
 msgid "Added to this employee"
-msgstr "Employé ajouté"
+msgstr "Ajouté à cet employé"
 
-#, fuzzy
 #| msgid "Select All Employees"
 msgid "Applies to all employees"
-msgstr "Sélectionner tous les employés"
+msgstr "S’applique à tous les employés"
 
 msgid "Applies to their department, job position or job role"
 msgstr ""
 
-#, fuzzy
 #| msgid "Condition Based"
 msgid "Condition based"
-msgstr "Basé sur la condition"
+msgstr "Selon condition"
 
-#, fuzzy
 msgid "When it happens"
-msgstr "Date d’effet"
+msgstr "Quand cela se produit"
 
-#, fuzzy
 msgid "Standard, always on"
 msgstr "Standard, toujours actif"
 
-#, fuzzy
 #| msgid "Salary Structure"
 msgid "Via Structure"
-msgstr "Structure salariale"
+msgstr "Via la structure"
 
-#, fuzzy
 msgid "Outside The Structure"
 msgstr "Hors structure"
 
@@ -23773,20 +23718,17 @@ msgstr "Département sur contrat"
 msgid "The value must be like the data stored in the database"
 msgstr "La valeur doit être comme les données stockées dans la base de données"
 
-#, fuzzy
 #| msgid "Remove this company"
 msgid "Cost to company"
-msgstr "Retirer cette entreprise"
+msgstr "Coût pour l’entreprise"
 
-#, fuzzy
 #| msgid "Allowance components"
 msgid "Another component"
-msgstr "Composants d'indemnité"
+msgstr "Un autre composant"
 
-#, fuzzy
 #| msgid "Taxable Gross Pay"
 msgid "Taxable gross pay"
-msgstr "Paiement brut imposable"
+msgstr "Salaire brut imposable"
 
 msgid "Exclude the allowance"
 msgstr "Exclure l'allocation"
@@ -23794,14 +23736,12 @@ msgstr "Exclure l'allocation"
 msgid "Provide max amount"
 msgstr "Fournir un montant maximum"
 
-#, fuzzy
 msgid "Percentage of Another Component"
-msgstr "Pourcentage d’un autre élément"
+msgstr "Pourcentage d’un autre composant"
 
-#, fuzzy
 #| msgid "Custom range"
 msgid "Custom Formula"
-msgstr "Plage personnalisée"
+msgstr "Formule personnalisée"
 
 msgid "Regular Overtime"
 msgstr "Heures supplémentaires normales"
@@ -23812,15 +23752,13 @@ msgstr "Inclure tous les employés"
 msgid "Employees Specific"
 msgstr "Employés spécifiques"
 
-#, fuzzy
 #| msgid "Applied"
 msgid "Applies By"
-msgstr "Appliqué"
+msgstr "Application par"
 
-#, fuzzy
 #| msgid "Basic pay"
 msgid "This is basic pay"
-msgstr "Paiement de base"
+msgstr "Ceci est le salaire de base"
 
 msgid ""
 "Use this earning as the employee's basic pay when their contract has no "
@@ -23844,32 +23782,27 @@ msgstr ""
 msgid "Code of the component this percentage is taken from."
 msgstr ""
 
-#, fuzzy
 #| msgid "Format"
 msgid "Formula"
-msgstr "Formater"
+msgstr "Formule"
 
 msgid "Expression over other components' codes, e.g. (BASIC + DA) * 0.12"
 msgstr ""
 
-#, fuzzy
 #| msgid "Amount Per One Hour"
 msgid "Flat Amount Per Hour"
-msgstr "Montant par heure"
+msgstr "Montant fixe par heure"
 
-#, fuzzy
 msgid "Multiplier Slabs On The Hourly Wage"
 msgstr "Tranches de multiplication du salaire horaire"
 
-#, fuzzy
 #| msgid "Overtime"
 msgid "Overtime Pay"
-msgstr "Délai supplémentaire"
+msgstr "Heures supplémentaires"
 
-#, fuzzy
 #| msgid "Total Days"
 msgid "Prorate Half Days"
-msgstr "Nombre total de jours"
+msgstr "Proratiser les demi-journées"
 
 msgid ""
 "Pay a half day at half the per attendance amount, instead of the full amount."
@@ -23878,10 +23811,9 @@ msgstr ""
 msgid "Has max limit for allowance"
 msgstr "A une limite maximale pour la franchise"
 
-#, fuzzy
 #| msgid "This month"
 msgid "This amount is"
-msgstr "Ce mois-ci"
+msgstr "Ce montant est"
 
 msgid ""
 "What the figures above are quoted per — both a fixed amount and any ceiling. "
@@ -23892,10 +23824,9 @@ msgid ""
 "percentage of."
 msgstr ""
 
-#, fuzzy
 #| msgid "Component"
 msgid "Which component"
-msgstr "Composant"
+msgstr "Quel composant"
 
 msgid ""
 "The component this rule looks at. It must be worked out before this one, so "
@@ -23942,23 +23873,20 @@ msgstr "Le montant par enfant doit être rempli."
 msgid "Amount should be greater than zero."
 msgstr "Le montant doit être supérieur à zéro."
 
-#, fuzzy
 #| msgid "From"
 msgid "From Hour"
-msgstr "A partir de"
+msgstr "De l’heure"
 
-#, fuzzy
 #| msgid "OT Hours"
 msgid "To Hour"
-msgstr "Heures sup."
+msgstr "À l’heure"
 
 msgid "Leave Empty For The Last Band, Which Has No Upper End."
 msgstr ""
 
-#, fuzzy
 #| msgid "Multiple Choice"
 msgid "Multiplier"
-msgstr "Choix multiple"
+msgstr "Multiplicateur"
 
 msgid "Exclude the deduction"
 msgstr "Exclure la déduction"
@@ -23966,30 +23894,26 @@ msgstr "Exclure la déduction"
 msgid "Employee rate"
 msgstr "Taux d'employés"
 
-#, fuzzy
 #| msgid "The percentage of based on"
 msgid "A percentage of the same figure"
-msgstr "Le pourcentage de basé sur"
+msgstr "Un pourcentage du même montant"
 
-#, fuzzy
 #| msgid "Custom range"
 msgid "Custom formula"
-msgstr "Plage personnalisée"
+msgstr "Formule personnalisée"
 
-#, fuzzy
 #| msgid "Employer Contribution"
 msgid "Employer contribution"
-msgstr "Contribution de l'employeur"
+msgstr "Contribution de l’employeur"
 
 msgid ""
 "How the employer's share is worked out. A percentage uses the same figure "
 "the deduction is based on."
 msgstr ""
 
-#, fuzzy
 #| msgid "Employer rate"
 msgid "Employer formula"
-msgstr "Taux de l'employeur"
+msgstr "Formule de l’employeur"
 
 msgid "Expression over other components' codes, e.g. (BASIC + DA) * 0.0367"
 msgstr ""
@@ -24030,10 +23954,9 @@ msgstr ""
 msgid "CTC Down — the wage is the gross, components divide it"
 msgstr ""
 
-#, fuzzy
 #| msgid "Salary Structure"
 msgid "Structure mode"
-msgstr "Structure salariale"
+msgstr "Mode structure"
 
 msgid ""
 "Gross Up: the contract wage IS basic pay, and allowances are added on top of "
@@ -24160,11 +24083,9 @@ msgstr ""
 msgid "Auto Generate"
 msgstr "Générer automatiquement"
 
-#, fuzzy
 msgid "Calendar month (1st to last day)"
 msgstr "Mois civil (du 1er au dernier jour)"
 
-#, fuzzy
 msgid "Cycle starting on a chosen day"
 msgstr "Cycle débutant un jour choisi"
 
@@ -24175,10 +24096,9 @@ msgid ""
 "worked out against that month's own working days."
 msgstr ""
 
-#, fuzzy
 #| msgid "st day of month"
 msgid "1st (calendar month)"
-msgstr "jour du mois"
+msgstr "1er (mois civil)"
 
 msgid ""
 "The day a pay period begins. It runs until the day before the same day next "
@@ -24189,10 +24109,9 @@ msgid ""
 "each month, 28th to 31st."
 msgstr ""
 
-#, fuzzy
 #| msgid "Open Days"
 msgid "Pay On Day"
-msgstr "Jours ouverts"
+msgstr "Paiement le jour"
 
 msgid ""
 "0 pays a number of days after the period ends (Pay Day). 1 to 30, or 31 for "
@@ -24206,7 +24125,6 @@ msgid ""
 "calculates with."
 msgstr ""
 
-#, fuzzy
 msgid "Input Cut-off"
 msgstr "Date limite de saisie"
 
@@ -24216,10 +24134,9 @@ msgid ""
 "blocked by it."
 msgstr ""
 
-#, fuzzy
 #| msgid "Payslip Automation"
 msgid "Generate Payslips Automatically"
-msgstr "Payslip Automation"
+msgstr "Générer les bulletins automatiquement"
 
 msgid ""
 "Draft payslips are created for the company's employees on the day after each "
@@ -24231,35 +24148,29 @@ msgid ""
 "generating, so two runs never generate the same period."
 msgstr ""
 
-#, fuzzy
 #| msgid "Payroll Settings"
 msgid "Pay Period Settings"
-msgstr "Paramètres de la paie"
+msgstr "Paramètres de la période de paie"
 
-#, fuzzy, python-format
 msgid "Generate payslips now for %(period)s"
 msgstr "Générer les bulletins pour %(period)s"
 
-#, fuzzy
 #| msgid "Offline"
 msgid "Off"
-msgstr "Hors ligne"
+msgstr "Désactivé"
 
 #, python-format
 msgid "Generates payslips for %(period)s on %(run)s."
 msgstr ""
 
-#, fuzzy
 #| msgid "IP address already exists."
 msgid "A pay period for all companies already exists."
-msgstr "Cette adresse IP existe déjà."
+msgstr "Une période de paie pour toutes les entreprises existe déjà."
 
-#, fuzzy
 #| msgid "Rotate every last day of month"
 msgid "Cycle starting on the last day of each month"
-msgstr "Tourner tous les derniers jours du mois"
+msgstr "Cycle débutant le dernier jour de chaque mois"
 
-#, fuzzy
 msgid " (or the last day if shorter)"
 msgstr " (ou le dernier jour si la période est plus courte)"
 
@@ -24267,45 +24178,37 @@ msgstr " (ou le dernier jour si la période est plus courte)"
 msgid "Cycle starting on the %(day)s of each month"
 msgstr ""
 
-#, fuzzy
 #| msgid "Interview"
 msgid "In review"
-msgstr "Interview"
+msgstr "En cours de révision"
 
-#, fuzzy
 #| msgid "Not Started"
 msgid "Not started"
 msgstr "Non démarré"
 
-#, fuzzy
 #| msgid "Generate"
 msgid "Generating"
-msgstr "Générer"
+msgstr "Génération en cours"
 
-#, fuzzy
 #| msgid "Period preset"
 msgid "Period start"
-msgstr "Préréglage de période"
+msgstr "Début de période"
 
-#, fuzzy
 #| msgid "Period In"
 msgid "Period end"
-msgstr "Période dans"
+msgstr "Fin de période"
 
-#, fuzzy
 msgid "Flagged (net zero or capped)"
 msgstr "Signalé (net nul ou plafonné)"
 
-#, fuzzy
 #| msgid "Payslip Batch"
 msgid "Payroll Batch"
-msgstr "Fiche de paie par lot"
+msgstr "Lot de paie"
 
 #| msgid "Status already in {} status"
 msgid "It is already %(status)s."
 msgstr "Le statut est déjà %(status)s."
 
-#, fuzzy, python-format
 msgid "%(status)s is not a status."
 msgstr "%(status)s n’est pas un statut valide."
 
@@ -24316,18 +24219,15 @@ msgstr ""
 msgid "A run that is %(current)s cannot become %(wanted)s."
 msgstr ""
 
-#, fuzzy
 msgid "The batch has not finished generating."
 msgstr "La génération du lot n’est pas terminée."
 
-#, fuzzy
 msgid "Queued"
 msgstr "En file d’attente"
 
-#, fuzzy
 #| msgid "Payroll Readiness"
 msgid "Payroll Batch Line"
-msgstr "Préparation de la paie"
+msgstr "Ligne du lot de paie"
 
 #, fuzzy
 #| msgid "Payroll Readiness"

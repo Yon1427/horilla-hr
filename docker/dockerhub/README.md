@@ -124,7 +124,7 @@ The container refuses to start in production without these. There are no usable 
 | `HORILLA_ENV` | — | Set to `production` to force security checks even if `DEBUG` is accidentally `1`. |
 | `REDIS_URL` | unset | Enables Redis caching. |
 | `SECURE_SSL_REDIRECT` | `False` | Turn on when TLS terminates in front of the app. |
-| `TIME_ZONE` | `Asia/Kolkata` | |
+| `TIME_ZONE` | `Africa/Algiers` | |
 | `GUNICORN_WORKERS` | auto | |
 
 ---

@@ -369,7 +369,9 @@ WSGI_APPLICATION = "horilla.wsgi.application"
 # INTERNATIONALIZATION
 # ========================================
 LANGUAGE_CODE = "fr"
-TIME_ZONE = env("TIME_ZONE", default="Asia/Kolkata")
+# Algeria is UTC+1 all year: no daylight saving, so a fixed zone is correct
+# here and there is no transition to get wrong.
+TIME_ZONE = env("TIME_ZONE", default="Africa/Algiers")
 # First day of the week for calendar-week ranges such as the Quick Date
 # "This Week" / "Last Week": 0 = Sunday, 1 = Monday ... 6 = Saturday.
 # Monday matches the attendance dashboard and the other week filters.

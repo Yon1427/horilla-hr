@@ -40,7 +40,7 @@ restart: ## Restart all services
 	$(COMPOSE) restart
 
 makemessages: ## Refresh catalogs without extracting vendored JavaScript identifiers
-	python manage.py makemessages -a $(I18N_EXCLUDES)
+	python manage.py makemessages -l en -l fr -l ar $(I18N_EXCLUDES)
 
 compilemessages: ## Compile all gettext catalogs
 	python manage.py compilemessages

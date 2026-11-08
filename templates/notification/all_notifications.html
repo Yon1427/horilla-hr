@@ -24,17 +24,9 @@
                         <p class="oh-navbar__notification-text" class="oh-navbar__notification-text--unread">
                             {{ notification.data.verb_ar }}
                         </p>
-                    {% elif LANGUAGE_CODE == 'de' %}
-                        <p class="oh-navbar__notification-text" class="oh-navbar__notification-text--unread">
-                            {{ notification.data.verb_de }}
-                        </p>
                     {% elif LANGUAGE_CODE == 'fr' %}
                         <p class="oh-navbar__notification-text" class="oh-navbar__notification-text--unread">
                             {{ notification.data.verb_fr }}
-                        </p>
-                    {% elif LANGUAGE_CODE == 'es' %}
-                        <p class="oh-navbar__notification-text" class="oh-navbar__notification-text--unread">
-                            {{ notification.data.verb_es }}
                         </p>
                     {% else %}
                         <p class="oh-navbar__notification-text" class="oh-navbar__notification-text--unread">

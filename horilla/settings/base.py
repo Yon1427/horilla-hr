@@ -379,18 +379,8 @@ USE_TZ = True
 
 LANGUAGES = (
     ("en", "English (US)"),
-    ("de", "Deutsch"),
-    ("es", "Español"),
     ("fr", "Français"),
     ("ar", "العربية"),
-    ("pt-br", "Português (Brasil)"),
-    ("zh-hans", "简体中文"),
-    ("zh-hant", "繁體中文"),
-    ("it", "Italian"),
-    ("tr", "Turkish"),
-    ("uk", "Українська"),
-    ("ro", "Română"),
-    ("ru", "Русский"),
 )
 
 LOCALE_PATHS = [join(BASE_DIR, "horilla", "locale")]

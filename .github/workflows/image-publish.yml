@@ -1,0 +1,152 @@
+name: Image Publish (GHCR)
+
+# Publishes the deployable image to GitHub Container Registry so Railway can
+# pull it instead of building the repository itself.
+#
+# Separate from docker-publish.yml, which is the upstream release path (Docker
+# Hub, semver, multi-arch). This is the fork's deployment feed.
+#
+# Order matters: the image is built and loaded locally, smoke-tested against a
+# real Django boot, and only then pushed. A broken image therefore never
+# reaches the registry, and so never reaches Railway.
+#
+# Tags produced by metadata-action:
+#   sha-<short>   immutable, what a deployment should pin
+#   sirh-v1       follows the branch
+#   latest        default branch only
+#   X.Y.Z         on a version tag
+
+on:
+  push:
+    branches: [sirh-v1]
+    tags: ["[0-9]+.[0-9]+.[0-9]+*"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  packages: write
+
+env:
+  REGISTRY: ghcr.io
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 75
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # GHCR rejects uppercase in a repository path, and Yon1427/horilla-hr is
+      # not lowercase as written, so normalise rather than assume.
+      - name: Resolve lowercase image name
+        id: img
+        run: echo "name=${GITHUB_REPOSITORY,,}" >> "$GITHUB_OUTPUT"
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Image metadata
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ env.REGISTRY }}/${{ steps.img.outputs.name }}
+          tags: |
+            type=sha,format=short,prefix=sha-
+            type=ref,event=branch
+            type=semver,pattern={{version}}
+            type=raw,value=latest,enable={{is_default_branch}}
+
+      # linux/amd64 only: Railway runs amd64, so a second platform doubles build
+      # time for an image nothing consumes.
+      - name: Build (load locally, do not push yet)
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          platforms: linux/amd64
+          load: true
+          push: false
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+      # The entrypoint waits for PostgreSQL before doing anything, so it is
+      # bypassed here and the checks run directly against a throwaway SQLite
+      # file. This proves the image carries working settings, migrations and
+      # static assets before anything is published.
+      - name: Smoke test (check, migrate, collectstatic)
+        run: |
+          set -e
+          IMAGE="$(printf '%s' '${{ steps.meta.outputs.tags }}' | head -n1)"
+          echo "Testing $IMAGE"
+          docker run --rm --entrypoint "" \
+            -e SECRET_KEY=ci-smoke-not-a-secret \
+            -e DEBUG=1 \
+            -e ALLOWED_HOSTS=localhost,127.0.0.1 \
+            -e DB_ENGINE=django.db.backends.sqlite3 \
+            -e DB_NAME=/tmp/smoke.sqlite3 \
+            "$IMAGE" sh -c "
+              set -e
+              python manage.py check
+              python manage.py migrate --noinput
+              python manage.py collectstatic --noinput
+            "
+
+      - name: Smoke test (gunicorn boots and answers /health/)
+        run: |
+          set -e
+          IMAGE="$(printf '%s' '${{ steps.meta.outputs.tags }}' | head -n1)"
+          docker run -d --name smoke --entrypoint "" \
+            -p 8000:8000 \
+            -e SECRET_KEY=ci-smoke-not-a-secret \
+            -e DEBUG=1 \
+            -e ALLOWED_HOSTS=localhost,127.0.0.1 \
+            -e DB_ENGINE=django.db.backends.sqlite3 \
+            -e DB_NAME=/tmp/smoke.sqlite3 \
+            "$IMAGE" gunicorn horilla.wsgi:application --config docker/gunicorn.conf.py
+
+          for i in $(seq 1 60); do
+            if curl -sf --max-time 5 http://localhost:8000/health/ | grep -q '"status"'; then
+              echo "health OK: $(curl -s http://localhost:8000/health/)"
+              exit 0
+            fi
+            sleep 2
+          done
+
+          echo "gunicorn did not answer /health/ within 2 minutes"
+          docker logs --tail=80 smoke
+          exit 1
+
+      - name: Stop smoke container
+        if: always()
+        run: docker rm -f smoke 2>/dev/null || true
+
+      - name: Log in to GHCR
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Push
+        run: |
+          set -e
+          printf '%s\n' '${{ steps.meta.outputs.tags }}' | while read -r tag; do
+            [ -n "$tag" ] && docker push "$tag"
+          done
+
+      - name: Summary
+        run: |
+          {
+            echo "### Image published"
+            echo ""
+            echo "Pull with:"
+            echo '```'
+            echo "docker pull ${{ env.REGISTRY }}/${{ steps.img.outputs.name }}:sha-${GITHUB_SHA::7}"
+            echo '```'
+            echo ""
+            echo "Railway: set the service source to this image and redeploy."
+            echo "See docker/railway.md."
+          } >> "$GITHUB_STEP_SUMMARY"

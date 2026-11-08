@@ -12,6 +12,7 @@ from urllib.parse import parse_qs, parse_qsl, urlencode, urlparse, urlunparse
 import pandas as pd
 from auditlog.registry import auditlog
 from django import forms
+from django.conf import settings
 from django.contrib import messages
 from django.core.cache import cache as CACHE
 from django.core.exceptions import FieldDoesNotExist
@@ -1511,8 +1512,8 @@ class HorillaDetailedView(DetailView):
     title = _("Detailed View")
     template_name = "generic/horilla_detailed_view.html"
     header: dict = {
-        "title": "Horilla",
-        "subtitle": "Horilla Detailed View",
+        "title": getattr(settings, "SIRH_BRAND_NAME", "Horilla"),
+        "subtitle": _("Detailed View"),
         "avatar": "",
     }
     body: list = []

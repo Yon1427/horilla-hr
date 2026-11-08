@@ -402,6 +402,10 @@ SIRH_BRAND_TAGLINE = env("SIRH_BRAND_TAGLINE", default="SIRH Algérie")
 # vendor address is baked into the code.
 SIRH_SUPPORT_EMAIL = env("SIRH_SUPPORT_EMAIL", default="support@example.dz")
 SIRH_TERMS_URL = env("SIRH_TERMS_URL", default="")
+# Stable machine identifier advertised by /health/. Not the brand name: a
+# white-labelled deployment still runs this product, and API clients key on the
+# slug to decide "can I talk to it" before anything else.
+SIRH_PRODUCT_SLUG = env("SIRH_PRODUCT_SLUG", default="sanad")
 
 # ========================================
 # LOGGING, MESSAGES, OTHER GLOBALS

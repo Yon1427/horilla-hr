@@ -10,6 +10,7 @@ from datetime import date, timedelta
 from urllib.parse import urlencode
 
 import openpyxl
+from django.conf import settings
 from django.contrib import messages
 from django.http import HttpResponse, JsonResponse
 from django.shortcuts import get_object_or_404, render
@@ -751,7 +752,10 @@ class RosterTemplateDownloadView(View):
                     c.fill = off_fill
                     c.font = off_font
                     if off_reason != "Weekly Off Day":
-                        c.comment = Comment(f"Holiday: {off_reason}", "Horilla")
+                        c.comment = Comment(
+                            f"Holiday: {off_reason}",
+                            getattr(settings, "SIRH_BRAND_NAME", "Horilla"),
+                        )
                 elif d.weekday() >= 5:
                     c.fill = weekend_fill
 

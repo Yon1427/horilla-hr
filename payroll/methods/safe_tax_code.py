@@ -53,7 +53,7 @@ DEFAULT_TIMEOUT_SECONDS = 2.0
 
 PYTHON_FORMULAS_OFF_MESSAGE = _(
     "Python formulas are turned off on this server. Use tax slabs, or ask whoever "
-    "runs Horilla to set HORILLA_ALLOW_PYTHON_TAX_FORMULAS=True."
+    "runs this server to set HORILLA_ALLOW_PYTHON_TAX_FORMULAS=True."
 )
 
 

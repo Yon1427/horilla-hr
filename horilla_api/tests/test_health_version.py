@@ -12,6 +12,7 @@ project's published advisories name exact patched versions, so returning
 apply to it. That is what the second test guards.
 """
 
+from django.conf import settings
 from django.test import TestCase
 
 from horilla.__version__ import API_VERSION, __version__
@@ -23,7 +24,11 @@ class HealthVersionTests(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertEqual(
             response.json(),
-            {"status": "ok", "product": "horilla", "api": API_VERSION},
+            {
+                "status": "ok",
+                "product": settings.SIRH_PRODUCT_SLUG,
+                "api": API_VERSION,
+            },
         )
 
     def test_health_does_not_disclose_the_release(self):

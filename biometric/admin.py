@@ -8,9 +8,17 @@ with the Django admin site, allowing them to be managed via the admin interface.
 
 from django.contrib import admin
 
-from .models import BiometricDevices, BiometricEmployees, COSECAttendanceArguments
+from .models import (
+    BiometricConsent,
+    BiometricDevices,
+    BiometricEmployees,
+    BiometricProcessingAuthorisation,
+    COSECAttendanceArguments,
+)
 
 # Register your models here.
 admin.site.register(BiometricDevices)
 admin.site.register(BiometricEmployees)
 admin.site.register(COSECAttendanceArguments)
+admin.site.register(BiometricProcessingAuthorisation)
+admin.site.register(BiometricConsent)

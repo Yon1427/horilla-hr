@@ -31,4 +31,7 @@ class BiometricConfig(AppConfig):
 
         from biometric import sidebar
 
+        # Lifecycle hooks: purge enrolments and withdraw consent on exit.
+        from biometric import signals  # noqa: F401
+
         super().ready()

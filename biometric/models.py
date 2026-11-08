@@ -11,6 +11,7 @@ from django.core.exceptions import ValidationError
 from django.core.validators import MaxValueValidator
 from django.db import models
 from django.urls import reverse, reverse_lazy
+from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
 
 from base.horilla_company_manager import HorillaCompanyManager
@@ -340,6 +341,174 @@ class BiometricDevices(HorillaModel):
         verbose_name_plural = _("Biometric Devices")
 
 
+class BiometricProcessingAuthorisation(HorillaModel):
+    """Company-level legal basis for biometric timekeeping.
+
+    Loi 18-07 art. 18 (amended by loi 25-11) treats biometric templates as
+    sensitive data: processing requires explicit consent, an ANPDP
+    authorisation where the law requires one, and a DPIA. This row is the
+    evidence the employer must be able to produce; without an authorised row
+    no employee can be enrolled on a device.
+
+    One row per company (the establishment is the data controller here).
+    ``is_active`` on the base model revokes the authorisation without deleting
+    the history.
+    """
+
+    ALTERNATIVE_CHOICES = [
+        ("manual", _("Manual entry by a supervisor")),
+        ("card", _("Badge / access card")),
+        ("mobile", _("Mobile check-in")),
+    ]
+
+    company_id = models.OneToOneField(
+        Company, on_delete=models.CASCADE, verbose_name=_("Company")
+    )
+    anpdp_required = models.BooleanField(
+        default=True,
+        verbose_name=_("ANPDP authorisation required"),
+        help_text=_(
+            "Untick only where counsel confirms the processing falls outside "
+            "the authorisation requirement (loi 18-07 art. 12)."
+        ),
+    )
+    anpdp_authorisation_ref = models.CharField(
+        max_length=255, blank=True, verbose_name=_("ANPDP authorisation reference")
+    )
+    authorisation_date = models.DateField(null=True, blank=True)
+    dpia_completed_on = models.DateField(
+        null=True, blank=True, verbose_name=_("DPIA completed on")
+    )
+    retention_months = models.PositiveSmallIntegerField(
+        default=12,
+        verbose_name=_("Template retention (months)"),
+        help_text=_("Templates are purged after this period unless a legal hold applies."),
+    )
+    alternative_method = models.CharField(
+        max_length=20,
+        choices=ALTERNATIVE_CHOICES,
+        default="manual",
+        verbose_name=_("Alternative clock-in method"),
+        help_text=_("Must be offered to every employee who refuses biometrics."),
+    )
+    notes = models.TextField(blank=True)
+    objects = HorillaCompanyManager("company_id")
+
+    def is_authorised(self, on=None):
+        """True when this company may run biometric capture today."""
+        on = on or timezone.localdate()
+        if not self.is_active:
+            return False
+        if self.dpia_completed_on is None or self.dpia_completed_on > on:
+            return False
+        if self.anpdp_required and not self.anpdp_authorisation_ref.strip():
+            return False
+        return True
+
+    def __str__(self):
+        return f"{self.company_id} — {'authorised' if self.is_authorised() else 'blocked'}"
+
+    class Meta:
+        verbose_name = _("Biometric processing authorisation")
+        verbose_name_plural = _("Biometric processing authorisations")
+
+
+class BiometricConsent(HorillaModel):
+    """One employee's explicit consent to biometric timekeeping.
+
+    Records the signed proof (``consent_reference``), the withdrawal date and
+    an optional expiry. Enrolment is refused while ``is_current()`` is False.
+    ``consent_given_on`` plus ``consent_reference`` is the evidence an ANPDP
+    inspection asks for; a bare boolean is not enough.
+    """
+
+    employee_id = models.OneToOneField(
+        Employee,
+        on_delete=models.CASCADE,
+        related_name="biometric_consent",
+        verbose_name=_("Employee"),
+    )
+    consent_given_on = models.DateField(null=True, blank=True)
+    consent_reference = models.CharField(
+        max_length=255,
+        blank=True,
+        verbose_name=_("Consent proof reference"),
+        help_text=_("Signed form, ticket or document reference."),
+    )
+    withdrawn_on = models.DateField(null=True, blank=True)
+    expires_on = models.DateField(null=True, blank=True)
+    company_id = models.ForeignKey(
+        Company, null=True, blank=True, on_delete=models.PROTECT
+    )
+    objects = HorillaCompanyManager("company_id")
+
+    def is_current(self, on=None):
+        """Consent in force on ``on`` (default today)."""
+        on = on or timezone.localdate()
+        if not self.is_active or not self.consent_given_on or self.withdrawn_on:
+            return False
+        if self.consent_given_on > on:
+            return False
+        if self.expires_on and self.expires_on < on:
+            return False
+        return bool(self.consent_reference.strip())
+
+    def clean(self):
+        super().clean()
+        if self.withdrawn_on and self.consent_given_on:
+            if self.withdrawn_on < self.consent_given_on:
+                raise ValidationError(
+                    {"withdrawn_on": _("Withdrawal cannot predate consent.")}
+                )
+        if self.expires_on and self.consent_given_on:
+            if self.expires_on < self.consent_given_on:
+                raise ValidationError(
+                    {"expires_on": _("Expiry cannot predate consent.")}
+                )
+
+    def save(self, *args, **kwargs):
+        # Model.save() does not run validators; a consent record with an
+        # impossible date range is evidence that will not survive an audit, so
+        # validate on every write. loaddata bypasses save() with raw=True.
+        self.clean()
+        return super().save(*args, **kwargs)
+
+    def __str__(self):
+        return f"{self.employee_id} — {'current' if self.is_current() else 'not current'}"
+
+    class Meta:
+        verbose_name = _("Biometric consent")
+        verbose_name_plural = _("Biometric consents")
+
+
+class BiometricEmployeesManager(HorillaCompanyManager):
+    """Company-scoped manager that applies the biometric consent gate.
+
+    The gate lives here, not only in a view, because employees are enrolled
+    from six different flows (ZKTeco, COSEC, Dahua, e-TimeOffice, sync, admin)
+    and some use ``bulk_create``, which bypasses ``Model.save()``.
+    """
+
+    company_filter_path = "employee_id__employee_work_info__company_id"
+
+    @staticmethod
+    def _assert_compliant(objs):
+        for obj in objs:
+            if obj._state.adding:
+                obj.clean()
+
+    def create(self, **kwargs):
+        obj = self.model(**kwargs)
+        self._assert_compliant([obj])
+        obj.save()
+        return obj
+
+    def bulk_create(self, objs, **kwargs):
+        objs = list(objs)
+        self._assert_compliant(objs)
+        return super().bulk_create(objs, **kwargs)
+
+
 class BiometricEmployees(models.Model):
     """
     Model: BiometricEmployees
@@ -363,7 +532,49 @@ class BiometricEmployees(models.Model):
     device_id = models.ForeignKey(
         BiometricDevices, on_delete=models.CASCADE, null=True, blank=True
     )
-    objects = models.Manager()
+    objects = BiometricEmployeesManager()
+
+    def _biometric_company(self):
+        if self.device_id_id:
+            return self.device_id.company_id
+        get_company = getattr(self.employee_id, "get_company", None)
+        return get_company() if callable(get_company) else None
+
+    def clean(self):
+        """Refuse enrolment without an authorised company and current consent.
+
+        Blocking, not warning: a template stored without a legal basis is
+        exactly the finding an ANPDP inspection reports.
+        """
+        super().clean()
+        if not self.employee_id_id:
+            return
+        company = self._biometric_company()
+        authorisation = (
+            BiometricProcessingAuthorisation.objects.filter(company_id=company).first()
+            if company
+            else None
+        )
+        if authorisation is None or not authorisation.is_authorised():
+            raise ValidationError(
+                _(
+                    "Biometric enrolment is blocked: the company has no active "
+                    "ANPDP/DPIA authorisation."
+                )
+            )
+        consent = getattr(self.employee_id, "biometric_consent", None)
+        if consent is None or not consent.is_current():
+            raise ValidationError(
+                _(
+                    "Biometric enrolment is blocked: the employee has no current "
+                    "biometric consent."
+                )
+            )
+
+    def save(self, *args, **kwargs):
+        if self._state.adding:
+            self.clean()
+        return super().save(*args, **kwargs)
 
     def __str__(self):
         return f"{self.employee_id} - {self.user_id} - {self.device_id}"

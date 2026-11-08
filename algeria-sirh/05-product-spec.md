@@ -386,6 +386,7 @@ These must be closed before the rule ships as blocking.
 | C17 | Overtime hourly base | 01 §10.4 | CCN parameter |
 | C18 | Advance repayment cap | 01 §10.4 | Company policy |
 | C19 | UI language scope (en/fr/ar trim proposed on M0/M1) | `settings/base.py`, `Makefile`, `locale/*` | 2026-11-08: ruled **M2 localization**, kept off `algeria/m0-m1`; trim lives on `algeria/m2-localization` |
+| C20 | Biometric attendance: legal basis | `biometric/*` | 2026-11-08: **blocking gate** — enrolment refused without a company ANPDP/DPIA authorisation and a current per-employee consent; templates purged on exit. Source: loi 18-07 art. 18 (as amended by loi 25-11), spec `05 §7` |
 
 ---
 

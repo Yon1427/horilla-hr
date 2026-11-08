@@ -9,6 +9,7 @@ from datetime import date, timedelta
 from django.urls import reverse
 from django.utils.translation import gettext_noop
 
+from horilla.branding import BOT_USERNAME
 from horilla.scheduling import register_job
 from notifications.signals import notify
 
@@ -24,7 +25,7 @@ def notify_expiring_assets():
     assets = Asset.objects.all()
 
     # Cache bot & superuser once
-    bot = HorillaUser.objects.filter(username="Horilla Bot").only("id").first()
+    bot = HorillaUser.objects.filter(username=BOT_USERNAME).only("id").first()
     superuser = HorillaUser.objects.filter(is_superuser=True).only("id").first()
 
     # Query only assets that are expiring today
@@ -80,7 +81,7 @@ def notify_expiring_documents():
 
     today = date.today()
     documents = Document.objects.all()
-    bot = HorillaUser.objects.filter(username="Horilla Bot").first()
+    bot = HorillaUser.objects.filter(username=BOT_USERNAME).first()
     for document in documents:
         if document.expiry_date:
             expiry_date = document.expiry_date

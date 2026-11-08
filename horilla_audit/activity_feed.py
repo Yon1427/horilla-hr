@@ -5,10 +5,13 @@ Normalize simple-history / auditlog diffs into one activity-feed context.
 import html
 import re
 from datetime import timedelta
+from urllib.parse import quote_plus
 
 from django.utils import timezone
 from django.utils.html import strip_tags
 from django.utils.translation import gettext as _
+
+from horilla.branding import BOT_USERNAME
 
 
 def history_action_phrase(changes, fallback=None):
@@ -57,19 +60,19 @@ def history_date_label(history_date, today=None):
 
 def _actor_name(updated_by):
     if updated_by is None:
-        return _("Horilla Bot")
+        return BOT_USERNAME
     if hasattr(updated_by, "get_full_name"):
         return updated_by.get_full_name() or str(updated_by)
-    return str(updated_by) or _("Horilla Bot")
+    return str(updated_by) or BOT_USERNAME
 
 
 def _actor_avatar(updated_by):
     if updated_by is None:
-        return "https://ui-avatars.com/api/?name=Horilla+Bot&background=random"
+        return f"https://ui-avatars.com/api/?name={quote_plus(BOT_USERNAME)}&background=random"
     getter = getattr(updated_by, "get_avatar", None)
     if callable(getter):
         return getter()
-    return "https://ui-avatars.com/api/?name=Horilla+Bot&background=random"
+    return f"https://ui-avatars.com/api/?name={quote_plus(BOT_USERNAME)}&background=random"
 
 
 _HTML_TAG_RE = re.compile(r"<\s*/?\s*[a-zA-Z][^>]*>")
@@ -180,7 +183,7 @@ class _AuditActor:
 
     def __init__(self, employee=None, name=None):
         self.employee = employee
-        self.name = name or _("Horilla Bot")
+        self.name = name or BOT_USERNAME
 
     def get_full_name(self):
         if self.employee and hasattr(self.employee, "get_full_name"):

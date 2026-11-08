@@ -5,10 +5,13 @@ This module is used to write methods related to the history
 """
 
 from django.core.paginator import Paginator
+from urllib.parse import quote_plus
+
 from django.db import models
 from django.shortcuts import render
 
 from horilla.decorators import apply_decorators
+from horilla.branding import BOT_USERNAME
 
 
 class Bot:
@@ -16,13 +19,13 @@ class Bot:
         self.__str__()
 
     def __str__(self) -> str:
-        return "Horilla Bot"
+        return BOT_USERNAME
 
     def get_avatar(self):
         """
         Get avatar
         """
-        return "https://ui-avatars.com/api/?name=Horilla+Bot&background=random"
+        return f"https://ui-avatars.com/api/?name={quote_plus(BOT_USERNAME)}&background=random"
 
 
 def _check_and_delete(entry1, entry2, dry_run=False):

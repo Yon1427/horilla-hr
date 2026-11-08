@@ -3,12 +3,18 @@ from django.core.management.base import BaseCommand
 from django.db import connection, transaction
 from django.utils import timezone
 
+from horilla.branding import BOT_USERNAME
 from horilla_auth.models import (
     AuthUserGroups,
     AuthUserUserPermissions,
     HorillaUser,
     LegacyUser,
 )
+
+# A v1 database names the automation account after the upstream product. The
+# schedulers look it up as BOT_USERNAME, so a verbatim copy would leave every
+# scheduled notification with no sender.
+LEGACY_BOT_USERNAME = "Horilla Bot"
 
 
 class Command(BaseCommand):
@@ -54,9 +60,13 @@ class Command(BaseCommand):
                 if last_login and timezone.is_naive(last_login):
                     last_login = timezone.make_aware(last_login)
 
+                username = old_user.username
+                if username == LEGACY_BOT_USERNAME:
+                    username = BOT_USERNAME
+
                 new_user = HorillaUser.objects.create(
                     id=old_user.id,
-                    username=old_user.username,
+                    username=username,
                     password=old_user.password,
                     first_name=old_user.first_name,
                     last_name=old_user.last_name,

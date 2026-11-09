@@ -242,6 +242,9 @@ class AlgeriaPayrollParameter(HorillaModel):
     fnpos_rate = models.FloatField(default=0.5)
     tfpc_rate = models.FloatField(default=1)
     tapp_rate = models.FloatField(default=1)
+    # Declaration deadlines and gates (M2, effective-dated like the rates).
+    dea_due_days = models.IntegerField(default=10)  # DEC-02 OFF, loi 83-14 art. 10
+    dea_nin_required = models.BooleanField(default=False)  # UNV - CNAS schema
     source_url = models.URLField(blank=True)
     objects = HorillaCompanyManager("company_id")
 

@@ -159,9 +159,9 @@ railway ssh -s web -- python manage.py test --noinput <module> -v 0   # one at a
 ## Resume here (next actions)
 
 1. **M1 is complete; M2 in flight** — registry (M2-1 `bbe448e0a`), DEA
-   (M2-2 `17c359cf6`), DAC (M2-3 `78e882a10`) done with golden tests.
-   Next: M2-4 DAS (annual, per-employee, C11 deadline parameter), then
-   G50/G29, ANEM/AT-MP/TFPC-TAPP, receipts (M2-8).
+   (M2-2 `17c359cf6`), DAC (M2-3 `78e882a10`), DAS (M2-4 `c2555ed82`) done
+   with golden tests. Next: M2-5 G50 (totals-only, 1st-20th window), then
+   G29, ANEM/AT-MP/TFPC-TAPP, receipts (M2-8).
 2. Change the `sidali.boulezaz` temporary password in prod.
 
 ## Ground rules for the next session

@@ -28,6 +28,10 @@ from payroll.models.models import (
 )
 from payroll.models.tax_models import PayrollSettings, TaxBracket
 
+# The models package __init__ is empty; admin imports are what register the
+# model modules (ModelBase side effect), so new modules must be imported here.
+from payroll.models.declarations import Declaration  # noqa: F401
+
 
 class FilingStatusAdminForm(forms.ModelForm):
     """

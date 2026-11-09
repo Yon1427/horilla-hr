@@ -387,6 +387,7 @@ These must be closed before the rule ships as blocking.
 | C18 | Advance repayment cap | 01 §10.4 | Company policy |
 | C19 | UI language scope (en/fr/ar trim proposed on M0/M1) | `settings/base.py`, `Makefile`, `locale/*` | 2026-11-08: ruled **M2 localization**, kept off `algeria/m0-m1`; trim lives on `algeria/m2-localization` |
 | C20 | Biometric attendance: legal basis | `biometric/*` | 2026-11-08: **blocking gate** — enrolment refused without a company ANPDP/DPIA authorisation and a current per-employee consent; templates purged on exit. Source: loi 18-07 art. 18 (as amended by loi 25-11), spec `05 §7` |
+| C21 | Working branch after the sirh-v1 consolidation | `algeria/m0-m1`, `sirh-v1` | 2026-11-09: **all work continues on `sirh-v1`** (deploy branch, GHCR CI feeds Railway). `algeria/m0-m1` was fast-forwarded to `1f234f0` locally and is archived — no new commits there. Every push to `sirh-v1` produces a deployable image; re-pin Railway to the new `sha-<short>` to release |
 
 ---
 

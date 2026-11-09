@@ -8,7 +8,7 @@ Do not change 60 844 unless the source in 01 section 7.2 changes.
 from datetime import date
 from unittest.mock import patch
 
-from django.test import TestCase
+from django.test import TestCase, override_settings
 
 from horilla.testkit import make_company, make_employee
 from payroll.methods.payroll_run import payroll_calculation
@@ -33,6 +33,7 @@ EMPTY_LEAVES = {
 }
 
 
+@override_settings(LANGUAGE_CODE="fr")
 class DzGoldenPayslip(TestCase):
     def test_80000_gross_matches_the_reference_case(self):
         company = make_company("DZ Golden Co")

@@ -37,7 +37,7 @@ from datetime import date
 from pathlib import Path
 from unittest.mock import patch
 
-from django.test import TestCase
+from django.test import TestCase, override_settings
 
 from horilla.testkit import make_company, make_employee
 from payroll.methods.payroll_run import payroll_calculation
@@ -88,6 +88,7 @@ def _normalize(value):
     return value
 
 
+@override_settings(LANGUAGE_CODE="fr")
 class PayrollCalculationGoldenTests(TestCase):
     """One scenario per method; all share the same period and wage."""
 

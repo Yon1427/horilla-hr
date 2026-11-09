@@ -368,7 +368,7 @@ WSGI_APPLICATION = "horilla.wsgi.application"
 # ========================================
 # INTERNATIONALIZATION
 # ========================================
-LANGUAGE_CODE = "fr"
+LANGUAGE_CODE = env("LANGUAGE_CODE", default="fr")
 # Algeria is UTC+1 all year: no daylight saving, so a fixed zone is correct
 # here and there is no transition to get wrong.
 TIME_ZONE = env("TIME_ZONE", default="Africa/Algiers")

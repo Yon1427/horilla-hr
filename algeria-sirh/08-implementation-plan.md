@@ -1752,19 +1752,17 @@ git push -u fork algeria/m0-m1
 ## Task 17: Localization pass — pin English-asserting tests (QA gate)
 
 **Context:** the fork serves French by default, upstream/fork tests assert
-English UI strings. With compiled `fr` catalogues (now part of CI), those
-tests fail on `KeyError: 'Yesterday'`-style lookups. Fix pattern: pin
-`@override_settings(LANGUAGE_CODE="en")` on the logic-test classes below, so
-tests verify logic while translation is covered by the catalogue build gate
-and the French golden payslip test. `test_payroll_calculation_golden` stays
-French (prod-like payload).
+English UI strings, and `makemigrations --check` resolves lazy-translated
+field metadata in the active locale (fake `horilla_documents` drift under
+French). Resolution (2026-11-09): `LANGUAGE_CODE` is env-overridable, CI
+runs the check AND the smoke suite with `LANGUAGE_CODE=en` (canonical
+msgids for the check, English assertions for the tests), the `fr` catalogues
+still compile as the translation gate, and the two golden payslip tests pin
+`fr` themselves via `override_settings`.
 
-- [ ] `horilla_views/tests/test_quick_date_filters.py` (6 errors, label keys)
-- [ ] `attendance/tests/test_half_day_resolution.py`
-- [ ] `attendance/tests/test_summary_override.py`
-- [ ] `attendance/tests/test_company_leave_and_range.py`
-- [ ] `payroll/tests/test_salary_structure_detail.py`
-- [ ] `payroll/tests/test_overtime_slab_payslip.py`
+- [x] `horilla/settings/base.py`: `LANGUAGE_CODE = env("LANGUAGE_CODE", default="fr")`
+- [x] CI: `LANGUAGE_CODE: en` on the makemigrations-check and test steps
+- [x] `test_payroll_calculation_golden.py` + `test_dz_payroll_golden.py`: `@override_settings(LANGUAGE_CODE="fr")`
 - [ ] Re-run `make test-smoke` until the gate is green, then re-pin Railway.
 
 ## M2+ roadmap (separate plans)

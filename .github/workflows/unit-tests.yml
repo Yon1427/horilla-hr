@@ -90,6 +90,10 @@ jobs:
           DEBUG: "True"
           SECRET_KEY: ci-dev-not-for-production
           ALLOWED_HOSTS: localhost,127.0.0.1
+          # English: lazy-translated field metadata resolves to its msgid, so
+          # the check compares canonical strings, not the active locale (the
+          # French catalogues would otherwise fake AlterField drift).
+          LANGUAGE_CODE: en
           # Takes the env.db() branch in settings/base.py, which avoids the
           # sqlite-only OPTIONS.timeout that Postgres rejects.
           DATABASE_URL: postgres://horilla_ci:horilla_ci@localhost:5432/horilla_ci
@@ -101,6 +105,9 @@ jobs:
           DEBUG: "True"
           SECRET_KEY: ci-dev-not-for-production
           ALLOWED_HOSTS: localhost,127.0.0.1
+          # English: the suite asserts English UI strings; the two golden
+          # payslip tests pin French themselves via override_settings.
+          LANGUAGE_CODE: en
           # Takes the env.db() branch in settings/base.py, which avoids the
           # sqlite-only OPTIONS.timeout that Postgres rejects.
           DATABASE_URL: postgres://horilla_ci:horilla_ci@localhost:5432/horilla_ci

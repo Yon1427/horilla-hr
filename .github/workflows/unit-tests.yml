@@ -75,6 +75,15 @@ jobs:
       # detect this -- it succeeds against whatever is committed -- and neither
       # can `manage.py check`, so without this gate the drift ships silently and
       # only surfaces as a runtime column error on someone else's database.
+      - name: Compile gettext catalogues (prod serves French)
+        env:
+          DJANGO_SETTINGS_MODULE: horilla.settings
+          DEBUG: "True"
+          SECRET_KEY: ci-dev-not-for-production
+          ALLOWED_HOSTS: localhost,127.0.0.1
+          DATABASE_URL: postgres://horilla_ci:horilla_ci@localhost:5432/horilla_ci
+        run: python manage.py compilemessages -l fr
+
       - name: Check for missing migrations
         env:
           DJANGO_SETTINGS_MODULE: horilla.settings

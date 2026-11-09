@@ -1749,6 +1749,24 @@ git push -u fork algeria/m0-m1
 
 ---
 
+## Task 17: Localization pass — pin English-asserting tests (QA gate)
+
+**Context:** the fork serves French by default, upstream/fork tests assert
+English UI strings. With compiled `fr` catalogues (now part of CI), those
+tests fail on `KeyError: 'Yesterday'`-style lookups. Fix pattern: pin
+`@override_settings(LANGUAGE_CODE="en")` on the logic-test classes below, so
+tests verify logic while translation is covered by the catalogue build gate
+and the French golden payslip test. `test_payroll_calculation_golden` stays
+French (prod-like payload).
+
+- [ ] `horilla_views/tests/test_quick_date_filters.py` (6 errors, label keys)
+- [ ] `attendance/tests/test_half_day_resolution.py`
+- [ ] `attendance/tests/test_summary_override.py`
+- [ ] `attendance/tests/test_company_leave_and_range.py`
+- [ ] `payroll/tests/test_salary_structure_detail.py`
+- [ ] `payroll/tests/test_overtime_slab_payslip.py`
+- [ ] Re-run `make test-smoke` until the gate is green, then re-pin Railway.
+
 ## M2+ roadmap (separate plans)
 
 | Milestone | Working software produced | Acceptance test |

@@ -1776,6 +1776,26 @@ still compile as the translation gate, and the two golden payslip tests pin
 | M6 Costisation UI | per employee/establishment/cost centre, budget vs actual, raise simulator | dashboard totals reconcile to `compute_employer_cost` |
 | M7 Hardening | ANPDP register, DPO, breach clock, load test 500 employees | 500-employee payroll < 2 min; breach workflow produces evidence |
 
+## M2 declaration tasks (IDs M2-1..M2-8)
+
+Spec: `02 §7` data contracts, `01 §9` calendar, `05 §1.4` maker-checker. Every
+declaration gets a golden fixture compared to a hand-checked sample; all
+deadlines are effective-dated parameters (C3, C11 stay open until closed).
+
+| ID | Task | Files | Acceptance (first) |
+|---|---|---|---|
+| M2-1 | Declaration registry: row per filing (type, company, period, status draft→filed→received→paid, receipt ref), maker-checker, `horilla_audit` trail | `payroll/models/declarations.py` + migration | status machine test; second-person gate blocks self-approval |
+| M2-2 | DEA (embauche): NIN/NSS/hire-date/contract data contract, D+10 deadline | `payroll/declarations/dea.py` | golden employee fixture; overdue flag at D+11 |
+| M2-3 | DAC monthly recap: assiettes, 9 % employee, 25,5 % employer, FNPOS, totals reconcile to the payroll run | `payroll/declarations/dac.py` | golden 80 000 case totals equal `compute_employer_cost` inputs |
+| M2-4 | DAS annual: calendar-year per-employee summary + totals; deadline parameter (30 vs 31 Jan, C11) | `payroll/declarations/das.py` | golden year fixture |
+| M2-5 | G50 monthly IRG: 1st–20th, totals equal the payroll IRG sums | `payroll/declarations/g50.py` | golden month fixture |
+| M2-6 | G29 annual IRG: NIN mandatory (DEC-06), « néant » wording (PAY-21), 30 Apr | `payroll/declarations/g29.py` | golden year fixture; blocked without NIN |
+| M2-7 | ANEM + AT/MP 48 h + TFPC/TAPP extracts (20 Jul / 20 Jan) | `payroll/declarations/anem.py`, `atmp.py`, `tfpc_tapp.py` | golden fixtures, parameter-driven rates |
+| M2-8 | Receipt capture + re-filing: attach DGI/CNAS receipts, status re-open, audit | `payroll/declarations/registry.py` | receipt→received transition test |
+
+Order: M2-1 first (everything attaches to the registry), then M2-2/M2-3
+(shortest golden cycles), M2-4/5/6, M2-7, M2-8 last.
+
 ---
 
 ## Execution handoff

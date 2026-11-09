@@ -247,6 +247,8 @@ class AlgeriaPayrollParameter(HorillaModel):
     dea_nin_required = models.BooleanField(default=False)  # UNV - CNAS schema
     dac_due_days = models.IntegerField(default=30)  # DEC-03, C3 open: portal 30, law 15
     dac_monthly_threshold = models.IntegerField(default=10)  # monthly if headcount >= 10
+    das_due_days = models.IntegerField(default=30)  # DEC-04, C11 open: +30 days after 31 Dec
+    das_time_unit = models.CharField(max_length=10, default="DAYS")  # UNV unit: DAYS|HOURS
     source_url = models.URLField(blank=True)
     objects = HorillaCompanyManager("company_id")
 

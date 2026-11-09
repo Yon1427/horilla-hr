@@ -1585,7 +1585,7 @@ git commit -m "test(payroll): golden Algerian payslip (80k -> net 60,844)"
 - Create: `payroll/methods/dz_cost.py`
 - Test: `payroll/tests/test_dz_cost.py`
 
-- [ ] **Step 1: Write the failing test**
+- [x] **Step 1: Write the failing test**
 
 ```python
 from datetime import date
@@ -1620,7 +1620,7 @@ class CostTest(SimpleTestCase):
         )
 ```
 
-- [ ] **Step 2: Run it and watch it fail**
+- [x] **Step 2: Run it and watch it fail**
 
 ```bash
 python manage.py test payroll.tests.test_dz_cost -v 2
@@ -1628,7 +1628,7 @@ python manage.py test payroll.tests.test_dz_cost -v 2
 
 Expected: `ModuleNotFoundError`.
 
-- [ ] **Step 3: Write the service**
+- [x] **Step 3: Write the service**
 
 ```python
 """Algerian employer cost (see algeria-sirh/01 §7)."""
@@ -1689,7 +1689,7 @@ def compute_employer_cost(
     )
 ```
 
-- [ ] **Step 4: Run**
+- [x] **Step 4: Run**
 
 ```bash
 python manage.py test payroll.tests.test_dz_cost -v 2

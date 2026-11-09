@@ -74,8 +74,11 @@ atomicity, CSV injection safety, leave lock, conflict blocking, Decimal money.
 | M1-12 `FilingStatus.tax_engine` | done | `payroll/models/models.py`, `tax_calc.py`, migration `0019` |
 | M1-13 component seed command | done | `seed_algeria_payroll.py` + `test_seed_algeria_payroll.py`; **run in prod** |
 | M1-14 80 000 DA golden payslip | done | `test_dz_payroll_golden.py` — exact equality, 60 844 net |
-| M1-15 employer cost | **open** | `payroll/methods/dz_cost.py` + `test_dz_cost.py` do not exist yet |
+| M1-15 employer cost | **done (`6655b78`)** | `payroll/methods/dz_cost.py` + `test_dz_cost.py`, golden §7.2; corrected the spec's 626,99→626,94 slip |
 | M1-16 delivery notes + gate | done (this file) | CI gate green on `sirh-v1` |
+
+**M1 complete.** Remaining scope is M2+ (declarations, contracts/shifts,
+localization, CASNOS/BTPH, costisation UI, hardening).
 
 Gate: CI runs `makemigrations --check` + `compilemessages -l fr` + the full
 smoke suite (34 apps, coverage floor 26) on every `sirh-v1` push — **green at
@@ -155,12 +158,9 @@ railway ssh -s web -- python manage.py test --noinput <module> -v 0   # one at a
 
 ## Resume here (next actions)
 
-1. **M1-15 employer cost** (`dz_cost.py` + `test_dz_cost.py`) — spec `01 §8`,
-   TFPC/TAPP stay parameters, no UNV default.
-2. Then `08-implementation-plan.md` Task 16 tail: mark 15/16 in the plan.
-3. M2+: declarations golden files (DEA/DAC/DAS/G50/G29), contracts/shifts,
-   CASNOS/BTPH, bank files — separate plans per `08` §M2+.
-4. Change the `sidali.boulezaz` temporary password in prod.
+1. **M1 is complete.** Next milestone is M2: declarations golden files
+   (DEA/DAC/DAS/G50/G29) per `02-legal-declarations.md` and `08` §M2+.
+2. Change the `sidali.boulezaz` temporary password in prod.
 
 ## Ground rules for the next session
 

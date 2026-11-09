@@ -7,6 +7,7 @@ based on their contract details and income information.
 
 import datetime
 import logging
+from decimal import Decimal
 
 from payroll.methods.contract_periods import forced_contract
 from payroll.methods.methods import (
@@ -83,8 +84,10 @@ def compute_yearly_tax(filing, yearly_income, employee=None, as_of=None):
             raise TaxComputationError(
                 "No Algeria payroll parameters effective on this date."
             )
+        # Exact division: the engine quantizes monthly IRG to 0.01 HALF_UP
+        # once; yearly = monthly × 12 (annual-regularisation method).
         monthly = compute_monthly_irg(
-            float(yearly_income) / 12,
+            Decimal(str(yearly_income)) / Decimal(12),
             params,
             disabled=bool(getattr(employee, "is_disabled", False)),
         )

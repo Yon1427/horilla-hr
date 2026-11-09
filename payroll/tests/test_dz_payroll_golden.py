@@ -74,6 +74,6 @@ class DzGoldenPayslip(TestCase):
             data = payroll_calculation(employee, PERIOD_START, PERIOD_END)
 
         self.assertIsNotNone(data, "engine returned no payslip data")
-        self.assertAlmostEqual(data["gross_pay"], 80000.0, places=2)
-        self.assertAlmostEqual(data["total_deductions"], 7200.0 + 11956.0, places=2)
-        self.assertAlmostEqual(data["net_pay"], 60844.0, places=2)
+        self.assertEqual(data["gross_pay"], 80000.0)
+        self.assertEqual(data["total_deductions"], 7200.0 + 11956.0)
+        self.assertEqual(data["net_pay"], 60844.0)

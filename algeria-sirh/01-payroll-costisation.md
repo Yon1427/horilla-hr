@@ -557,8 +557,13 @@ Notes:
 | **Subtotal** | **102 000,00** | |
 | Provision congés payés 8,33 % | 6 666,67 | 80 000 / 12 |
 | **Total employer cost / month** | **108 666,67** | **135,8 % of gross** |
-| Cost per paid hour | **626,99** | 108 666,67 / 173,33 |
-| Annual cost | **1 304 000,00** | × 12 |
+| Cost per paid hour | **626,94** | 108 666,67 / 173,33 |
+| Annual cost | **1 304 000,04** | × 12 |
+
+> Corrected 2026-11-09 during M1-15: the two figures above follow from the
+> table's own inputs — `108 666,67 / 173,33 = 626,94` (not 626,99) and
+> `108 666,67 × 12 = 1 304 000,04` (not ,00). The original values were an
+> arithmetic slip in the worked example, not a rate change.
 
 **Cost of a 1 000 DA raise**
 

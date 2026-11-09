@@ -45,12 +45,12 @@ jobs:
           python-version: "3.12"
           cache: pip
 
-      - name: Install system libraries (Weasy/xhtml2pdf)
+      - name: Install system libraries (Weasy/xhtml2pdf, gettext)
         run: |
           sudo apt-get update
           sudo apt-get install -y --no-install-recommends \
             libcairo2 libpango-1.0-0 libpangocairo-1.0-0 \
-            libgdk-pixbuf-2.0-0 libffi8 shared-mime-info
+            libgdk-pixbuf-2.0-0 libffi8 shared-mime-info gettext
 
       - name: Install dependencies
         run: |

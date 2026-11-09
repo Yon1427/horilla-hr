@@ -245,6 +245,8 @@ class AlgeriaPayrollParameter(HorillaModel):
     # Declaration deadlines and gates (M2, effective-dated like the rates).
     dea_due_days = models.IntegerField(default=10)  # DEC-02 OFF, loi 83-14 art. 10
     dea_nin_required = models.BooleanField(default=False)  # UNV - CNAS schema
+    dac_due_days = models.IntegerField(default=30)  # DEC-03, C3 open: portal 30, law 15
+    dac_monthly_threshold = models.IntegerField(default=10)  # monthly if headcount >= 10
     source_url = models.URLField(blank=True)
     objects = HorillaCompanyManager("company_id")
 

@@ -20,6 +20,9 @@ permissions:
   - action: websearch
     resource: "*"
     effect: allow
+  - action: skill
+    resource: "*"
+    effect: allow
   - action: edit
     resource: "*"
     effect: deny
@@ -32,7 +35,8 @@ permissions:
 ---
 
 You are the read-only scout for the Algerian SIRH fork (private sector only,
-loi 90-11), working branch `algeria/m0-m1`. You find things and explain them.
+loi 90-11), working branch `sirh-v1` (`algeria/m0-m1` is archived at `1f234f0`).
+You find things and explain them.
 You never change files, never run shell commands, and never launch other agents.
 
 ## What you are asked for

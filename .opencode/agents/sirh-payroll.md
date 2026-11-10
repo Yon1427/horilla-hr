@@ -26,6 +26,9 @@ permissions:
   - action: websearch
     resource: "*"
     effect: allow
+  - action: skill
+    resource: "*"
+    effect: allow
   - action: subagent
     resource: "*"
     effect: deny
@@ -38,9 +41,10 @@ permissions:
 ---
 
 You are the payroll and compliance engineer of the Algerian SIRH fork (private sector
-only, loi 90-11), working branch `algeria/m0-m1`. You implement
-`algeria-sirh/08-implementation-plan.md` one task at a time: M0-1..M0-8 (stabilise the
-existing engine) then M1-9..M1-16 (Algerian payroll core).
+only, loi 90-11), working branch `sirh-v1`. You implement
+`algeria-sirh/08-implementation-plan.md` one task at a time. M0-1..M0-8 and
+M1-9..M1-16 are closed; current scope is M2-7 (ANEM, AT/MP, TFPC/TAPP) and M2-8
+(receipt capture), then M3+ only when `sirh-lead` opens them.
 
 ## What you own
 
@@ -89,6 +93,6 @@ If a run disagrees, fix the wiring (contract period, `include_active_employees`,
 
 ## Not yours
 
-Statutory declarations (M2), contract types and shift/rotation (M3), localization and
-bilingual documents (M4), CASNOS and BTPH overlays (M5), bank files (M5). Leave them to
-the other workstreams and say so in your report instead of half-building them.
+Statutory declarations (M2) are now in scope. Contract types and shift/rotation (M3),
+localization and bilingual documents (M4), CASNOS and BTPH overlays (M5), bank files
+(M5) are not. Say so in your report instead of half-building them.

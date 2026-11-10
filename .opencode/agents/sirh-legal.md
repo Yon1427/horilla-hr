@@ -20,6 +20,9 @@ permissions:
   - action: websearch
     resource: "*"
     effect: allow
+  - action: skill
+    resource: "*"
+    effect: allow
   - action: edit
     resource: "*"
     effect: deny

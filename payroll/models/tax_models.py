@@ -249,6 +249,7 @@ class AlgeriaPayrollParameter(HorillaModel):
     dac_monthly_threshold = models.IntegerField(default=10)  # monthly if headcount >= 10
     das_due_days = models.IntegerField(default=30)  # DEC-04, C11 open: +30 days after 31 Dec
     das_time_unit = models.CharField(max_length=10, default="DAYS")  # UNV unit: DAYS|HOURS
+    g50_due_day = models.IntegerField(default=20)  # DEC-05 OFF: window 1st-20th of M+1
     source_url = models.URLField(blank=True)
     objects = HorillaCompanyManager("company_id")
 

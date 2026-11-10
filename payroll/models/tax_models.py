@@ -253,6 +253,7 @@ class AlgeriaPayrollParameter(HorillaModel):
     g29_due_day = models.IntegerField(default=30)  # DEC-06 OFF: 30 April N+1
     g29_nin_mandatory = models.BooleanField(default=True)  # OFF: LF 2026 art. 8
     anem_recruit_due_days = models.IntegerField(default=10)  # DEC-08 OFF: month end + 10
+    atmp_due_hours = models.IntegerField(default=48)  # DEC-10 OFF existence; calendar-hours UNV
     source_url = models.URLField(blank=True)
     objects = HorillaCompanyManager("company_id")
 
